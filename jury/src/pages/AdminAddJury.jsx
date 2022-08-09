@@ -6,7 +6,7 @@ import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
 
 const AdminAddJury = () => {
 
-    const [modalActive, setModalActive] = useState(true);
+    const [modalActive, setModalActive] = useState(false);
 
     return (
         <>
@@ -24,7 +24,7 @@ const AdminAddJury = () => {
                 <div className="jury"></div>
                 <div className="jury"></div>
             </div>
-            <button>Зарегистрировать нового члена жури</button>
+                <button onClick={() => setModalActive(true)}>Зарегистрировать нового члена жури</button>
         </section>
         <AdminAddJuryModal active={modalActive} setActive={setModalActive}/>
         </>
