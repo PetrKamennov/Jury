@@ -1,0 +1,12 @@
+.buttons_jury_meet{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    height: 70px;
+}
+.jury_meet_button{
+    width: 30%;
+    height: 40px;
+    color: black;
+    background: aqua;
+}
