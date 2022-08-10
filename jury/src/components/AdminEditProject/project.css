@@ -1,0 +1,68 @@
+.Project {
+    height: 120px;
+    margin: 15px 0px;
+    width: 100%;
+    background: #99158C;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project__text {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.project__text span {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.project__button {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.project__button:before {
+    content: '+';
+    color: #337AB7;
+    position: absolute;
+    z-index: 2;
+    transform: rotate(45deg);
+    font-size: 50px;
+    line-height: 1;
+    top: -5px;
+    left: 6px;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+}
+
+.project__button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background: #337AB7;
+    z-index: 1;
+    transition: all 0.3s cubic-bezier(0.77, 0, 0.2, 0.85);
+    transform: scale(0.01);
+}
+
+.project__button:hover:after {
+    transform: scale(1);
+}
+
+.project__button:hover:before {
+    transform: scale(0.8) rotate(45deg);
+    color: #fff;
+}

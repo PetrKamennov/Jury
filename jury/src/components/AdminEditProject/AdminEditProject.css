@@ -1,0 +1,96 @@
+*,
+*before,
+*after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    list-style: none;
+}
+
+input {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: none;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.AdminEditProject {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E5E5E5;
+}
+
+.AdminEditProject h1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 77px;
+    color: #000000;
+    margin: 0;
+}
+
+.AdminEditProject__pullProject {
+    width: 1737px;
+    height: 784px;
+    background: #D9D9D9;
+    overflow-y: scroll;
+}
+
+
+.AdminEditProject button {
+    align-self: flex-end;
+    width: 452px;
+    height: 75px;
+    background: #FF0000;
+    border: none;
+    margin-right: 10%;
+    margin-top: 10px;
+}
