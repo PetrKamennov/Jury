@@ -1,0 +1,12 @@
+.central_part_selectors{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selector_jury_history{
+    width: 80%;
+    background: #99158C;
+    font-size: 30px;
+    color: black;
+}
