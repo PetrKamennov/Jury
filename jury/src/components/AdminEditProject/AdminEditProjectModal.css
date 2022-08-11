@@ -18,35 +18,37 @@
 
 .AdminEditProjectModal__content {
     background-color: #FFFFFF;
-    width: 70%;
-    height: 70%;
+    width: 758px;
+    height: 579px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px;
+    
 }
 
 .AdminEditProjectModal__content h1 {
+    font-family: 'IBM Plex Sans';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 48px;
-    line-height: 77px;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+    margin: 82px 0 22px 0;
     color: #000000;
+    align-self: flex-start;
 }
 
 .AdminEditProjectModal__content-regJury {
     width: 100%;
-    height: 60%;
-    background: #D9D9D9;
+    height: 360px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
 }
 
 .AdminEditProjectModal__content-regJury__inputs {
-    width: 60%;
-    height: 90%;
+    width: 566px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -54,21 +56,28 @@
 
 .AdminEditProjectModal__content-regJury__inputs input {
     width: 100%;
-    height: 20%;
-    background: #FFE600;
+    height: 70px;
+    background: #FFFFFF;
     display: flex;
+    border: none;
+    margin-top: 34px;
+    border-bottom: 2px solid #394A58;;
     flex-direction: column;
     align-items: center;
 }
 
 .AdminEditProjectModal__content-regJury button {
-    width: 50%;
-    height: 100px;
-    background: #FF0000;
+    width: 566px;
+    height: 66px;
+    background: #E21A1A;
     font-style: normal;
-    font-weight: 400;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
     font-size: 32px;
-    line-height: 77px;
+    line-height: 42px;
+    text-align: center;
     color: #FFFFFF;
     border: none;
+    margin-top: 65px;
 }

@@ -27,7 +27,6 @@ const AdminEditProject = () => {
     return (
         <>
             <section className="AdminEditProject">
-                <h1>Редактирование мероприятия</h1>
                 <div className="AdminEditProject__pullProject">
                     {projects.map((projects, index) =>
                         <Project remove={removeProject} number={index + 1} project={projects} key={projects.id}/>
