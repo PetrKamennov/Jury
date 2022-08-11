@@ -49,6 +49,7 @@ html,
 body {
     position: relative;
     height: 100%;
+
 }
 
 body {
@@ -60,37 +61,24 @@ body {
 }
 
 
-.AdminEditProject {
+.AdminEditJury {
     width: 89.5%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     padding-top: 193px;
+    align-items: flex-end;
 }
 
-.AdminEditProject h1 {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 64px;
-    line-height: 77px;
-    color: #000000;
-    margin: 0;
-}
-::-webkit-scrollbar-button {
-    display: none;
-}
-.AdminEditProject__pullProject {
+
+.AdminEditJury__pulljury {
     width: 100%;
     height: 496px;
     overflow-y: scroll;
 }
 
-.AdminEditProject__pullProject::-webkit-scrollbar-button {
-    display: none;
-}
 
-.AdminEditProject > button {
-    align-self: flex-end;
+.AdminEditJury__button {
     width: 560px;
     height: 66px;
     background: #E21A1A;
@@ -105,5 +93,3 @@ body {
     margin-right: 100px;
     margin-top: 54px;
 }
-
-

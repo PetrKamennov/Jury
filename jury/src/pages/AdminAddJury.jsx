@@ -1,32 +1,39 @@
 import React from "react";
 import { useState } from "react";
 
+import AddJury from "../components/AdminAddJury/AddJury";
+
 import "../components/AdminAddJury/AdminAddJury.css";
 import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
 
 const AdminAddJury = () => {
 
+    const [jurys, setjury] = useState([
+        { id: 1, juryname: 'Проект хуйни', job: 'Долбаеееб' },
+        { id: 2, juryname: 'Проект хуйни', job: 'Долбаеееб' },
+        { id: 3, juryname: 'Проект хуйни', job: 'Долбаеееб' },
+        { id: 4, juryname: 'Проект хуйни', job: 'Долбаеееб' },
+    ])
+
     const [modalActive, setModalActive] = useState(false);
+
+    const createjury = (newjury) => {
+        setjury([...jurys, newjury])
+    }
+
 
     return (
         <>
-        <section className="AddJurySection">
-            <h1>Добавление члена жури</h1>
-            <div className="AddJurySection__pullJury">
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-                <div className="jury"></div>
-            </div>
-                <button onClick={() => setModalActive(true)}>Зарегистрировать нового члена жури</button>
-        </section>
-        <AdminAddJuryModal active={modalActive} setActive={setModalActive}/>
+            <section className="AdminAddJury">
+                <div className="AdminAddJury__pulljury">
+                    {jurys.map((jurys, index) =>
+                        <AddJury number={index + 1} jury={jurys} key={jurys.id} />
+                    )}
+
+                </div>
+                <button onClick={() => setModalActive(true)}>Зарегистрировать члена жюри</button>
+            </section>
+            <AdminAddJuryModal create={createjury} active={modalActive} setActive={setModalActive} />
         </>
     )
 }

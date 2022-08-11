@@ -49,47 +49,56 @@ html,
 body {
     position: relative;
     height: 100%;
-
 }
-
-body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+hr{
     margin: 0;
-    padding: 0;
-    background-color: #F3F3F3;
 }
 
-
-.AdminAddJury {
-    width: 89.5%;
-    margin: 0 auto;
+.navbar{
+    width: 1720px;
+    height: 59px;
+    margin: 80px 5.2%;
+    position: fixed;
+}
+.navbar__line{
     display: flex;
-    flex-direction: column;
-    padding-top: 193px;
+}
+.navbar__line-AdminEditProject{
+    width: 124px;
+}
+.navbar__line-AdminEditJury{
+    width: 88px;
+}
+.navbar__line-AdminEditMeet{
+    width: 185px;
+}
+.navbar__line-end{
+    width: 1223px;
+}
+
+.navbar__line-AdminEditJury-space,
+.navbar__line-AdminEditProject-space{
+    width: 45px;
+}
+
+.active{
+    border: 1px solid #E21A1A;
 }
 
 
-.AdminAddJury__pulljury {
-    width: 100%;
-    height: 496px;
-    overflow-y: scroll;
-}
-
-
-.AdminAddJury>button {
-    align-self: flex-end;
-    width: 560px;
-    height: 66px;
-    background: #E21A1A;
-    border: none;
+.navbar__button{
     font-family: 'IBM Plex Sans';
     font-style: normal;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 42px;
-    text-align: center;
-    color: #FFFFFF;
-    margin-right: 100px;
-    margin-top: 54px;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.navbar__button:nth-child(2){
+    margin: 0 50px;
+}
+.navbar__buttons{
+    display: flex;
 }
