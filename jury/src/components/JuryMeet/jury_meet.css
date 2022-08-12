@@ -1,14 +1,19 @@
 .buttons_jury_meet{
     display: flex;
     justify-content: space-around;
-    width: 50%;
+    width: 60%;
 }
 .jury_meet_button{
-    width: 30%;
     color: black;
-    background: aqua;
+    background: none;
     text-align: center;
-    font-size: 19px;
     padding: 7px 7px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    border-bottom: solid 3px #FFFFFF;
 
+}
+.jury_meet_button:hover{
+    border-bottom: solid 3px #E21A1A;
 }

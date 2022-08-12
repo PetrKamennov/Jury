@@ -1,52 +1,100 @@
-.first_block_profile{
+input{
+    outline: 0;
+}
+.main_block_profile{
     display: flex;
-    width: 40%;
-    justify-content: space-between;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 120px;
+}
+.block_of_profile{
+    display: flex;
+    flex-direction: column;
+}
+.first_block_prof{
+    align-items: center;
+}
+.scnd_block_prof{
+    align-items: flex-start;
+    margin-top: -40px;
+ }
+.third_block_prof{
+    align-items: flex-start;
+    margin-top: -40px;
 }
 .your_photo{
-    width: 300px;
-    height: 400px;
+    width: 360px;
+    height: 360px;
     background: black;
-    margin: 30px 0px 0px 40px;
+    border-radius: 50%;
 }
 .inputs_FIO{
     display: flex;
     flex-direction: column;
 }
 .data_inp{
-    margin-top: 40px;
-    width: 400px;
-    height: 70px;
-    background: #FFE600;
+    width: 445px;
+    height: 40px;
     color: black;
-    text-align: center;
-}
-.data_inp::placeholder{
-    color: black;
+    border-bottom: solid 2px #394A58;
     font-size: 24px;
 }
-.block_jury_profile_butts{
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
+.data_butts{
+    margin-top: 50px;
+}
+.placeholder_for_input{
+    color: #CCCCCC;
+    font-size: 24px;
+    margin: 40px 0px 0px 0px;
+}
+.butt_edit_profile{
+    background: #FFFFFF;
+    color: #394A58;
+    text-align: center;
+    border-bottom:solid 2px black;
+    width: 200px;
+    margin-top: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+.butt_edit_profile:hover{
+    color: #E21A1A;
+    border-color: #E21A1A;
+
 }
 .butt_jury_profile{
-    padding: 10px 50px;
-    background: #FF0000;
-    color: #FFFFFF;
-    margin: 30px 0px 0px 40px;
+    padding: 10px 80px;
+    background: #F3F3F3;
+    color: #E21A1A;
     text-align: center;
-    font-size: 19px;
+    margin-top: 32px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    border: solid 2px #FFFFFF;
+}
+.butt_jury_profile:hover{
+    border: solid 2px #E21A1A;
 }
 .butts_jury_block{
     display: flex;
     flex-direction: column;
 }
+.photo_butts{
+    margin-top: 16px;
+}
 .save_your_profile{
     display: flex;
     justify-content: flex-end;
-    width: 97%;
-    height: 70px;
-    margin-top: 220px;
-
+    width: 94%;
+    margin-top: 95px;
+}
+.save_profile{
+    background: #E21A1A;
+    color: #FFFFFF;
+    padding: 12px 100px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
 }
