@@ -4,12 +4,13 @@ import {Link} from "react-router-dom";
 const JuriProfile = () => {
     return (
         <div className="JuryProfile">
+            <section className="white_block">
             <div className="main_block_profile">
                 <div className="block_of_profile first_block_prof">
                     <div className="your_photo"></div>
                     <div className="butts_jury_block photo_butts">
                         <Link to="" className="butt_edit_profile give_photo">Добавить фото</Link>
-                        <Link to="" className="butt_edit_profile send_photo">Отправить фото</Link>
+                        <Link to="" className="butt_edit_profile delete_photo">Удалить фото</Link>
                     </div>
                 </div>
                 <div className="block_of_profile scnd_block_prof">
@@ -46,6 +47,7 @@ const JuriProfile = () => {
             <div className="save_your_profile">
                 <Link to="" className="save_profile">Сохранить</Link>
             </div>
+            </section>
         </div>
     );
 };
