@@ -1,0 +1,113 @@
+.EventProject {
+    min-height: 100px;
+    margin-bottom: 32px;
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
+.EventProject__container {
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.EventProject__text {
+    display: flex;
+    width: 48%;
+    justify-content: space-between;
+}
+
+.EventProject__text-spans {
+    display: flex;
+}
+
+.EventProject__text p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.EventProject__text span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+.EventProject__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.EventProject__buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.EventProject__buttons-1 {
+    width: 356px;
+    height: 50px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.EventProject__Jurrypull{
+    height: 200px;
+    width: 100%;
+    background: #FFFFFF;
+    border-top: 1px solid #CCCCCC;
+}
+
+.EventProject__Jurrypull-container{
+    overflow-y: scroll;
+    height: 200px;
+    padding: 0 50px;
+}
+
+.EventProject__Jurrypull-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.EventProjecthidden{
+    display: none;
+}
+.EventProject__buttons-3{
+    width: 30px;
+    height: 30px;
+}
+.EventProject__buttons-2 {
+    width: 440px !important;
+    height: 45.59px !important;
+    background: #F3F3F3 !important;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px !important;
+    line-height: 34px !important;
+    text-align: center;
+    color: #E21A1A !important;
+
+}
