@@ -12,12 +12,12 @@ const ProjectJury = (props, remove) => {
                 <div className="ProjectJury__container">
                     <div className="ProjectJury__text">
                         <div className="ProjectJury__text-spans">
-                            <span>1.</span>
-                            <span>Имя члена жюри</span>
+                            <span>{props.number}.</span>
+                            <span>{props.jury.juryname}</span>
                         </div>
-                        <p>должность</p>
+                        <p>{props.jury.job}</p>
                     </div>
-                    <span className="ProjectJury__indicator">Проголосовал</span>
+                    <span className="ProjectJury__indicator">{props.jury.ready}</span>
                 </div>
             </div>
         </>
