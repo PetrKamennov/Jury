@@ -23,10 +23,10 @@ const EventProjectJury = (props) => {
     }
 
     const [jurys, setjury] = useState([
-        { id: 1, juryname: 'Проект', job: 'студент', ready: 'Проголосовал'},
-        { id: 2, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
-        { id: 3, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
-        { id: 4, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
+        { id: 1, juryname: 'Название проекта', job: 'имя конкурсанта', ready: 'Проголосовал'},
+        { id: 2, juryname: 'Название проекта', job: 'имя конкурсанта', ready: 'Проголосовал' },
+        { id: 3, juryname: 'Название проекта', job: 'имя конкурсанта', ready: 'Не проголосовал' },
+        { id: 4, juryname: 'Название проекта', job: 'имя конкурсанта', ready: 'Не проголосовал' },
     ])
 
     return (
@@ -38,7 +38,7 @@ const EventProjectJury = (props) => {
                             <span>{props.number}.</span>
                             <span>{props.project.projectname}</span>
                         </div>
-                        {/*<p className={EventProject__text_p}>{props.project.participant}</p>*/}
+                        <p className="EventProject__text_p">{props.project.date}</p>
                     </div>
                         <img src={Arrow} alt="arrow" className={EventProject__buttons_3} onClick={CloseJury} />
                 </div>
