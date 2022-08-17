@@ -61,3 +61,8 @@
     text-align: center;
     color: #394A58;
 }
+.score_block{
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+}

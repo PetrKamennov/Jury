@@ -1,12 +1,14 @@
-.central_part_selectors{
-    width: 100%;
+.Jury_History_select{
+    width: 89.5%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    padding-top: 50px;
     align-items: center;
 }
-.selector_jury_history{
-    width: 80%;
-    background: #99158C;
-    font-size: 30px;
-    color: black;
+.JuryHistory__ProjektPull{
+    width: 100%;
+    height: 664px;
+    overflow-y: scroll;
 }
+
