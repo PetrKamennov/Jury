@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Event.css";
 
-const Event = (props, remove) => {
+const Event = (props) => {
 
 
     return (
@@ -18,7 +18,7 @@ const Event = (props, remove) => {
                     </div>
                     <div className="Event__buttons">
                         <Link to='/AdminMeet'><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' ><button className="Event__button-edit">Редактировать</button></Link>
+                        <Link to='/AdminEditProject' className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
             </div>

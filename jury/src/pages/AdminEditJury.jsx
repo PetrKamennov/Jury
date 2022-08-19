@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Jury from "../components/AdminEditJury/Jury";
 
 import "../components/AdminEditJury/AdminEditJury.css";
+import Navbar from "../components/navbar/Navbar";
 
 const AdminEditJury = () => {
 
@@ -21,6 +22,7 @@ const AdminEditJury = () => {
 
     return (
         <>
+            <Navbar/>
             <section className="AdminEditJury">
                 <div className="AdminEditJury__pulljury">
                     {jurys.map((jurys, index) =>

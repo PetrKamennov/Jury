@@ -5,6 +5,7 @@ import AddJury from "../components/AdminAddJury/AddJury";
 
 import "../components/AdminAddJury/AdminAddJury.css";
 import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
+import Navbar from "../components/navbar/Navbar";
 
 const AdminAddJury = () => {
 
@@ -24,6 +25,7 @@ const AdminAddJury = () => {
 
     return (
         <>
+            <Navbar/>
             <section className="AdminAddJury">
                 <div className="AdminAddJury__pulljury">
                     {jurys.map((jurys, index) =>

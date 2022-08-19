@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Event from "../components/AdminMain/Event";
 import "../components/AdminMain/AdminMain.css";
+import Navbar from "../components/navbar/Navbar";
 
 
 const AdminMain = () => {
@@ -16,6 +17,7 @@ const AdminMain = () => {
 
     return (
         <>
+            
             <section className="AdminMain">
                 <h1>Мероприятия</h1>
                 <div className="AdminMain__EventPull">

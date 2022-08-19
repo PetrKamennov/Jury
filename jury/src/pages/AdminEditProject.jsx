@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../components/AdminEditProject/AdminEditProject.css";
 import AdminEditProjectModal from "../components/AdminEditProject/AdminEditProjectModal";
 import Project from "../components/AdminEditProject/Project";
+import Navbar from "../components/navbar/Navbar";
 
 const AdminEditProject = () => {
 
@@ -26,6 +27,7 @@ const AdminEditProject = () => {
 
     return (
         <>
+            <Navbar/>
             <section className="AdminEditProject">
                 <div className="AdminEditProject__pullProject">
                     {projects.map((projects, index) =>
