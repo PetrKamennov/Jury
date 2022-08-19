@@ -12,6 +12,7 @@ const Start = () => {
 
             <section className="Start">
                 <Link to='/AdminMain' className="navbar__button">Админка</Link>
+                <Link to='/jury_meets' className="navbar__button">Жюри</Link>
             </section>
         </>
     )

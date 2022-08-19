@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import "../components/JuryMeet/jury_meet.css"
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
+import NavbarJury from '../components/navbar/NavbarJury';
 
 
 
@@ -16,16 +17,19 @@ const JuryMeet = () => {
     ])
 
     return (
-        <div className="JuryMeet">
+        <>
+            <NavbarJury/>
+            <div className="JuryMeet">
 
-            <section className="Jury_Meet_select">
-                <div className="JuryMeet__ProjektPull">
-                    {projects.map((projects, index) =>
-                        <EventProjectJury number={index + 1} project={projects} key={projects.id} />
-                    )}
-                </div>
-            </section>
-        </div>
+                <section className="Jury_Meet_select">
+                    <div className="JuryMeet__ProjektPull">
+                        {projects.map((projects, index) =>
+                            <EventProjectJury number={index + 1} project={projects} key={projects.id} />
+                        )}
+                    </div>
+                </section>
+            </div>
+        </>
     );
 };
 

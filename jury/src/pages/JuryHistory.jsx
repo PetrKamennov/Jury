@@ -3,6 +3,7 @@ import "../components/JuryMeet/jury_history.css"
 import {useState} from "react";
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import EventProjectHistory from "../components/JuryMeet/EventProjectHistory";
+import NavbarJury from '../components/navbar/NavbarJury';
 const JuryHistory = () => {
 
     const [projects, setprojects] = useState([
@@ -13,15 +14,18 @@ const JuryHistory = () => {
     ])
 
     return (
-        <div className="JuriHistory">
-            <section className="Jury_History_select">
-                <div className="JuryHistory__ProjektPull">
-                    {projects.map((projects, index) =>
-                        <EventProjectHistory number={index + 1} project={projects} key={projects.id} />
-                    )}
-                </div>
-            </section>
-        </div>
+        <>
+            <NavbarJury/>
+            <div className="JuriHistory">
+                <section className="Jury_History_select">
+                    <div className="JuryHistory__ProjektPull">
+                        {projects.map((projects, index) =>
+                            <EventProjectHistory number={index + 1} project={projects} key={projects.id} />
+                        )}
+                    </div>
+                </section>
+            </div>
+        </>
     );
 };
 
