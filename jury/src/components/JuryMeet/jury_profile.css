@@ -1,0 +1,111 @@
+input{
+    outline: 0;
+}
+.white_block{
+    width: 91%;
+    height: 790px;
+    margin: 54px auto 0px auto;
+    background: #FFFFFF;
+}
+.main_block_profile{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+.block_of_profile{
+    display: flex;
+    flex-direction: column;
+}
+.first_block_prof{
+    align-items: center;
+}
+.scnd_block_prof{
+    align-items: flex-start;
+    margin-top: -40px;
+ }
+.third_block_prof{
+    align-items: flex-start;
+    margin-top: -40px;
+}
+.your_photo{
+    width: 360px;
+    height: 360px;
+    background: black;
+    border-radius: 50%;
+}
+.inputs_FIO{
+    display: flex;
+    flex-direction: column;
+}
+.data_inp{
+    width: 445px;
+    height: 40px;
+    color: black;
+    border-bottom: solid 2px #394A58;
+    font-size: 24px;
+}
+.data_butts{
+    margin-top: 36px;
+}
+.placeholder_for_input{
+    color: #CCCCCC;
+    font-size: 24px;
+    margin: 40px 0px 0px 0px;
+}
+.butt_edit_profile{
+    background: #FFFFFF;
+    color: #394A58;
+    text-align: center;
+    border-bottom:solid 2px black;
+    margin-top: 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+}
+.butt_edit_profile:hover{
+    color: #E21A1A;
+    border-color: #E21A1A;
+
+}
+.butt_jury_profile{
+    padding: 10px 80px;
+    background: #F3F3F3;
+    color: #E21A1A;
+    text-align: center;
+    margin-top: 32px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    border: solid 2px #FFFFFF;
+}
+.butt_jury_profile:hover{
+    border: solid 2px #E21A1A;
+}
+.butts_jury_block{
+    display: flex;
+    flex-direction: column;
+}
+.photo_butts{
+    margin-top: 16px;
+}
+.save_your_profile{
+    display: flex;
+    justify-content: flex-end;
+    width: 94%;
+    margin-top: 80px;
+}
+.save_profile{
+    background: #E21A1A;
+    color: #FFFFFF;
+    padding: 12px 100px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    border: solid 3px #FFFFFF;
+}
+.save_profile:hover{
+    color:#E21A1A;
+    background: #FFFFFF;
+    border: solid 3px #E21A1A;
+}
