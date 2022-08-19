@@ -4,6 +4,7 @@ import { useState } from "react";
 import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
+import Navbar from "../components/navbar/Navbar";
 
 const AdminEditMeet = () => {
 
@@ -24,7 +25,7 @@ const AdminEditMeet = () => {
 
     return (
         <>
-            
+            <Navbar/>
             <section className="AdminEditMeet">
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">

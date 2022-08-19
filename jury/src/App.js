@@ -10,19 +10,20 @@ import AdminEditProject from './pages/AdminEditProject';
 import Navbar from './components/navbar/Navbar';
 import Authorization from './pages/Authorization';
 import PasswordRecovery from './pages/PasswordRecovery';
+import Start from './pages/Start';
 
 
 
 function App() {
   return (
     <>
-      {/* <Navbar/> */}
       <Routes>
+        <Route path='/' element={<Start />}/>
         <Route path='/AdminEditProject' element={<AdminEditProject/>}/>
         <Route path='/AdminEditJury' element={<AdminEditJury />} />
         <Route path='/AdminAddJury' element={<AdminAddJury />} />
         <Route path='/AdminEditMeet' element={<AdminEditMeet />} />
-        <Route path='/' element={<AdminMain />} />
+        <Route path='/AdminMain' element={<AdminMain />} />
         <Route path='/AdminMeet' element={<AdminMeet />} />
       </Routes>
     </>
