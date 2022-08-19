@@ -1,0 +1,84 @@
+.AdminAddJuryModal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:   rgba(0, 0, 0, 0.4);
+    transform: scale(0);
+}
+
+.AdminAddJuryModal.active{
+    transform: scale(1);
+}
+
+.AdminAddJuryModal__content{
+    background-color: #FFFFFF;
+    width: 1500px;
+    height: 579px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AdminAddJuryModal__content h1{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    margin: 80px 0 22px 0 ;
+    align-self: flex-start;
+}
+
+.AdminAddJuryModal__content-regJury{
+
+}
+.AdminAddJuryModal__content-regJury__inputs{
+    width: 1310px;
+        height: 212px;
+        display: flex;
+        justify-content: space-between;
+}
+
+.AdminAddJuryModal__content-regJury__inputs input{
+        width: 566px;
+        height: 70px;
+        background: #FFFFFF;
+        display: flex;
+        border: none;
+        margin-top: 34px;
+        border-bottom: 2px solid #394A58;
+        flex-direction: column;
+        align-items: center;
+    }
+
+.AdminAddJuryModal__content button{
+    width: 566px;
+    height: 66px;
+    background: #E21A1A;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    align-self: flex-end;
+    margin-top: 65px;
+}
+
+.AdminAddJuryModal__content-container{
+    width: 1310px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,65 @@
+.Criteria {
+    height: 100px;
+    margin-bottom: 32px;
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
+.Criteria__container {
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Criteria__text {
+    display: flex;
+    width: 48%;
+    justify-content: space-between;
+}
+
+.Criteria__text-spans {
+    display: flex;
+}
+
+.Criteria__text p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.Criteria__text span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+.Criteria__button {
+    width: 230px;
+    height: 50px;
+    background: #F3F3F3;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    color: #E21A1A;
+    border: none;
+}
