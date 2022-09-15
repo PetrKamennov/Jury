@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 
@@ -16,7 +17,10 @@ const AdminAddJury = () => {
         { id: 4, juryname: 'Проект хуйни', job: 'Долбаеееб' },
     ])
 
+    
+    
     const [modalActive, setModalActive] = useState(false);
+
 
     const createjury = (newjury) => {
         setjury([...jurys, newjury])
