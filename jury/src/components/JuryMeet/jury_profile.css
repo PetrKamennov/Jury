@@ -1,11 +1,16 @@
 input{
     outline: 0;
 }
+.JuryProfile{
+    padding-top: 180px;
+}
 .white_block{
     width: 91%;
     height: 790px;
-    margin: 54px auto 0px auto;
+    margin: 0px auto;
     background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
 }
 .main_block_profile{
     display: flex;
@@ -93,7 +98,7 @@ input{
     display: flex;
     justify-content: flex-end;
     width: 94%;
-    margin-top: 80px;
+    margin-top: 70px;
 }
 .save_profile{
     background: #E21A1A;
@@ -108,4 +113,64 @@ input{
     color:#E21A1A;
     background: #FFFFFF;
     border: solid 3px #E21A1A;
+}
+@media (max-width: 1560px) {
+    .main_block_profile{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .white_block{
+        height: 1560px;
+    }
+    .scnd_block_prof{
+        margin-top: 20px;
+    }
+    .data_butts{
+        margin-top: 0px;
+        padding-top: 240px;
+    }
+    .third_block_prof{
+        margin-top: -420px;
+    }
+    .save_your_profile{
+        margin-top: 280px;
+        justify-content: center;
+        width: 100%;
+    }
+    .butt_jury_profile{
+        padding: 10px 120px;
+    }
+}
+@media (max-width: 600px){
+    .white_block{
+        height: 1360px;
+    }
+    .your_photo{
+        width: 240px;
+        height: 240px;
+    }
+    .butt_edit_profile{
+        font-size: 18px;
+    }
+    .placeholder_for_input{
+        font-size: 18px;
+    }
+    .data_inp{
+        width: 300px;
+    }
+    .scnd_block_prof{
+        align-items: center;
+    }
+    .butt_jury_profile{
+        font-size: 20px;
+        padding: 5px 40px;
+    }
+    .save_profile{
+        font-size: 24px;
+        padding: 6px 80px;
+    }
+    .third_block_prof{
+        margin-top: -390px;
+    }
 }
