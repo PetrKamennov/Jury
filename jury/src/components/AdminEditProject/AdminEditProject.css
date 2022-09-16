@@ -105,5 +105,22 @@ body {
     margin-right: 100px;
     margin-top: 54px;
 }
+@media (max-width: 1050px){
+    .AdminEditProject > button{
+        align-self: center;
+        margin-right: 0px;
+    }
+}
+@media (max-width: 760px){
+    .AdminEditProject > button{
+        width: 360px;
+    }
+}
+@media (max-width: 460px){
+    .AdminEditProject > button{
+        width: 260px;
+        font-size: 26px;
+    }
+}
 
 

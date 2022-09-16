@@ -61,3 +61,72 @@
     color: #E21A1A;
     border: none;
 }
+@media (max-width: 1050px){
+    .project__text span{
+        font-size: 24px;
+    }
+    .project__text p{
+        font-size: 22px;
+    }
+    .project__button{
+        font-size: 22px;
+    }
+}
+@media (max-width: 890px){
+    .project__text span{
+        font-size: 20px;
+    }
+    .project__text p{
+        font-size: 18px;
+    }
+    .project__button{
+        font-size: 18px;
+    }
+}
+@media (max-width: 760px){
+    .project__text{
+        width: 62%;
+    }
+    .project__button{
+        width: 130px;
+    }
+}
+@media (max-width: 590px){
+    .project__text span{
+        font-size: 16px;
+    }
+    .project__text p{
+        font-size: 14px;
+    }
+    .project__button{
+        font-size: 14px;
+    }
+    .project__container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 460px){
+    .project__button{
+        width: 100px;
+    }
+    .project__text{
+        width: 68%;
+    }
+}
+@media (max-width: 400px){
+    .project__button{
+        width: 80px;
+    }
+    .project__text span{
+        font-size: 14px;
+    }
+    .project__text p{
+        font-size: 12px;
+    }
+    .project__button{
+        font-size: 12px;
+    }
+    .project__container{
+        padding: 0 10px;
+    }
+}

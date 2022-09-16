@@ -93,4 +93,23 @@ body {
     margin-right: 100px;
     margin-top: 54px;
 }
+@media (max-width: 1050px){
+    .AdminEditJury__button{
+        margin-right: 0px;
+    }
+    .AdminEditJury{
+        align-items: center;
+    }
+}
+@media (max-width: 760px){
+    .AdminEditJury__button{
+        width: 360px;
+    }
+}
+@media (max-width: 460px){
+    .AdminEditJury__button{
+        width: 260px;
+        font-size: 20px;
+    }
+}
 

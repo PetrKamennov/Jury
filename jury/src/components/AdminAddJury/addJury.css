@@ -62,3 +62,72 @@
     color: #E21A1A;
     border: none;
 }
+@media (max-width: 1050px){
+    .Jury__text span{
+        font-size: 24px;
+    }
+    .Jury__text p{
+        font-size: 22px;
+    }
+    .Jury__button{
+        font-size: 22px;
+    }
+}
+@media (max-width: 890px){
+    .Jury__text span{
+        font-size: 20px;
+    }
+    .Jury__text p{
+        font-size: 18px;
+    }
+    .Jury__button{
+        font-size: 18px;
+    }
+}
+@media (max-width: 760px){
+    .Jury__text{
+        width: 62%;
+    }
+    .Jury__button{
+        width: 130px;
+    }
+}
+@media (max-width: 590px){
+    .Jury__text span{
+        font-size: 16px;
+    }
+    .Jury__text p{
+        font-size: 14px;
+    }
+    .Jury__button{
+        font-size: 14px;
+    }
+    .Jury__container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 460px){
+    .Jury__button{
+        width: 100px;
+    }
+    .Jury__text{
+        width: 68%;
+    }
+}
+@media (max-width: 400px){
+    .Jury__button{
+        width: 80px;
+    }
+    .Jury__text span{
+        font-size: 14px;
+    }
+    .Jury__text p{
+        font-size: 12px;
+    }
+    .Jury__button{
+        font-size: 12px;
+    }
+    .Jury__container{
+        padding: 0 10px;
+    }
+}

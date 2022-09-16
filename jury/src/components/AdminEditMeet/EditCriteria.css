@@ -80,3 +80,98 @@
     align-items: center;
     color: #CCCCCC;
 }
+@media (max-width: 1450px){
+    .EditCriteria__text input{
+        width: 180px;
+    }
+}
+@media (max-width: 1050px){
+    .EditCriteria__text span{
+        font-size: 24px;
+    }
+    .EditCriteria__text p{
+        font-size: 22px;
+    }
+    .EditCriteria__button{
+        font-size: 22px;
+    }
+    .EditCriteria__text{
+        width: 62%;
+    }
+}
+@media (max-width: 970px){
+    .EditCriteria__text input{
+        width: 130px;
+    }
+}
+@media (max-width: 890px){
+    .EditCriteria__text span{
+        font-size: 20px;
+    }
+    .EditCriteria__text p{
+        font-size: 18px;
+    }
+    .EditCriteria__button{
+        font-size: 18px;
+    }
+}
+@media (max-width: 760px){
+    .EditCriteria__button{
+        width: 130px;
+    }
+    .EditCriteria__text{
+        width: 66%;
+    }
+}
+@media (max-width: 660px){
+    .EditCriteria__text input{
+        width: 100px;
+    }
+}
+@media (max-width: 590px){
+    .EditCriteria__text span{
+        font-size: 16px;
+    }
+    .EditCriteria__text p{
+        font-size: 14px;
+    }
+    .EditCriteria__button{
+        font-size: 14px;
+    }
+    .EditCriteria__container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 500px){
+    .EditCriteria__text input{
+        width: 75px;
+    }
+    .EditCriteria__text{
+        width: 63%;
+    }
+}
+@media (max-width: 460px){
+    .EditCriteria__button{
+        width: 100px;
+    }
+    .EditCriteria__text{
+        width: 68%;
+    }
+}
+@media (max-width: 400px){
+    .EditCriteria__button{
+        width: 80px;
+    }
+    .EditCriteria__text span{
+        font-size: 14px;
+    }
+    .EditCriteria__text p{
+        font-size: 12px;
+    }
+    .EditCriteria__button{
+        font-size: 12px;
+    }
+    .EditCriteria__container{
+        padding: 0 10px;
+    }
+}

@@ -63,3 +63,73 @@
     color: #E21A1A;
     border: none;
 }
+@media (max-width: 1050px){
+    .Criteria__text span{
+        font-size: 24px;
+    }
+    .Criteria__text p{
+        font-size: 22px;
+    }
+    .Criteria__button{
+        font-size: 22px;
+    }
+}
+@media (max-width: 890px){
+    .Criteria__text span{
+        font-size: 20px;
+    }
+    .Criteria__text p{
+        font-size: 18px;
+    }
+    .Criteria__button{
+        font-size: 18px;
+    }
+    .Criteria__text{
+        width: 59%;
+    }
+}
+@media (max-width: 760px){
+
+    .Criteria__button{
+        width: 130px;
+    }
+}
+@media (max-width: 590px){
+    .Criteria__text span{
+        font-size: 16px;
+    }
+    .Criteria__text p{
+        font-size: 14px;
+    }
+    .Criteria__button{
+        font-size: 14px;
+    }
+    .Criteria__container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 460px){
+    .Criteria__button{
+        width: 100px;
+    }
+    .Criteria__text{
+        width: 68%;
+    }
+}
+@media (max-width: 400px){
+    .Criteria__button{
+        width: 80px;
+    }
+    .Criteria__text span{
+        font-size: 14px;
+    }
+    .Criteria__text p{
+        font-size: 12px;
+    }
+    .Criteria__button{
+        font-size: 12px;
+    }
+    .Criteria__container{
+        padding: 0 10px;
+    }
+}
