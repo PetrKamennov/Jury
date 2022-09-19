@@ -40,3 +40,25 @@
     text-align: center;
     color: #FFFFFF;
 }
+@media (max-width: 1470px){
+    .AdminMeet h1{
+        align-self: center;
+    }
+}
+@media (max-width: 680px){
+    .AdminMeet h1{
+        font-size: 38px;
+    }
+    .AdminMeet > button{
+        width: 320px;
+    }
+}
+@media (max-width: 500px){
+    .AdminMeet h1{
+        font-size: 32px;
+    }
+    .AdminMeet > button{
+        width: 280px;
+        font-size: 26px;
+    }
+}

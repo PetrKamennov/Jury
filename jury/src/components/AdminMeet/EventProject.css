@@ -125,3 +125,34 @@
     color: #E21A1A ;
     border: none;
 }
+@media (max-width: 1200px){
+    .EventProject__buttons-1{
+        width: 240px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 960px){
+    .EventProject__buttons-1{
+        width: 180px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 830px){
+    .EventProject__buttons-1{
+        width: 150px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 500px){
+    .EventProject__buttons-1{
+        width: 120px;
+        height: 30px;
+        font-size: 11px;
+    }
+}
+@media (max-width: 390px){
+    .EventProject__buttons-1{
+        width: 100px;
+        font-size: 9px;
+    }
+}

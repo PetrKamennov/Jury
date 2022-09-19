@@ -42,21 +42,33 @@
     text-align: center;
     color: #FFFFFF;
 }
+@media (max-width: 1470px){
+    .AdminMain h1{
+        align-self: center;
+    }
+    .AdminMain__buttons{
+        align-items: center;
+        flex-direction: column;
+    }
+    .AdminMain__buttons button{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 680px){
+    .AdminMain__buttons button{
+        width: 320px;
+    }
+    .AdminMain h1{
+        font-size: 38px;
+    }
+}
+@media (max-width: 500px){
+    .AdminMain__buttons button{
+        width: 280px;
+        font-size: 26px;
+    }
+    .AdminMain h1{
+        font-size: 32px;
+    }
+}
 
-/* Large desktops and laptops */
-@media (min-width: 1200px) {}
-
-/* Landscape tablets and medium desktops */
-@media (min-width: 992px) and (max-width: 1199px) {}
-
-/* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {}
-
-/* Landscape phones and portrait tablets */
-@media (max-width: 767px) {}
-
-/* Portrait phones and smaller */
-@media (max-width: 480px) {}
-
-/* Iphone 5 */
-@media (max-width: 320px) {}

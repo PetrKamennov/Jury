@@ -84,3 +84,88 @@
     text-align: center;
     color: #E21A1A !important;
 }
+@media (max-width: 1100px){
+    .Event__text span{
+        font-size: 20px;
+    }
+    .Event__text p{
+        font-size: 16px;
+    }
+    .Event__buttons{
+        width: 180px;
+        height: 100px;
+    }
+    .Event__buttons button:nth-child(1){
+        font-size: 18px;
+        height: 35px;
+    }
+    .Event__button-edit{
+        font-size: 18px;
+        height: 35px;
+    }
+}
+@media (max-width: 850px){
+    .Event__text{
+        width: 60%;
+    }
+}
+@media (max-width: 680px){
+    .Event__container{
+        padding: 0px 5px;
+    }
+    .Event__text{
+        width: 58%;
+    }
+    .Event__text span{
+        font-size: 16px;
+    }
+    .Event__text p{
+        font-size: 14px;
+    }
+    .Event__buttons{
+        width: 130px;
+        height: 100px;
+    }
+    .Event__buttons button:nth-child(1){
+        font-size: 16px;
+        height: 35px;
+    }
+    .Event__button-edit{
+        font-size: 16px;
+        height: 35px;
+    }
+}
+@media (max-width: 500px){
+    .Event__text{
+        width: 64%;
+    }
+    .Event__text span{
+        font-size: 14px;
+    }
+    .Event__text p{
+        font-size: 12px;
+    }
+    .Event__buttons{
+        width: 110px;
+        height: 80px;
+    }
+    .Event__buttons button:nth-child(1){
+        font-size: 12px;
+        height: 30px;
+    }
+    .Event__button-edit{
+        font-size: 12px;
+        height: 30px;
+    }
+}
+@media (max-width: 390px){
+    .Event__text{
+        width: 60%;
+    }
+    .Event__text span{
+        font-size: 12px;
+    }
+    .Event__text p{
+        font-size: 10px;
+    }
+}

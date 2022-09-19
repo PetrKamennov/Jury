@@ -81,3 +81,37 @@
     border: none;
     margin-top: 65px;
 }
+@media (max-width: 800px){
+    .AdminEditProjectModal__content{
+        width: 400px;
+    }
+    .AdminEditProjectModal__content h1{
+        font-weight: 500;
+        font-size: 28px;
+        justify-content: center;
+    }
+    .AdminEditProjectModal__content-regJury__inputs{
+        width: 330px;
+    }
+    .AdminEditProjectModal__content-regJury button{
+        width: 310px;
+        font-size: 28px;
+    }
+}
+@media (max-width: 410px){
+    .AdminEditProjectModal__content{
+        width: 300px;
+    }
+    .AdminEditProjectModal__content h1{
+        font-weight: 500;
+        font-size: 24px;
+        justify-content: center;
+    }
+    .AdminEditProjectModal__content-regJury__inputs{
+        width: 260px;
+    }
+    .AdminEditProjectModal__content-regJury button{
+        width: 240px;
+        font-size: 24px;
+    }
+}
