@@ -1,14 +1,48 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+
+from rest_framework import  mixins
+from rest_framework.viewsets import GenericViewSet
+
+from .models import NewsInfo
+from .permissions import IsAdminOrReadOnly
+from .serializers import NewsInfoSerializer
 
 
-from .models import News
+class NewsViewSet(mixins.CreateModelMixin,
+                  mixins.RetrieveModelMixin,
+                  mixins.UpdateModelMixin,
+                  mixins.ListModelMixin,
+                  GenericViewSet):
 
-def index(request):
-    news = News.objects.all()
-    context = {
-        'news': news,
-        'title': 'News list'
-    }
+    queryset = NewsInfo.objects.all()
+    serializer_class = NewsInfoSerializer
+    permission_classes = (IsAdminOrReadOnly, )
 
-    return render(request, 'news/index.html', context)
+
+    # def get_queryset(self):
+    #     pk = self.kwargs.get("pk")
+    #
+    #     if not pk:
+    #         return NewsInfo.objects.all()[:1]
+    #
+    #     return NewsInfo.objects.filter(pk=pk)
+    #
+    # @action(methods=['get'], detail=True)
+    # def category(self, request, pk=None):
+    #     news = NewsInfo.objects.get(pk=pk)
+    #     return Response({'news': news.title})
+
+# class NewsAPIList(generics.ListCreateAPIView):
+#     queryset = NewsInfo.objects.all()
+#     serializer_class = NewsInfoSerializer
+#
+#
+# class NewsAPIUpdate(generics.UpdateAPIView):
+#     queryset = NewsInfo.objects.all()
+#     serializer_class = NewsInfoSerializer
+#
+#
+# class NewsAPIDetailView(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = NewsInfo.objects.all()
+#     serializer_class = NewsInfoSerializer
+
+

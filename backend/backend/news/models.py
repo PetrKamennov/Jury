@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -16,3 +17,10 @@ class News(models.Model):
         verbose_name = 'Новость'
         verbose_name_plural = 'Новости'
         ordering = ['-created_at']
+
+
+class NewsInfo(models.Model):
+    title = models.CharField(max_length=150, verbose_name='Наименование')
+    content = models.TextField(blank=True, verbose_name='Контент')
+    is_published = models.BooleanField(default=False, verbose_name='Опубликовано')
+    user = models.ForeignKey(User, verbose_name='Пользователь', on_delete=models.CASCADE)
