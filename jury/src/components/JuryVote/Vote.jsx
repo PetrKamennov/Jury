@@ -14,7 +14,7 @@ const Vote = () => {
                     <span></span>
                 </div>
                 <div className="Vote__bottom">
-                    <select name="voting">
+                    <select className="voting" name="voting">
                         <option value="value1" selected>1</option>
                         <option value="value2">2</option>
                         <option value="value3">3</option>

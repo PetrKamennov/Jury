@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.JuryVote__content_container{
+    width: 90%;
+    margin: 80px auto;
+}
+.JuryVote__text-h1{
+    font-family: 'IBM Plex Sans';
+    font-weight: 600;
+    font-size: 48px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.JuryVote__text-h2{
+    margin-top: 20px;
+    font-family: 'IBM Plex Sans';
+    font-weight: 300;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.Vote__pull{
+    margin-top: 54px;
+}
+.Vote__pull_text{
+    width: 286px;
+    height: 110px;
+    word-wrap: break-word;
+    align-items: center;
+    background: #394A58;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #394A58;
+    border-right: 2px solid white;
+    border-bottom: none;
+}
+.Vote__pull_text h3{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    display: flex;
+    color: #FFFFFF;
+}
+.Vote__pull_text p{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+.Vote__pull_score{
+    width: 286px;
+    height: 110px;
+    border: 2px solid #394A58;
+    display: flex;
+    justify-content: center;
+}

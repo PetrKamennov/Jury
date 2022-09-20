@@ -35,7 +35,7 @@
     color: #000000;
 }
 
-.EventProject__text span {
+.EventProject__text a {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 500;
