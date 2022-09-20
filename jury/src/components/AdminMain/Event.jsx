@@ -12,9 +12,9 @@ const Event = (props) => {
                 <div className="Event__container">
                     <div className="Event__text">
                         <div className="Criteria__text-spans">
-                            <span>{props.event.eventname}</span>
+                            <span>{props.event.name_of_event}</span>
                         </div>
-                        <p>{props.event.time}</p>
+                        <p>{props.event.date_of_event}</p>
                     </div>
                     <div className="Event__buttons">
                         <Link to='/AdminMeet'><button>Начать</button></Link>

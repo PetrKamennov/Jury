@@ -9,17 +9,27 @@ import Navbar from "../components/navbar/Navbar";
 
 const AdminMain = () => {
 
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY0MTA5OTc1LCJpYXQiOjE2NjM2Nzc5NzUsImp0aSI6IjUzYTZiNmQ4YWNhNjQzODk4Nzc1MmFlMmZlYjQ0NzE1IiwidXNlcl9pZCI6Mn0.iGflXEgU-P-PGM74P7wdYUWq_TzOI8UpFoRDN6NX2uE"
+    // refresh: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2Mzc2NDM3NSwiaWF0IjoxNjYzNjc3OTc1LCJqdGkiOiJlNmQ1OWFlNDZjNGY0Mjc1YTEwMzUzM2M1OWEwOGFlMSIsInVzZXJfaWQiOjJ9.giLIPCAbdINgg93lxnLiYo37nf01Cw8K_BhGuzIgjlI"
+
     
     
     const [events, setevent] = useState([
-        { id: 1, eventname: 'Мероприятие 1', time: '10.08.2022   9:30' },
-        { id: 2, eventname: 'Мероприятие 2', time: '10.08.2022   9:30' },
-        { id: 3, eventname: 'Мероприятие 3', time: '10.08.2022   9:30' },
-        { id: 4, eventname: 'Мероприятие 4', time: '10.08.2022   9:30' },
     ])
     
-    axios.get('http://aleksbcg.beget.tech/newsList/').then(response => {
-        console.log(response.data[1])
+    // axios.post('http://aleksbcg.beget.tech/api/token/',
+    //     { username: "Admin", password: "Admin" }
+    // ).then(response => {
+    //     console.log(response.data)
+    // })
+
+
+    axios.get('http://aleksbcg.beget.tech/events/1', {
+        headers: {
+            'AUTHORIZATION':`Bearer ${token}`
+        }
+    }).then(response => {
+        setevent([...events, response.data])
     })
     return (
         <>
