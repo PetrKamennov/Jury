@@ -14,7 +14,6 @@ import PasswordRecovery from './pages/PasswordRecovery';
 import Start from './pages/Start';
 import JuryHistory from './pages/JuryHistory';
 import JuriProfile from './pages/JuriProfile';
-import JuryVote from "./pages/JuryVote";
 
 
 
@@ -32,7 +31,6 @@ function App() {
         <Route path='/AdminEditMeet' element={<AdminEditMeet />} />
         <Route path='/AdminMain' element={<AdminMain />} />
         <Route path='/AdminMeet' element={<AdminMeet />} />
-        <Route path='/JuryVote' element={<JuryVote />} />
       </Routes>
     </>
   );

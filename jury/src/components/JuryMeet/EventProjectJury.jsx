@@ -3,7 +3,6 @@ import ProjectJury from "./ProjectJury";
 import {useState} from "react";
 import Arrow from "../img/down-arrow 1.png"
 import "./event_project_jury.css"
-import {Link} from "react-router-dom";
 
 const EventProjectJury = (props) => {
 
@@ -37,7 +36,7 @@ const EventProjectJury = (props) => {
                     <div className="EventProject__text">
                         <div className="EventProject__text-spans">
                             <span>{props.number}.</span>
-                            <Link to='/JuryVote'>{props.project.projectname}</Link>
+                            <span>{props.project.projectname}</span>
                         </div>
                         <p className="EventProject__text_p">{props.project.date}</p>
                     </div>
