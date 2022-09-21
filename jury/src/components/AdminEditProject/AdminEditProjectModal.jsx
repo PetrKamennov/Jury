@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { useState } from "react";
 
@@ -8,15 +9,26 @@ const AdminEditProjectModal = ({ active, setActive, create }) => {
     const [project, setProject] = useState({projectname: '', participant: ''})
 
 
-    const addNewProject = () => {
-        const newProject = {
-            ...project, id: Date.now()
-        }
-        create(newProject)
-        setProject({ projectname: '', participant: '' })
+    // const addNewProject = () => {
+    //     const newProject = {
+    //         ...project, id: Date.now()
+    //     }
+    //     create(newProject)
+    //     setProject({ projectname: '', participant: '' })
+    // }
+
+    function pushProject (){
+        axios.post('http://aleksbcg.beget.tech/events/', {
+            eventName: project.projectname,
+            eventDate: project.participant
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
-
-
 
     return (
         <div className={active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => setActive(false)} >
@@ -28,7 +40,7 @@ const AdminEditProjectModal = ({ active, setActive, create }) => {
                             <input placeholder="Наименование проекта " type="text" value={project.projectname} onChange={e => setProject({...project, projectname: e.target.value})}/>
                             <input placeholder="Имя конкурсанта" type="text" value={project.participant} onChange={e => setProject({ ...project, participant: e.target.value })} />
                         </div>
-                        <button onClick={addNewProject}>Добавить</button>
+                        <button onClick={pushProject}>Добавить</button>
                     </div>
                 </div>
             </div>

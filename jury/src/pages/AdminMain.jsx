@@ -6,39 +6,31 @@ import Event from "../components/AdminMain/Event";
 import "../components/AdminMain/AdminMain.css";
 import Navbar from "../components/navbar/Navbar";
 
-
-const AdminMain = () => {
-
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY0MTA5OTc1LCJpYXQiOjE2NjM2Nzc5NzUsImp0aSI6IjUzYTZiNmQ4YWNhNjQzODk4Nzc1MmFlMmZlYjQ0NzE1IiwidXNlcl9pZCI6Mn0.iGflXEgU-P-PGM74P7wdYUWq_TzOI8UpFoRDN6NX2uE"
-    // refresh: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY2Mzc2NDM3NSwiaWF0IjoxNjYzNjc3OTc1LCJqdGkiOiJlNmQ1OWFlNDZjNGY0Mjc1YTEwMzUzM2M1OWEwOGFlMSIsInVzZXJfaWQiOjJ9.giLIPCAbdINgg93lxnLiYo37nf01Cw8K_BhGuzIgjlI"
+class AdminMain extends React.Component {
 
     
-    
-    const [events, setevent] = useState([
-    ])
-    
-    // axios.post('http://aleksbcg.beget.tech/api/token/',
-    //     { username: "Admin", password: "Admin" }
-    // ).then(response => {
-    //     console.log(response.data)
-    // })
+    state = {
+        events: []
+    }
 
-
-    axios.get('http://aleksbcg.beget.tech/events/1', {
-        headers: {
-            'AUTHORIZATION':`Bearer ${token}`
+    componentDidMount() {
+        for (let index = 1; index < 5; index++) {
+            axios.get('http://aleksbcg.beget.tech/events/', {
+            }).then(response => {
+                    // this.setState({ events: [ ...this.state.events, response.data.posts[index]] })         
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
-    }).then(response => {
-        setevent([...events, response.data])
-    })
-    return (
-        <>
-            
+        }
+    render() {
+        return (
+                    <>
             <section className="AdminMain">
                 <h1>Мероприятия</h1>
                 <div className="AdminMain__EventPull">
-                    {events.map((events) =>
-                        <Event event={events} key={events.id} />
+                    {this.state.events.map((event) =>
+                        <Event event={event} key={event.id} />
                     )}
                 </div>
                 <div className="AdminMain__buttons">
@@ -47,7 +39,8 @@ const AdminMain = () => {
                 </div>
             </section>
         </>
-    )
+        )   
+    }
 }
 
 export default AdminMain
