@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
-
+import { useEffect } from "react";
+import axios from 'axios';
 import "./EventProject.css";
 import ProjectJury from "./ProjectJury";
 import Arrow from "./img/down-arrow 1.png"
@@ -14,7 +15,7 @@ const EventProject = (props, remove) => {
     const [EventProject__buttons_3, setEventProject__buttons_3] = useState('EventProject__buttons-3 EventProjecthidden')
     const [EventProject__buttons, setEventProject__buttons] = useState('EventProject__buttons')
     const [isMenuClicked, setIsMenuClicked] = useState(false)
-   
+    const [update, setUpdate] = useState(false)
 
     const CloseJury = () => {
         if (!isMenuClicked) {
@@ -40,12 +41,22 @@ const EventProject = (props, remove) => {
     }
 
     const [jurys, setjury] = useState([
-        { id: 1, juryname: 'Проект', job: 'студент', ready: 'Проголосовал'},
-        { id: 2, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
-        { id: 3, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
-        { id: 4, juryname: 'Проект', job: 'студент', ready: 'Проголосовал' },
     ])
 
+
+    async function getinf() {
+        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${props.EventId}`, {
+        }).then(response => {
+            setjury(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
 
     return (
         <>
@@ -54,9 +65,9 @@ const EventProject = (props, remove) => {
                     <div className="EventProject__text">
                         <div className="EventProject__text-spans">
                             <span>{props.number}.</span>
-                            <span>{props.project.projectname}</span>
+                            <span>{props.project.projectName}</span>s
                         </div>
-                        <p className={EventProject__text_p}>{props.project.participant}</p>
+                        <p className={EventProject__text_p}>{props.project.projectAuthor}</p>
                     </div>
                     <div className={EventProject__buttons}>
                         <button className={EventProject__buttons_1} onClick={OpenJury}>Начать голосование</button>

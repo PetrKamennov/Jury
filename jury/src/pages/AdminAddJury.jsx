@@ -1,23 +1,19 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-
+import { useEffect } from "react";
 import AddJury from "../components/AdminAddJury/AddJury";
 
 import "../components/AdminAddJury/AdminAddJury.css";
 import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
 import Navbar from "../components/navbar/Navbar";
 
-const AdminAddJury = () => {
+const AdminAddJury = (props) => {
 
     const [jurys, setjury] = useState([
-        { id: 1, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 2, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 3, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 4, juryname: 'Проект хуйни', job: 'Долбаеееб' },
     ])
 
-    
+    const [update, setUpdate] = useState(false)
     
     const [modalActive, setModalActive] = useState(false);
 
@@ -26,6 +22,19 @@ const AdminAddJury = () => {
         setjury([...jurys, newjury])
     }
 
+        async function getinf() {
+        axios.get(`http://aleksbcg.beget.tech/jury/`, {
+        }).then(response => {
+            setjury(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
 
     return (
         <>
@@ -33,7 +42,7 @@ const AdminAddJury = () => {
             <section className="AdminAddJury">
                 <div className="AdminAddJury__pulljury">
                     {jurys.map((jurys, index) =>
-                        <AddJury number={index + 1} jury={jurys} key={jurys.id} />
+                        <AddJury EventId={props.EventId} number={index + 1} jury={jurys} key={jurys.id} />
                     )}
 
                 </div>

@@ -1,24 +1,37 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
+import axios from 'axios';
 import Jury from "../components/AdminEditJury/Jury";
 
 import "../components/AdminEditJury/AdminEditJury.css";
 import Navbar from "../components/navbar/Navbar";
 
-const AdminEditJury = () => {
+const AdminEditJury = (props) => {
+
+    const [update, setUpdate] = useState(false)
 
     const [jurys, setJury] = useState([
-        { id: 1, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 2, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 3, juryname: 'Проект хуйни', job: 'Долбаеееб' },
-        { id: 4, juryname: 'Проект хуйни', job: 'Долбаеееб' },
     ])
 
     const removeJury = (project) => {
         setJury(jurys.filter(p => p.id !== project.id))
     }
+
+    async function getinf() {
+        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${props.EventId}`, {
+        }).then(response => {
+            setJury(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
 
     return (
         <>

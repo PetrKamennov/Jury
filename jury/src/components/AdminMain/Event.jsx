@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 import "./Event.css";
 
-const Event = (props) => {
+const Event = (props, getId) => {
+
+    const EventIds = "props.event.eventName";
+
 
 
     return (
@@ -14,11 +17,11 @@ const Event = (props) => {
                         <div className="Criteria__text-spans">
                             <span>{props.event.eventName}</span>
                         </div>
-                        <p>{props.event.eventDate}</p>
+                        <p onClick={() => props.getId(props.event.eventName)}>{props.event.eventDate}</p>
                     </div>
                     <div className="Event__buttons">
-                        <Link to='/AdminMeet'><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
+                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.id)}><button>Начать</button></Link>
+                        <Link to='/AdminEditProject' onClick={() => props.getId(props.event.id)} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
             </div>

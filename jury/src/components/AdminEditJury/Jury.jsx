@@ -11,9 +11,9 @@ const Jury = (props, remove) => {
                 <div className="Jury__text">
                     <div className="Jury__text-spans">
                         <span>{props.number}.</span>
-                        <span>{props.jury.juryname}</span>
+                        <span>{props.jury.fio}</span>
                     </div>
-                    <p>{props.jury.job}</p>
+                    <p>{props.jury.post}</p>
                 </div>
                 <button className="Jury__button" onClick={() => props.remove(props.jury)}>Удалить</button>
             </div>

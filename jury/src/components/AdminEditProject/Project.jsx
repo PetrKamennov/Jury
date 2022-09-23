@@ -1,9 +1,21 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import "./project.css";
 
 const Project = (props, remove) => {
 
+
+    async function RemoveProject() {
+        props.remove(props.project)
+        axios.delete(`http://aleksbcg.beget.tech/projects/uni/${props.project.id}`, {
+            id: props.project.id,
+        }).then(response => {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
 
     return (
         <div className="Project">
@@ -11,11 +23,12 @@ const Project = (props, remove) => {
                 <div className="project__text">
                     <div className="project__text-spans">
                         <span>{props.number}.</span>
-                        <span>{props.project.projectname}</span>  
+                        <span>{props.project.projectName}</span>  
                     </div>
-                    <p>{props.project.participant}</p>
+                    <p>{props.project.projectAuthor}</p>
                 </div>
-                <button className="project__button" onClick={() => props.remove(props.project)}>Удалить</button>
+                <button className="project__button" onClick={RemoveProject}
+                >Удалить</button>
             </div>
         </div>
     )

@@ -1,9 +1,20 @@
 import React from "react";
-
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import "./Criteria.css";
 
 const Criteria = (props, remove) => {
 
+    async function RemoveProject() {
+        props.remove(props.criteria)
+        axios.delete(`http://aleksbcg.beget.tech/cretery/${props.criteria.id}`, {
+            id: props.criteria.id,
+        }).then(response => {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
 
     return (
         <>
@@ -12,11 +23,11 @@ const Criteria = (props, remove) => {
                     <div className="Criteria__text">
                         <div className="Criteria__text-spans">
                             <span>{props.number}.</span>
-                            <span>{props.criteria.criterianame}</span>
+                            <span>{props.criteria.creteryName}</span>
                         </div>
-                        <p>{props.criteria.description}</p>
+                        <p>{props.criteria.creteryDescription}</p>
                     </div>
-                    <button className="Criteria__button" onClick={() => props.remove(props.criteria)}>Удалить</button>
+                    <button className="Criteria__button" onClick={RemoveProject}>Удалить</button>
                 </div>
             </div>
         </>

@@ -1,18 +1,31 @@
 import React from "react";
 import { useState } from "react";
-
+import { useEffect } from "react";
+import axios from 'axios';
 import "../components/AdminMeet/AdminMeet.css";
 import EventProject from "../components/AdminMeet/EvetProject";
 
 
-const AdminMeet = () => {
+const AdminMeet = (props => {
+
+    const [update, setUpdate] = useState(false)
 
     const [projects, setprojects] = useState([
-        { id: 1, projectname: 'Проект', participant: 'студент',},
-        { id: 2, projectname: 'Проект', participant: 'студент', },
-        { id: 3, projectname: 'Проект', participant: 'студент', },
-        { id: 4, projectname: 'Проект', participant: 'студент', },
     ])
+
+    async function getinf() {
+        axios.get(`http://aleksbcg.beget.tech/projects/${props.EventId}`, {
+        }).then(response => {
+            setprojects(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
 
     return (
         <>
@@ -20,7 +33,7 @@ const AdminMeet = () => {
                 <h1>Мероприятия</h1>
                 <div className="AdminMeet__ProjektPull">
                     {projects.map((projects, index) =>
-                        <EventProject number={index + 1} project={projects} key={projects.id} />
+                        <EventProject EventId={props.EventId} number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
                 <button>Жюри</button>
@@ -28,5 +41,5 @@ const AdminMeet = () => {
         </>
     )
 }
-
+)
 export default AdminMeet
