@@ -13,8 +13,8 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
     async function addNewJury() {
         axios.post(`http://aleksbcg.beget.tech/jury/`, {
                 fio: jury.juryname,
-                post: jury.login,
-                login: jury.job,
+                post: jury.job,
+                login: jury.login,
                 password: jury.password
         }).then(response => {
             console.log(response.data)

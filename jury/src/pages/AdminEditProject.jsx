@@ -16,9 +16,9 @@ const AdminEditProject = (props) => {
 
     const [modalActive, setModalActive] = useState(false);
 
-    const createProject = (newProject) => {
-        setProject( [...projects, newProject])
-    }
+    // const createProject = (newProject) => {
+    //     setProject( [...projects, newProject])
+    // }
 
     const removeProject = (project) => {
         setProject(projects.filter(p => p.id !== project.id))
@@ -49,7 +49,7 @@ const AdminEditProject = (props) => {
                 </div>
                 <button onClick={() => setModalActive(true)}>Добавить проект</button>
             </section>
-            <AdminEditProjectModal EventId={props.EventId} create={createProject} active={modalActive} setActive={setModalActive} />
+            <AdminEditProjectModal EventId={props.EventId} active={modalActive} setActive={setModalActive} />
         </>
     )
 }

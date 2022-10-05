@@ -1,19 +1,39 @@
 import React from "react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "../components/Authorization/Authorization.css";
 
 const Authorization = () => {
 
+    const [auth, setAuth] = useState({login: '', password: ''})
+
+    const [author, setAuthor] = useState('/')
+
+    function authorization() {
+        if (auth.login === 'admin' & auth.password === 'admin') {
+            setAuthor('/AdminMain')
+        }
+        if (auth.login === 'jury1' & auth.password === 'jury1') {
+            setAuthor('/jury_meets')
+        }
+    }
+    console.log(auth.login)
 
     return (
         <>
             <section className="authorization">
                 <div className="authorization__block">
-                    <h1>Авторизация</h1>
-                    <input type="text" />
-                    <input type="text" />
-                    <span>Забыли пароль?</span>
-                    <button>Войти</button>
+                    <div className="authorization__block_content">
+                        <h1>Вход</h1>
+                        <input className="authorization__login_input" type="text" placeholder="Введите ваш логин" value={auth.login} onChange={e => setAuth({ ...auth, login: e.target.value })} />
+                        <input className="authorization__password_input" type="text" placeholder="Введите ваш пароль" value={auth.password} onChange={e => setAuth({ ...auth, password: e.target.value })} />
+                        <Link className="goto__button" to={author} onClick={authorization}>Продолжить</Link>
+                        <div className="authorization__block_bottom">
+                            <span>Забыли пароль?</span>
+                            <Link className="goto__change_password" to="/ChangePassword">Восстановить</Link>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>
