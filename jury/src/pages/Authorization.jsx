@@ -10,16 +10,6 @@ const Authorization = () => {
 
     const [author, setAuthor] = useState('/')
 
-    function authorization() {
-        if (auth.login === 'admin' & auth.password === 'admin') {
-            setAuthor('/AdminMain')
-        }
-        if (auth.login === 'jury1' & auth.password === 'jury1') {
-            setAuthor('/jury_meets')
-        }
-    }
-    console.log(auth.login)
-
     return (
         <>
             <section className="authorization">
@@ -27,8 +17,8 @@ const Authorization = () => {
                     <div className="authorization__block_content">
                         <h1>Вход</h1>
                         <input className="authorization__login_input" type="text" placeholder="Введите ваш логин" value={auth.login} onChange={e => setAuth({ ...auth, login: e.target.value })} />
-                        <input className="authorization__password_input" type="text" placeholder="Введите ваш пароль" value={auth.password} onChange={e => setAuth({ ...auth, password: e.target.value })} />
-                        <Link className="goto__button" to={author} onClick={authorization}>Продолжить</Link>
+                        <input className="authorization__password_input" type="text" placeholder="Введите ваш пароль" value={auth.password} onChange={e => setAuthor({ ...auth, password: e.target.value })} />
+                        <Link className="goto__button" to={author}>Продолжить</Link>
                         <div className="authorization__block_bottom">
                             <span>Забыли пароль?</span>
                             <Link className="goto__change_password" to="/ChangePassword">Восстановить</Link>
