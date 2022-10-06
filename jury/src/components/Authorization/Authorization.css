@@ -60,48 +60,66 @@ body {
     background-color: #FFFFFF;
 }
 .authorization__block{
-    width: 739px;
-    height: 837px;
-    background: #D9D9D9;
+    width: 750px;
+    height: 750px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 250px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+.authorization__block_content{
+    width: 566px;
+    display: flex;
+    flex-direction: column;
+}
+
 
 .authorization__block h1{
     font-style: normal;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 48px;
     line-height: 58px;
     color: #000000;
-    margin:  30px 0 83px 0 ;
+    margin-top:  126px;
+    margin-bottom: 0px;
 }
 
 .authorization__block input{
-    width: 560px;
-    height: 103px;
-    background: #FFE600;
-    margin-bottom: 42px;
+    width: 566px;
+    background: #FFFFFF;
+    font-family: 'IBM Plex Sans';
     font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 58px;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 36px;
     color: #000000;
+    border-bottom: 2px solid #394A58;
 }
+.authorization__login_input{
+    margin-top: 65px;
+}
+.authorization__password_input{
+    margin-top: 54px;
+}
+.authorization__block_bottom{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 42px;
 
+}
 .authorization__block span{
-    font-style: normal;
-    font-weight: 400;
-    font-size: 32px;
-    text-align: end;
-    width: 560px;
-    line-height: 58px;
-    color: #000000;
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 36px;
 }
-
-.authorization__block button{
-    width: 560px;
-    height: 100px;
+.goto__button{
+    width: 566px;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0px;
     background: #FF0000;
     font-style: normal;
     font-weight: 400;
@@ -109,5 +127,14 @@ body {
     line-height: 58px;
     color: #FFFFFF;
     border: none;
-    margin-top: 149px;
+    margin-top: 65px;
+}
+.goto__change_password{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: #000000;
+    cursor: pointer;
 }
