@@ -14,7 +14,7 @@ const AdminAddEvent = (props) => {
 
 
     async function addNewEvent() {
-        axios.post(`http://aleksbcg.beget.tech/events`, {
+        axios.post(`http://aleksbcg.beget.tech/events/`, {
             eventName: events.eventName, 
             eventDate: events.eventDate,
         }).then(response => {
@@ -30,11 +30,11 @@ const AdminAddEvent = (props) => {
         <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >
             <div className="AdminEditProjectModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AdminEditProjectModal__content-container">
-                    <h1>Добавление мероприятия</h1>
+                    <h1>Добавление проекта</h1>
                     <div className="AdminEditProjectModal__content-regJury">
                         <div className="AdminEditProjectModal__content-regJury__inputs">
-                            <input placeholder="Наименование мероприятия " type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })} />
-                            <input placeholder="Дата проведения" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })} />
+                            <input placeholder="Наименование проекта " type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })} />
+                            <input placeholder="Имя конкурсанта" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })} />
                         </div>
                         <button onClick={addNewEvent} >Добавить</button>
                     </div>
