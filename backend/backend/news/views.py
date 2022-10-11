@@ -1,11 +1,18 @@
 
-from rest_framework import  mixins
+from rest_framework import mixins
+from rest_framework.generics import CreateAPIView
+from rest_framework.views import APIView
 from rest_framework.viewsets import GenericViewSet
 
 from .models import NewsInfo
 from .permissions import IsAdminOrReadOnly
 from .serializers import NewsInfoSerializer
 
+class NewsViewSet(APIView)
+
+class EventsCreateViewSet(CreateAPIView)
+    queryset = Events.objects.all()
+    serializer_class = EventsSerializer
 
 class NewsViewSet(mixins.CreateModelMixin,
                   mixins.RetrieveModelMixin,
