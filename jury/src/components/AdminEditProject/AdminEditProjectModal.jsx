@@ -8,6 +8,9 @@ const AdminEditProjectModal = (props, {create}) => {
     
     const [update, setUpdate] = useState(false)
 
+    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NzMxMzgwLCJpYXQiOjE2NjUxMzkzODAsImp0aSI6IjNlYTA4ZjE2YmUzNDQyYmViZjQ1Njg5NDkzMDhlZTIzIiwidXNlcl9pZCI6Mn0.sAquDN8WQVpuJnZ8BjLqX8h4ua6KX_IvUH4sdcxDKdc"
+
+
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
 
 
@@ -21,10 +24,15 @@ const AdminEditProjectModal = (props, {create}) => {
 
     async function addNewProject() {
         // addNewProjects()
-        axios.post(`http://aleksbcg.beget.tech/projects/`, {
-                eventId: props.EventId,     
-                projectName: project.projectName,
-                projectAuthor: project.projectAuthor
+        axios.post(`http://aleksbcg.beget.tech/projects/${props.EventId}/`, {    
+            headers: {
+                Authorization: "Bearer " + token
+            }
+        },
+        {
+            event: null,
+            name_of_project: project.projectName,
+            speaker_name: project.projectAuthor
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

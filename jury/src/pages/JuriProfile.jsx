@@ -32,8 +32,8 @@ const JuriProfile = () => {
                             </div>
                         </div>
                         <div className="butts_jury_block data_butts">
-                            <Link to="" className="butt_jury_profile change_password">Сменить пароль</Link>
-                            <Link to="" className="butt_jury_profile change_login">Сменить логин</Link>
+                            <Link to="" className="butt_jury_profile change_password_profile">Сменить пароль</Link>
+                            <Link to="" className="butt_jury_profile change_login_profile">Сменить логин</Link>
                         </div>
                     </div>
                     <div className="block_of_profile third_block_prof">

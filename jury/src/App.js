@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+
 import { useState, useEffect } from "react";
 import { Route, Routes } from 'react-router-dom';
 import AdminEditJury from './pages/AdminEditJury';
