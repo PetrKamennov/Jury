@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useState, useEffect } from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import AdminEditJury from './pages/AdminEditJury';
 import AdminEditMeet from './pages/AdminEditMeet';
 import AdminMain from './pages/AdminMain';
@@ -17,29 +17,51 @@ import JuryHistory from './pages/JuryHistory';
 import JuriProfile from './pages/JuriProfile';
 import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
+import { useTransition, animated } from 'react-spring';
 
 function App() {
+  const location = useLocation();
+  const transitions = useTransition(location,
+    {
+      from: {
+        transform: 'translateY(100%)',
+        position: 'absolute',
+        width: '100%',
+      },
+      enter: { 
+        transform: 'translateY(0%)',
+        opacity: 1, 
+        transition: 'all 0.25s linear 0s'
+       },
+      leave: {
+        transform: 'translateY(-100%)',
+        transition: 'all 0.25s linear 0s'
+      }
+    })
   const [getId1, setgetId1] = useState('');
   const getId2 = (EventIds) =>{
     setgetId1(EventIds)
   }
-  return (
+  return transitions((props, item, key) => (
     <>
-      <Routes>
-        <Route path='/jury_meets' element={<JuryMeet />} />
-        <Route path='/history' element={<JuryHistory />} />
-        <Route path='/profile' element={<JuriProfile />} />
-        <Route path='/' element={<Authorization/>}/>
-        <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
-        <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
-        <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
-        <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
-        <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
-        <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
-        <Route path='/ChangePassword' element={<ChangePassword/>} />
-        <Route path='/EmailChange' element={<EmailChange />} />
-      </Routes>
+      <animated.div key={key} style={props}>
+        <Routes location={item}>
+          <Route path='/jury_meets' element={<JuryMeet />} />
+          <Route path='/history' element={<JuryHistory />} />
+          <Route path='/profile' element={<JuriProfile />} />
+          <Route path='/' element={<Authorization/>}/>
+          <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
+          <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
+          <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
+          <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
+          <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
+          <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
+          <Route path='/ChangePassword' element={<ChangePassword/>} />
+          <Route path='/EmailChange' element={<EmailChange />} />
+        </Routes>
+      </animated.div>
     </>
+    )
   );
 }
 
