@@ -38,9 +38,6 @@
     align-self: flex-start;
 }
 
-.AdminAddJuryModal__content-regJury{
-
-}
 .AdminAddJuryModal__content-regJury__inputs{
     width: 1310px;
         height: 212px;
@@ -50,7 +47,7 @@
 
 .AdminAddJuryModal__content-regJury__inputs input{
         width: 566px;
-        height: 70px;
+        height: 47px;
         background: #FFFFFF;
         display: flex;
         border: none;
@@ -58,7 +55,39 @@
         border-bottom: 2px solid #394A58;
         flex-direction: column;
         align-items: center;
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 34px;
     }
+
+.AdminAddJuryModal__content-regJury__input__box span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.AdminAddJuryModal__content-regJury__input__box > input:focus~span,
+.AdminAddJuryModal__content-regJury__input__box > input[value]:not([value=""])~span {
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+
+
+.AdminAddJuryModal__content-regJury__input__box {
+    position: relative;
+    margin-top: 68px;
+}
 
 .AdminAddJuryModal__content button{
     width: 566px;

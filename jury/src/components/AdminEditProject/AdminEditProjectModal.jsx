@@ -49,8 +49,15 @@ const AdminEditProjectModal = (props, {create}) => {
                     <h1>Добавление проекта</h1>
                     <div className="AdminEditProjectModal__content-regJury">
                         <div className="AdminEditProjectModal__content-regJury__inputs">
-                            <input placeholder="Наименование проекта " type="text" value={project.projectName} onChange={e => setProject({ ...project, projectName: e.target.value})}/>
-                            <input placeholder="Имя конкурсанта" type="text" value={project.projectAuthor} onChange={e => setProject({ ...project, projectAuthor: e.target.value })} />
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box projectName">
+                                <input type="text" value={project.projectName} onChange={e => setProject({ ...project, projectName: e.target.value})}/>
+                                <span>Наименование проекта</span>
+                            </div>
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box projectAuthor">
+                                <input type="text" value={project.projectAuthor} onChange={e => setProject({ ...project, projectAuthor: e.target.value })} />
+                                <span>Имя конкурсанта</span>
+                            </div>
+
                         </div>
                         <button onClick={addNewProject} >Добавить</button>
                     </div>

@@ -30,12 +30,24 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                     <h1>Регистрация жюри</h1>
                             <div className="AdminAddJuryModal__content-regJury__inputs">
                                 <div className="AdminAddJuryModal__content-regJury__inputs-left">
-                            <input placeholder="Имя " type="text" className="AdminAddJuryModal__content-regJury__name" value={jury.juryname} onChange={e => setJury({ ...jury, juryname: e.target.value })} />
-                            <input placeholder="Логин " type="text" className="AdminAddJuryModal__content-regJury__login" value={jury.login} onChange={e => setJury({ ...jury, login: e.target.value })} />
+                                    <div className="AdminAddJuryModal__content-regJury__input__box">
+                                        <input type="name" className="AdminAddJuryModal__content-regJury__name" value={jury.juryname} onChange={e => setJury({ ...jury, juryname: e.target.value })} />
+                                        <span>Имя</span>
+                                    </div>
+                                    <div className="AdminAddJuryModal__content-regJury__input__box">
+                                        <input type="login" className="AdminAddJuryModal__content-regJury__login" value={jury.login} onChange={e => setJury({ ...jury, login: e.target.value })} />
+                                        <span>Логин</span>
+                                    </div>
                                 </div>
                                 <div className="AdminAddJuryModal__content-regJury__inputs-right">
-                            <input placeholder="Должность" type="text" className="AdminAddJuryModal__content-regJury__job" value={jury.job} onChange={e => setJury({ ...jury, job: e.target.value })} />
-                            <input placeholder="Пароль" type="text" className="AdminAddJuryModal__content-regJury__password" value={jury.password} onChange={e => setJury({ ...jury, password: e.target.value })} />
+                                    <div className="AdminAddJuryModal__content-regJury__input__box">
+                                        <input type="job" className="AdminAddJuryModal__content-regJury__job" value={jury.job} onChange={e => setJury({ ...jury, job: e.target.value })} />
+                                        <span>Должность</span>
+                                    </div>
+                                    <div className="AdminAddJuryModal__content-regJury__input__box">
+                                        <input type="password" className="AdminAddJuryModal__content-regJury__password" value={jury.password} onChange={e => setJury({ ...jury, password: e.target.value })} />
+                                        <span>Пароль</span>
+                                    </div>
                                 </div>
                             </div>
                     <button onClick={addNewJury}>Зарегистрировать</button>

@@ -18,17 +18,17 @@ const JuriProfile = () => {
                     </div>
                     <div className="block_of_profile scnd_block_prof">
                         <div className="inputs_FIO">
-                            <div>
-                                <h4 className="placeholder_for_input">Имя</h4>
+                            <div className='JuryProfile__input__box'>
                                 <input  className="data_inp name_inp"/>
+                                <span className="placeholder_for_input">Имя</span>
                             </div>
-                            <div>
-                                <h4 className="placeholder_for_input">Фамилия</h4>
+                            <div className='JuryProfile__input__box'>
                                 <input className="data_inp surname_inp"/>
+                                <span className="placeholder_for_input">Фамилия</span>
                             </div>
-                            <div>
-                                <h4 className="placeholder_for_input">Отчество (при наличии)</h4>
+                            <div className='JuryProfile__input__box'>
                                 <input className="data_inp patronymic_inp"/>
+                                <span className="placeholder_for_input">Отчество (при наличии)</span>
                             </div>
                         </div>
                         <div className="butts_jury_block data_butts">
@@ -37,13 +37,13 @@ const JuriProfile = () => {
                         </div>
                     </div>
                     <div className="block_of_profile third_block_prof">
-                        <div>
-                            <h4 className="placeholder_for_input">Должность</h4>
+                        <div className='JuryProfile__input__box'>
                             <input  className="data_inp post_inp"/>
+                            <span className="placeholder_for_input">Должность</span>
                         </div>
-                        <div>
-                            <h4 className="placeholder_for_input">Логин</h4>
+                        <div className='JuryProfile__input__box'>
                             <input className="data_inp login_inp"/>
+                            <span className="placeholder_for_input">Логин</span>
                         </div>
                     </div>
                 </div>

@@ -94,7 +94,7 @@ body {
 
 .AdminEditMeet__firstBlock__left input{
     width: 100%;
-    height: 70px;
+    height: 37px;
     background: #FFFFFF;
     display: flex;
     border: none;
@@ -108,6 +108,42 @@ body {
     line-height: 31px;
     color: #CCCCCC;
 }
+.AdminEditMeet__firstBlock__left__input__box.Date input {
+    display: flow-root;
+}
+.AdminEditMeet__firstBlock__left__input__box span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: -10px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName>input:focus~span,
+.AdminEditMeet__firstBlock__left__input__box.eventName>input[value]:not([value=""])~span {
+    transform: translateY(-38px);
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName{
+    margin-bottom: 27px;
+    position: relative;
+}
+
 
 .AdminEditMeet__firstBlock__right{
     height: 140px;

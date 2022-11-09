@@ -96,10 +96,10 @@ body {
     color: #000000;
     border-bottom: 2px solid #394A58;
 }
-.authorization__login_input{
+.authorization__input__box.login{
     margin-top: 65px;
 }
-.authorization__password_input{
+.authorization__input__box.password{
     margin-top: 54px;
 }
 .authorization__block_bottom{
@@ -138,3 +138,34 @@ body {
     color: #000000;
     cursor: pointer;
 }
+
+
+.authorization__input__box span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: -10px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 36px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.authorization__login_input:focus ~ span,
+.authorization__login_input[value]:not([value=""]) ~ span {
+    color:rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+.authorization__password_input:focus~span,
+.authorization__password_input[value]:not([value=""])~span {
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+ .authorization__input__box {
+     position: relative;
+     width: 300px; height: 46px; margin-bottom: 35px;
+ }

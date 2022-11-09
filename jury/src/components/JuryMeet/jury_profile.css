@@ -56,7 +56,6 @@ input{
 .placeholder_for_input{
     color: #CCCCCC;
     font-size: 24px;
-    margin: 40px 0px 0px 0px;
 }
 .butt_edit_profile{
     background: #FFFFFF;
@@ -173,4 +172,31 @@ input{
     .third_block_prof{
         margin-top: -390px;
     }
+}
+
+.JuryProfile__input__box span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.JuryProfile__input__box>input:focus~span,
+.JuryProfile__input__box>input[value]:not([value=""])~span {
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+
+
+.JuryProfile__input__box {
+    position: relative;
+    margin-top: 68px;
 }
