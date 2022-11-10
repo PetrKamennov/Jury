@@ -63,6 +63,8 @@ const AdminEditMeet = (props) => {
 
     console.log(criterias)
 
+    
+
     return (
         <>
             <Navbar/>

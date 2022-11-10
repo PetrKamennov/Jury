@@ -18,6 +18,10 @@ import JuriProfile from './pages/JuriProfile';
 import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
 import { useTransition, animated } from 'react-spring';
+<<<<<<< Updated upstream
+=======
+import CriteriaPool from './components/AdminEditMeet/CriteriaPool';
+>>>>>>> Stashed changes
 
 function App() {
   const location = useLocation();
@@ -54,6 +58,10 @@ function App() {
           <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
           <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
           <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
+<<<<<<< Updated upstream
+=======
+          <Route path='/CriteriaPool' element={<CriteriaPool EventId={getId1} />} />
+>>>>>>> Stashed changes
           <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
           <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
           <Route path='/ChangePassword' element={<ChangePassword/>} />

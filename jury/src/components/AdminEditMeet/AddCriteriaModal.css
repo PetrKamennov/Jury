@@ -1,4 +1,4 @@
-.AdminAddJuryModal{
+.AddCriteriaModal{
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -12,11 +12,11 @@
     transform: scale(0);
 }
 
-.AdminAddJuryModal.active{
+.AddCriteriaModal.active{
     transform: scale(1);
 }
 
-.AdminAddJuryModal__content{
+.AddCriteriaModal__content{
     background-color: #FFFFFF;
     width: 1500px;
     height: 579px;
@@ -25,7 +25,7 @@
     align-items: center;
 }
 
-.AdminAddJuryModal__content h1{
+.AddCriteriaModal__content h1{
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 700;
@@ -38,14 +38,14 @@
     align-self: flex-start;
 }
 
-.AdminAddJuryModal__content-regJury__inputs{
+.AddCriteriaModal__content-regJury__inputs{
     width: 1310px;
         height: 212px;
         display: flex;
         justify-content: space-between;
 }
 
-.AdminAddJuryModal__content-regJury__inputs input{
+.AddCriteriaModal__content-regJury__inputs input{
         width: 566px;
         height: 70px;
         background: #FFFFFF;
@@ -56,8 +56,20 @@
         flex-direction: column;
         align-items: center;
     }
+    .AddCriteriaModal__content-regJury__inputs select{
+        width: 566px;
+        height: 70px;
+        background: #FFFFFF;
+        display: flex;
+        margin-top: 34px;
+        flex-direction: column;
+        align-items: center;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #394A58;
+    }
 
-.AdminAddJuryModal__content button{
+.AddCriteriaModal__content button{
     width: 566px;
     height: 66px;
     background: #E21A1A;
@@ -73,65 +85,65 @@
     margin-top: 65px;
 }
 
-.AdminAddJuryModal__content-container{
+.AddCriteriaModal__content-container{
     width: 1310px;
     display: flex;
     flex-direction: column;
 }
 @media (max-width: 1570px){
-    .AdminAddJuryModal__content{
+    .AddCriteriaModal__content{
         width: 700px;
         height: 700px;
     }
-    .AdminAddJuryModal__content-container{
+    .AddCriteriaModal__content-container{
         width: 650px;
         height: 700px;
     }
-    .AdminAddJuryModal__content h1{
+    .AddCriteriaModal__content h1{
         align-self: center;
         font-size: 40px;
         margin: 40px 0px 100px 0px;
     }
-    .AdminAddJuryModal__content-regJury__inputs{
+    .AddCriteriaModal__content-regJury__inputs{
         width: 650px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-    .AdminAddJuryModal__content-regJury__inputs input{
+    .AddCriteriaModal__content-regJury__inputs input{
         width: 500px;
         height: 45px;
     }
-    .AdminAddJuryModal__content button{
+    .AddCriteriaModal__content button{
         align-self: center;
         margin-top: 160px;
     }
 }
 @media (max-width: 730px){
-    .AdminAddJuryModal__content{
+    .AddCriteriaModal__content{
         width: 350px;
         height: 600px;
     }
-    .AdminAddJuryModal__content-container{
+    .AddCriteriaModal__content-container{
         width: 300px;
         height: 600px;
     }
-    .AdminAddJuryModal__content h1{
+    .AddCriteriaModal__content h1{
         align-self: center;
         font-size: 30px;
         margin: 40px 0px;
     }
-    .AdminAddJuryModal__content-regJury__inputs{
+    .AddCriteriaModal__content-regJury__inputs{
         width: 300px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
     }
-    .AdminAddJuryModal__content-regJury__inputs input{
+    .AddCriteriaModal__content-regJury__inputs input{
         width: 200px;
         height: 30px;
     }
-    .AdminAddJuryModal__content button{
+    .AddCriteriaModal__content button{
         align-self: center;
         margin-top: 100px;
         width: 250px;
