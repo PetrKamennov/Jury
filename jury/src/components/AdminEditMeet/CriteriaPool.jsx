@@ -17,7 +17,7 @@ const CriteriaPool = (props) => {
     }
     const [update, setUpdate] = useState(false)
     async function getcrit() {
-        axios.get(`http://aleksbcg.beget.tech/criteria/`, {
+        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, {
         }).then(response => {
             setcriteria(response.data)
         }).catch(function (error) {

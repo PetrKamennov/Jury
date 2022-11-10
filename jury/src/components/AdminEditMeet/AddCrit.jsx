@@ -5,17 +5,16 @@ import "./AddCrit.css";
 const AddCrit = (props, remove) => {
 
     async function AddCrit() {
-        axios.post(`http://aleksbcg.beget.tech/`, {
-            eventId: props.EventId,
-            names: props.criteria.name,
-            descript: props.criteria.descript
+        axios.post(`http://aleksbcg.beget.tech/AddCreteryOnEvent/`, {
+            event: props.event,
+            cretery: props.creteria
         }).then(response => {
             console.log(response.data.posts)
         }).catch(function (error) {
             console.log(error);
         })
     }
-    console.log(props.EventId)
+    console.log(props.creteria)
 
     return (
         <div className="Crit">
@@ -23,9 +22,9 @@ const AddCrit = (props, remove) => {
                 <div className="Crit__text">
                     <div className="Crit__text-spans">
                         <span>{props.number}.</span>
-                        <span>{props.criteria.name}</span>
+                        <span>{props.criteria.creteryName}</span>
                     </div>
-                    <p>{props.criteria.descript}</p>
+                    <p>{props.criteria.creteryDescription}</p>
                 </div>
                 <button onClick={AddCrit} className="Jury__button">Добавить</button>
             </div>
