@@ -18,6 +18,7 @@ import JuriProfile from './pages/JuriProfile';
 import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
 import { useTransition, animated } from 'react-spring';
+import CriteriaPool from './components/AdminEditMeet/CriteriaPool';
 
 function App() {
   const location = useLocation();
@@ -54,6 +55,7 @@ function App() {
           <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
           <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
           <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
+          <Route path='/CriteriaPool' element={<CriteriaPool EventId={getId1} />} />
           <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
           <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
           <Route path='/ChangePassword' element={<ChangePassword/>} />

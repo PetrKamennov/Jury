@@ -63,6 +63,8 @@ const AdminEditMeet = (props) => {
 
     console.log(criterias)
 
+    
+
     return (
         <>
             <Navbar/>
@@ -70,14 +72,8 @@ const AdminEditMeet = (props) => {
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">
                         <div className="AdminEditMeet__firstBlock__left">
-                            <div className="AdminEditMeet__firstBlock__left__input__box eventName">
-                                <input type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
-                                <span>Наименование проекта</span>
-                            </div>
-                            <div className="AdminEditMeet__firstBlock__left__input__box Date">
-                                <span>Дата и время проведения</span>    
-                                <input type="date" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
-                            </div>
+                            <input placeholder="Наименование проекта" type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
+                            <input placeholder="Дата и время проведения" type="text" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
                         </div>
                         <div className="AdminEditMeet__firstBlock__right">
                             <Link to='/AdminMain'><button onClick={removeEvent}>Удалить мероприятие</button></Link>
