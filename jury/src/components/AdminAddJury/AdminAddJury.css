@@ -93,3 +93,15 @@ body {
     margin-right: 100px;
     margin-top: 54px;
 }
+@media (max-width: 920px){
+    .AdminAddJury>button{
+        align-self: center;
+        margin-right: 0px;
+    }
+}
+@media (max-width: 600px){
+    .AdminAddJury>button{
+        width: 360px;
+        font-size: 20px;
+    }
+}

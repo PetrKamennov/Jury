@@ -160,12 +160,11 @@
         align-items: center;
     }
     .AdminAddJuryModal__content-regJury__inputs input{
-        width: 200px;
+        width: 250px;
         height: 30px;
     }
     .AdminAddJuryModal__content button{
         align-self: center;
-        margin-top: 100px;
         width: 250px;
         height: 45px;
         font-size: 22px;
