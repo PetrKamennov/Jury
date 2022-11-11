@@ -9,7 +9,7 @@ import Navbar from "../components/navbar/Navbar";
 
 const AdminEditMeet = (props) => {
 
-
+    const EventId = localStorage.getItem("EventId")
 
     const [update, setUpdate] = useState(false)
 
@@ -25,7 +25,19 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axios.get(`http://aleksbcg.beget.tech/cretery/getCretery/${props.EventId}`, {
+        axios.get(`http://aleksbcg.beget.tech/GetCreteryOnEvent/${EventId}`, {
+            id: EventId
+        })
+        .then(response => {
+            setcriteria(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    async function getcrit() {
+        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, {
+            
         }).then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
@@ -36,11 +48,12 @@ const AdminEditMeet = (props) => {
     useEffect(() => {
         if (update) return
         getEvent()
+        getcrit()
     }, [update])
 
     async function editEvent() {
-        axios.patch(`http://aleksbcg.beget.tech/events/${props.EventId}/`, {
-            id: props.EventId,
+        axios.patch(`http://aleksbcg.beget.tech/events/${EventId}/`, {
+            id: EventId,
             eventName: events.eventName,
             eventDate: events.eventDate
         }).then(response => {
@@ -52,8 +65,8 @@ const AdminEditMeet = (props) => {
 
 
     async function removeEvent() {
-        axios.delete(`http://aleksbcg.beget.tech/events/${props.EventId}`, {
-            id: props.EventId,
+        axios.delete(`http://aleksbcg.beget.tech/events/${EventId}`, {
+            id: EventId,
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {
@@ -91,7 +104,7 @@ const AdminEditMeet = (props) => {
                                 <Criteria remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
                             )}
                         </div>
-                        <EditCriteria EventId={props.EventId} create={createcriteria}/>
+                        <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
                 <button>Сохранить</button>

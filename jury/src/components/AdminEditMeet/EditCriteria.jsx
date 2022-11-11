@@ -29,10 +29,11 @@ const EditCriteria = (props, {create}) => {
         create(newCriteria)
         setCriteria({ criterianame: '', description: '' })
     }
+    const EventId = localStorage.getItem("EventId")
 
     async function addCriteria() {
         axios.post(`http://aleksbcg.beget.tech/cretery/`, {
-            eventId: props.EventId,
+            eventId: EventId,
             creteryName: criteria.criterianame,
             creteryDescription: criteria.description,
             creteryVal: 0

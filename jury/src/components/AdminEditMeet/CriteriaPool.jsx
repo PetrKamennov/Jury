@@ -29,8 +29,8 @@ const CriteriaPool = (props) => {
         if (update) return
         getcrit()
     }, [update])
-
-    console.log(props.EventId)
+    
+    const EventId = localStorage.getItem("EventId")
 
 
     return(
@@ -39,7 +39,7 @@ const CriteriaPool = (props) => {
             <section className="CriteriaPool">
                 <div className="CriteriaPool__pullcrit">
                     {criterias.map((criterias, index) =>
-                        <AddCrit EventId={props.EventId} number={index + 1} criteria={criterias} key={criterias.id} />
+                        <AddCrit number={index + 1} criteria={criterias} key={criterias.id} />
                     )}
                 </div>
                 <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить Критерий</button>

@@ -7,7 +7,9 @@ const Event = (props, getId) => {
 
     const EventIds = "props.event.eventName";
 
-
+    function sendID() {
+        localStorage.setItem("EventId", props.event.id)
+    }
 
     return (
         <>
@@ -21,7 +23,7 @@ const Event = (props, getId) => {
                     </div>
                     <div className="Event__buttons">
                         <Link to='/AdminMeet' onClick={() => props.getId(props.event.id)}><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' onClick={() => props.getId(props.event.id)} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
+                        <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
             </div>

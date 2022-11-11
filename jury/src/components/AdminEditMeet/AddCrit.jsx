@@ -4,17 +4,20 @@ import "./AddCrit.css";
 
 const AddCrit = (props, remove) => {
 
+    const EventId = localStorage.getItem("EventId")
+
     async function AddCrit() {
         axios.post(`http://aleksbcg.beget.tech/AddCreteryOnEvent/`, {
-            event: props.EventId,
+            event: EventId,
             cretery: props.criteria.id
         }).then(response => {
-            console.log(response.data.posts)
+            console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
-    console.log(props.event)
+    console.log(EventId)
+    console.log(props.criteria.id)
 
     return (
         <div className="Crit">

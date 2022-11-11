@@ -8,6 +8,8 @@ const AdminEditProjectModal = (props, {create}) => {
     
     const [update, setUpdate] = useState(false)
 
+    const EventId = localStorage.getItem("EventId")
+
 
 
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
@@ -26,7 +28,7 @@ const AdminEditProjectModal = (props, {create}) => {
         axios.post(`http://aleksbcg.beget.tech/projects/`,
         {
 
-            events: props.EventId,
+            events: EventId,
             projectName: project.projectName,
             projectAuthor: project.projectAuthor
         }).then(response => {

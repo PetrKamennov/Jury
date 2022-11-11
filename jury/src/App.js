@@ -39,10 +39,7 @@ function App() {
         transition: 'all 0.25s linear 0s'
       }
     })
-  const [getId1, setgetId1] = useState('');
-  const getId2 = (EventIds) =>{
-    setgetId1(EventIds)
-  }
+
   return transitions((props, item, key) => (
     <>
       <animated.div key={key} style={props}>
@@ -51,13 +48,13 @@ function App() {
           <Route path='/history' element={<JuryHistory />} />
           <Route path='/profile' element={<JuriProfile />} />
           <Route path='/' element={<Authorization/>}/>
-          <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
-          <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
-          <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
-          <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
-          <Route path='/CriteriaPool' element={<CriteriaPool EventId={getId1} />} />
-          <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
-          <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
+          <Route path='/AdminEditProject' element={<AdminEditProject />}/>
+          <Route path='/AdminEditJury' element={<AdminEditJury />} />
+          <Route path='/AdminAddJury' element={<AdminAddJury />} />
+          <Route path='/AdminEditMeet' element={<AdminEditMeet />} />
+          <Route path='/CriteriaPool' element={<CriteriaPool />} />
+          <Route path='/AdminMain' element={<AdminMain />} />
+          <Route path='/AdminMeet' element={<AdminMeet />} />
           <Route path='/ChangePassword' element={<ChangePassword/>} />
           <Route path='/EmailChange' element={<EmailChange />} />
         </Routes>
