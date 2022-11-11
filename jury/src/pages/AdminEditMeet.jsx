@@ -25,8 +25,7 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axios.get(`http://aleksbcg.beget.tech/GetCreteryOnEvent/${EventId}`, {
-            id: EventId
+        axios.get(`http://aleksbcg.beget.tech/ReturnCretery/${EventId}`, {
         })
         .then(response => {
             setcriteria(response.data)
@@ -35,20 +34,19 @@ const AdminEditMeet = (props) => {
         })
     }
 
-    async function getcrit() {
-        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, {
-            
-        }).then(response => {
+    /*async function getcrit() {
+        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, )
+        .then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
             console.log(error);
         })
-    }
+    }*/
 
     useEffect(() => {
         if (update) return
         getEvent()
-        getcrit()
+        /*getcrit()*/
     }, [update])
 
     async function editEvent() {
