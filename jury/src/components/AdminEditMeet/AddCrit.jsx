@@ -6,15 +6,15 @@ const AddCrit = (props, remove) => {
 
     async function AddCrit() {
         axios.post(`http://aleksbcg.beget.tech/AddCreteryOnEvent/`, {
-            event: props.event,
-            cretery: props.creteria
+            event: props.EventId,
+            cretery: props.criteria.id
         }).then(response => {
             console.log(response.data.posts)
         }).catch(function (error) {
             console.log(error);
         })
     }
-    console.log(props.creteria)
+    console.log(props.event)
 
     return (
         <div className="Crit">

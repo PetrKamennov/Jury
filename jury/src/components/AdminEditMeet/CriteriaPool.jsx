@@ -30,6 +30,8 @@ const CriteriaPool = (props) => {
         getcrit()
     }, [update])
 
+    console.log(props.EventId)
+
 
     return(
         <>

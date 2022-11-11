@@ -13,22 +13,22 @@ const AdminEditProjectModal = (props, {create}) => {
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
 
 
-    // const addNewProjects = () => {
-    //     const newProject = {
-    //         ...project, id: Date.now()
-    //     }
-    //     create(newProject)
-    //     setProject({ projectname: '', participant: '' })
-    // }
+     /*const addNewProjects = () => {
+         const newProject = {
+         ...project, id: Date.now()
+         }
+         create(newProject)
+         setProject({ projectname: '', participant: '' })
+     }*/
 
     async function addNewProject() {
         // addNewProjects()
-        axios.post(`http://aleksbcg.beget.tech/projects/${props.EventId}/`, {    
-        },
+        axios.post(`http://aleksbcg.beget.tech/projects/`,
         {
-            event: null,
-            name_of_project: project.projectName,
-            speaker_name: project.projectAuthor
+
+            events: props.EventId,
+            projectName: project.projectName,
+            projectAuthor: project.projectAuthor
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

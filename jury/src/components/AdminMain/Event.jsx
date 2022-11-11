@@ -20,8 +20,8 @@ const Event = (props, getId) => {
                         <p onClick={() => props.getId(props.event.eventName)}>{props.event.eventDate}</p>
                     </div>
                     <div className="Event__buttons">
-                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.pk)}><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' onClick={() => props.getId(props.event.pk)} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
+                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.id)}><button>Начать</button></Link>
+                        <Link to='/AdminEditProject' onClick={() => props.getId(props.event.id)} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
             </div>

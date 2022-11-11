@@ -24,9 +24,9 @@ const Project = (props, remove) => {
                 <div className="project__text">
                     <div className="project__text-spans">
                         <span>{props.number}.</span>
-                        <span>{props.project.name_of_project}</span>  
+                        <span>{props.project.projectName}</span>  
                     </div>
-                    <p>{props.project.speaker_name}</p>
+                    <p>{props.project.projectAuthor}</p>
                 </div>
                 <button className="project__button" onClick={RemoveProject}
                 >Удалить</button>
