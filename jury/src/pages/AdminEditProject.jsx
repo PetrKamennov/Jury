@@ -19,19 +19,16 @@ const AdminEditProject = (props) => {
 
     const [modalActive, setModalActive] = useState(false);
 
-    // const createProject = (newProject) => {
-    //     setProject( [...projects, newProject])
-    // }
+    const createProject = (newProject) => {
+        setProject( [...projects, newProject])
+    }
 
     const removeProject = (project) => {
         setProject(projects.filter(p => p.id !== project.id))
     }
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/projects/${props.EventId}`, {
-            headers: {
-                Authorization: "Bearer " + token
-            }
-        }).then(response => {
+        axios.get(`http://aleksbcg.beget.tech/projects/${props.getId1}`
+        ).then(response => {
             setProject(response.data)
         }).catch(function (error) {
             console.log(error);
@@ -42,6 +39,8 @@ const AdminEditProject = (props) => {
         if (update) return
         getinf()
     }, [update])
+
+    console.log(projects)
 
     return (
         <>
@@ -55,7 +54,7 @@ const AdminEditProject = (props) => {
                 </div>
                 <button onClick={() => setModalActive(true)}>Добавить проект</button>
             </section>
-            <AdminEditProjectModal EventId={props.EventId} active={modalActive} setActive={setModalActive} />
+            <AdminEditProjectModal onClick={createProject} EventId={props.EventId} active={modalActive} setActive={setModalActive} />
         </>
     )
 }
