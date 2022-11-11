@@ -1,26 +1,28 @@
 import React from "react";
-import { useRef, useState, useEffect, useContext } from 'react';
-import { Link } from "react-router-dom";
+import { useRef, useState, useEffect } from 'react';
 import AuthContext from "../content/AuthProvider";
 import "../components/Authorization/Authorization.css";
 import axios from "axios";
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
+import useAuth from '../hooks/useAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-const LOGIN_URL = '/auth';
+const LOGIN_URL = 'http://aleksbcg.beget.tech/api/token/';
 
 const Authorization = () => {
 
-    // const [auth, setAuthor] = useState({login: '', password: ''})
+    const { setAuth } = useAuth();
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.pathname || "/";
 
-    const { setAuth } = useContext(AuthContext);
     const userRef = useRef();
     const errRef = useRef();
 
     const [user, setUser] = useState('');
     const [pwd, setPwd] = useState('');
     const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
 
     useEffect(() => {
         userRef.current.focus();
@@ -34,35 +36,43 @@ const Authorization = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(`http://aleksbcg.beget.tech/api/token/`,
+            const response = await axios.post(LOGIN_URL,
                 {
                     username: user,
                     password: pwd
-                }
+                },
+                // {
+                //     headers: { 'Content-Type': 'application/json' },
+                //     withCredentials: true
+                // }
             );
-            // console.log(JSON.stringify(response?.data));
             console.log(JSON.stringify(response.data));
-
+            //console.log(JSON.stringify(response));
             const accessToken = response.data.access;
-
-            
-
-            const decoded = jwt_decode(response.data.access);
-            console.log(accessToken)
-
-            axios.get(`http://aleksbcg.beget.tech/getUser/${decoded.user_id}`, {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`
-                }
-            }).then(response => { console.log(response.data)
-            })
-            // const roles = response?.data?.roles;
-            // setAuth({ user, pwd, roles, accessToken });
-             console.log(decoded);
+            const roles = response.data.is_superuser;
+            setAuth({ user, pwd, roles, accessToken});
+            console.log(roles)
             setUser('');
             setPwd('');
-            setSuccess(true);
+            if (roles === true){
+                navigate("/adminMain")
+            }else if (roles === false){
+                navigate("/jury_meets")
+            }else{
+                navigate(from, { replace: true });
+
+            }
         } catch (err) {
+            // if (!err.response) {
+            //     setErrMsg('No Server Response');
+            // } else if (err.response.status === 400) {
+            //     setErrMsg('Missing Username or Password');
+            // } else if (err.response.status === 401) {
+            //     setErrMsg('Unauthorized');
+            // } else {
+            //     setErrMsg('Login Failed');
+            // }
+            // errRef.current.focus();
         }
     }
 
@@ -73,7 +83,7 @@ const Authorization = () => {
                 <div className="authorization__block">
                     <div className="authorization__block_content">
                         <h1>Вход</h1>
-                        <form onSubmit={handleSubmit}>
+                        <form >
 
                         <div className="authorization__input__box login">
                                 <input className="authorization__login_input" type="login" id="username"
@@ -92,12 +102,12 @@ const Authorization = () => {
                                     required />
                             <span>Введите ваш пароль</span>
                         </div>
-                        <button className="goto__button">Продолжить</button>
+                            <button onClick={handleSubmit} className="goto__button">Продолжить</button>
+                        </form>
                         <div className="authorization__block_bottom">
                             <span>Забыли пароль?</span>
                             <Link className="goto__change_password" to="/ChangePassword">Восстановить</Link>
                         </div>
-                        </form>
                     </div>
                 </div>
             </section>

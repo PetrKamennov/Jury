@@ -7,6 +7,8 @@ const Event = (props, getId) => {
 
     const EventIds = "props.event.eventName";
 
+    localStorage.setItem('id', 1);
+
 
 
     return (

@@ -38,6 +38,8 @@ const AdminEditMeet = (props) => {
         getEvent()
     }, [update])
 
+    console.log(localStorage.getItem("id"))
+
     async function editEvent() {
         axios.patch(`http://aleksbcg.beget.tech/events/${props.EventId}/`, {
             id: props.EventId,

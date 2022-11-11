@@ -17,52 +17,48 @@ import JuryHistory from './pages/JuryHistory';
 import JuriProfile from './pages/JuriProfile';
 import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
-import { useTransition, animated } from 'react-spring';
+import RequireAuth from './components/RequireAuth';
+import Layout from './pages/Layout';
 
 function App() {
-  const location = useLocation();
-  const transitions = useTransition(location,
-    {
-      from: {
-        transform: 'translateY(100%)',
-        position: 'absolute',
-        width: '100%',
-      },
-      enter: { 
-        transform: 'translateY(0%)',
-        opacity: 1, 
-        transition: 'all 0.25s linear 0s'
-       },
-      leave: {
-        transform: 'translateY(-100%)',
-        transition: 'all 0.25s linear 0s'
-      }
-    })
   const [getId1, setgetId1] = useState('');
   const getId2 = (EventIds) =>{
     setgetId1(EventIds)
   }
-  return transitions((props, item, key) => (
+  const ROLES = {
+    'Jury': false,
+    'Admin': true
+  }
+  return (
     <>
-      <animated.div key={key} style={props}>
-        <Routes location={item}>
-          <Route path='/jury_meets' element={<JuryMeet />} />
-          <Route path='/history' element={<JuryHistory />} />
-          <Route path='/profile' element={<JuriProfile />} />
-          <Route path='/' element={<Authorization/>}/>
-          <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
-          <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
-          <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
-          <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
-          <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
-          <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
-          <Route path='/ChangePassword' element={<ChangePassword/>} />
-          <Route path='/EmailChange' element={<EmailChange />} />
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+              {/* Жюри */}
+              <Route element={<RequireAuth allowedRoles={[ROLES.Jury]} />}>
+                <Route path='/jury_meets' element={<JuryMeet />} />
+                <Route path='/history' element={<JuryHistory />} />
+                <Route path='/profile' element={<JuriProfile />} />
+              </Route>
+              {/* Админка */}
+              <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+                <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
+                <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
+                <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
+                <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
+                <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
+                <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
+              </Route>
+              {/* Общее */}
+              <Route path='/login' element={<Authorization/>}/>
+              <Route path='/ChangePassword' element={<ChangePassword/>} />
+              <Route path='/EmailChange' element={<EmailChange />} />
+
+          </Route>
+
+
         </Routes>
-      </animated.div>
     </>
     )
-  );
 }
 
 export default App;
