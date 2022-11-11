@@ -14,8 +14,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< Updated upstream
     "start": "react-scripts start",
     "build": "react-scripts build",
+=======
+    "dev": "concurrently \"npm start npm\" \"run server\"",
+    "start": "react-scripts  start",
+    "build": "react-scripts --openssl-legacy-provider build ",
+>>>>>>> Stashed changes
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
