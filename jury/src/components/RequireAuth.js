@@ -5,7 +5,7 @@ import useAuth from "../hooks/useAuth";
 const RequireAuth = ({ allowedRoles }) => {
     const { auth } = useAuth();
     const location = useLocation();
-
+    console.log(auth.roles)
     return (
         auth.roles === allowedRoles[0]
             ? <Outlet />
