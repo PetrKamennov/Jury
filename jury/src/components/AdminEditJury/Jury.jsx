@@ -1,8 +1,19 @@
+import axios from "axios";
 import React from "react";
 
 import "./Jury.css";
 
 const Jury = (props, remove) => {
+
+    async function DeleteJury(){
+        props.remove(props.jury)
+        axios.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criteria.id}/`
+        ).then(response => {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
 
 
     return (
@@ -15,7 +26,7 @@ const Jury = (props, remove) => {
                     </div>
                     <p>{props.jury.post}</p>
                 </div>
-                <button className="Jury__button" onClick={() => props.remove(props.jury)}>Удалить</button>
+                <button className="Jury__button" onClick={() => DeleteJury}>Удалить</button>
             </div>
         </div>
     )

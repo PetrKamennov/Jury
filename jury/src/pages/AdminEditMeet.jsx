@@ -13,7 +13,7 @@ const AdminEditMeet = (props) => {
 
     const [update, setUpdate] = useState(false)
 
-    const [criterias, setcriteria] = useState([])
+    const [criterias, setcriteria] = useState([{}])
     const [events, setevents] = useState({eventName: '', eventDate: ''})
 
     const createcriteria = (newCriteria) => {
@@ -64,7 +64,6 @@ const AdminEditMeet = (props) => {
 
     async function removeEvent() {
         axios.delete(`http://aleksbcg.beget.tech/events/${EventId}`, {
-            id: EventId,
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {
