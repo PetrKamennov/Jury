@@ -10,9 +10,6 @@ const Project = (props, remove) => {
     async function RemoveProject() {
         props.remove(props.project)
         axios.delete(`http://aleksbcg.beget.tech/projects/Change/${props.project.id}`, {
-            id: props.project.id,
-            projectName: props.project.projectName,
-            projectAuthor: props.project.projectAuthor,
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

@@ -4,11 +4,12 @@ import "./addJury.css";
 
 const AddJury = (props, remove) => {
 
+    const EventId = localStorage.getItem("EventId")
+
     async function addJury() {
         axios.post(`http://aleksbcg.beget.tech/eventJury/`, {
-            eventId: props.EventId,
-            fio: props.jury.fio,
-            post: props.jury.post
+            event: EventId,
+            jury: props.jury.id
         }).then(response => {
             console.log(response.data.posts)
         }).catch(function (error) {
@@ -23,9 +24,9 @@ const AddJury = (props, remove) => {
                 <div className="Jury__text">
                     <div className="Jury__text-spans">
                         <span>{props.number}.</span>
-                        <span>{props.jury.fio}</span>
+                        <span>{props.jury.last_name}</span>
                     </div>
-                    <p>{props.jury.post}</p>
+                    <p>{props.jury.first_name}</p>
                 </div>
                 <button onClick={addJury} className="Jury__button">Добавить</button>
             </div>

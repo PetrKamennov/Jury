@@ -13,7 +13,7 @@ const AdminEditMeet = (props) => {
 
     const [update, setUpdate] = useState(false)
 
-    const [criterias, setcriteria] = useState([{}])
+    const [criterias, setcriteria] = useState([])
     const [events, setevents] = useState({eventName: '', eventDate: ''})
 
     const createcriteria = (newCriteria) => {
@@ -25,8 +25,7 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axios.get(`http://aleksbcg.beget.tech/ReturnCretery/${EventId}`, {
-        })
+        axios.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
         .then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
@@ -34,26 +33,17 @@ const AdminEditMeet = (props) => {
         })
     }
 
-    /*async function getcrit() {
-        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, )
-        .then(response => {
-            setcriteria(response.data)
-        }).catch(function (error) {
-            console.log(error);
-        })
-    }*/
 
     useEffect(() => {
         if (update) return
         getEvent()
-        /*getcrit()*/
     }, [update])
 
     async function editEvent() {
-        axios.patch(`http://aleksbcg.beget.tech/events/${EventId}/`, {
+        axios.patch(`http://aleksbcg.beget.tech/events/${EventId}`, {
             id: EventId,
             eventName: events.eventName,
-            eventDate: events.eventDate
+            eventDate: events.eventDate,
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {
@@ -63,15 +53,15 @@ const AdminEditMeet = (props) => {
 
 
     async function removeEvent() {
-        axios.delete(`http://aleksbcg.beget.tech/events/${EventId}`, {
-        }).then(response => {
+        axios.delete(`http://aleksbcg.beget.tech/events/${EventId}`)
+        .then(response => {
             console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
 
-    console.log(criterias)
+    console.log(EventId)
 
     
 
@@ -98,7 +88,7 @@ const AdminEditMeet = (props) => {
                     <div className="AdminEditMeet__secondBlock-container">
                         <div className="AdminEditMeet__secondBlock__criteriaPull">
                             {criterias.map((criterias, index) =>
-                                <Criteria remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
+                                <Criteria EventId={EventId} remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
                             )}
                         </div>
                         <EditCriteria create={createcriteria}/>

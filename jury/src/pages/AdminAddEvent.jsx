@@ -14,7 +14,7 @@ const AdminAddEvent = (props) => {
 
 
     async function addNewEvent() {
-        axios.post(`http://aleksbcg.beget.tech/events`, {
+        axios.post(`http://aleksbcg.beget.tech/events/`, {
             eventName: events.eventName, 
             eventDate: events.eventDate,
         }).then(response => {
@@ -24,7 +24,6 @@ const AdminAddEvent = (props) => {
         })
     }
 
-    console.log(props.EventId)
 
     return (
         <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >

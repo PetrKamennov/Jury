@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -10,6 +11,16 @@ const Event = (props, getId) => {
     function sendID() {
         localStorage.setItem("EventId", props.event.id)
     }
+    async function startEvent(){
+        axios.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
+            eventIsStarted: true
+        }).then(resp =>{
+        }).catch(error => {
+            console.log(error)
+        })
+        
+    }
+
 
     return (
         <>
@@ -19,10 +30,10 @@ const Event = (props, getId) => {
                         <div className="Criteria__text-spans">
                             <span>{props.event.eventName}</span>
                         </div>
-                        <p onClick={() => props.getId(props.event.eventName)}>{props.event.eventDate}</p>
+                        <p>{props.event.eventDate}</p>
                     </div>
                     <div className="Event__buttons">
-                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.id)}><button>Начать</button></Link>
+                        <Link to='/AdminMeet' onClick={startEvent}><button>Начать</button></Link>
                         <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
