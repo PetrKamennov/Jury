@@ -8,31 +8,29 @@ const AdminEditProjectModal = (props, {create}) => {
     
     const [update, setUpdate] = useState(false)
 
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NzMxMzgwLCJpYXQiOjE2NjUxMzkzODAsImp0aSI6IjNlYTA4ZjE2YmUzNDQyYmViZjQ1Njg5NDkzMDhlZTIzIiwidXNlcl9pZCI6Mn0.sAquDN8WQVpuJnZ8BjLqX8h4ua6KX_IvUH4sdcxDKdc"
+    const EventId = localStorage.getItem("EventId")
+
 
 
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
 
 
-    // const addNewProjects = () => {
-    //     const newProject = {
-    //         ...project, id: Date.now()
-    //     }
-    //     create(newProject)
-    //     setProject({ projectname: '', participant: '' })
-    // }
+     /*const addNewProjects = () => {
+         const newProject = {
+         ...project, id: Date.now()
+         }
+         create(newProject)
+         setProject({ projectname: '', participant: '' })
+     }*/
 
     async function addNewProject() {
         // addNewProjects()
-        axios.post(`http://aleksbcg.beget.tech/projects/${props.EventId}/`, {    
-            headers: {
-                Authorization: "Bearer " + token
-            }
-        },
+        axios.post(`http://aleksbcg.beget.tech/projects/`,
         {
-            event: null,
-            name_of_project: project.projectName,
-            speaker_name: project.projectAuthor
+
+            events: EventId,
+            projectName: project.projectName,
+            projectAuthor: project.projectAuthor
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

@@ -10,6 +10,8 @@ import Navbar from "../components/navbar/Navbar";
 
 const AdminEditJury = (props) => {
 
+    const EventId = localStorage.getItem("EventId")
+
     const [update, setUpdate] = useState(false)
 
     const [jurys, setJury] = useState([
@@ -20,7 +22,7 @@ const AdminEditJury = (props) => {
     }
 
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${props.EventId}`, {
+        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
         }).then(response => {
             setJury(response.data)
         }).catch(function (error) {

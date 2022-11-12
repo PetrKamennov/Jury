@@ -43,9 +43,10 @@ const EventProject = (props, remove) => {
     const [jurys, setjury] = useState([
     ])
 
+    const EventId = localStorage.getItem("EventId")
 
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${props.EventId}`, {
+        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {

@@ -7,9 +7,9 @@ const Event = (props, getId) => {
 
     const EventIds = "props.event.eventName";
 
-    localStorage.setItem('id', 1);
-
-
+    function sendID() {
+        localStorage.setItem("EventId", props.event.id)
+    }
 
     return (
         <>
@@ -17,13 +17,13 @@ const Event = (props, getId) => {
                 <div className="Event__container">
                     <div className="Event__text">
                         <div className="Criteria__text-spans">
-                            <span>{props.event.name_of_event}</span>
+                            <span>{props.event.eventName}</span>
                         </div>
-                        <p onClick={() => props.getId(props.event.eventName)}>{props.event.date_of_event}</p>
+                        <p onClick={() => props.getId(props.event.eventName)}>{props.event.eventDate}</p>
                     </div>
                     <div className="Event__buttons">
-                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.pk)}><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' onClick={() => props.getId(props.event.pk)} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
+                        <Link to='/AdminMeet' onClick={() => props.getId(props.event.id)}><button>Начать</button></Link>
+                        <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
                     </div>
                 </div>
             </div>

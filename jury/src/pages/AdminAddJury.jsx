@@ -10,6 +10,8 @@ import Navbar from "../components/navbar/Navbar";
 
 const AdminAddJury = (props) => {
 
+    const EventId = localStorage.getItem("EventId")
+
     const [jurys, setjury] = useState([
     ])
 
@@ -42,7 +44,7 @@ const AdminAddJury = (props) => {
             <section className="AdminAddJury">
                 <div className="AdminAddJury__pulljury">
                     {jurys.map((jurys, index) =>
-                        <AddJury EventId={props.EventId} number={index + 1} jury={jurys} key={jurys.id} />
+                        <AddJury EventId={EventId} number={index + 1} jury={jurys} key={jurys.id} />
                     )}
 
                 </div>
