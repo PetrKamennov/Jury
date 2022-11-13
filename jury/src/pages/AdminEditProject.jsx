@@ -48,7 +48,7 @@ const AdminEditProject = (props) => {
             <section className="AdminEditProject">
                 <div className="AdminEditProject__pullProject">
                     {projects.map((projects, index) =>
-                        <Project EventId={EventId} remove={removeProject} number={index + 1} project={projects} key={projects.id}/>
+                        <Project remove={removeProject} number={index + 1} project={projects} key={projects.id}/>
                     )}
 
                 </div>

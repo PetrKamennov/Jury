@@ -38,7 +38,7 @@ const AdminEditProjectModal = (props, {create}) => {
         })
     }
 
-    console.log(props.EventId)
+    
 
     return (
         <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >
@@ -57,7 +57,7 @@ const AdminEditProjectModal = (props, {create}) => {
                             </div>
 
                         </div>
-                        <button onClick={addNewProject} >Добавить</button>
+                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button>
                     </div>
                 </div>
             </div>

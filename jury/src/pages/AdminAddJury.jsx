@@ -25,7 +25,7 @@ const AdminAddJury = (props) => {
     }
 
         async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/jury/`, {
+        axios.get(`http://aleksbcg.beget.tech/getAllUsers/`, {
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {
