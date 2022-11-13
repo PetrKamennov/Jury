@@ -3,6 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NavbarJury.css";
 
+const url = window.location.href
+
 const NavbarJury = () => {
     const [navbar__line__AdminEditProject, setLine1Class] = useState("navbar__line-AdminEditProject")
     const [navbar__line__AdminEditJury, setLine2Class] = useState("navbar__line-AdminEditJury")

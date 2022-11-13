@@ -67,7 +67,6 @@ const AdminEditMeet = (props) => {
 
     return (
         <>
-            <Navbar/>
             <section className="AdminEditMeet">
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">
@@ -94,7 +93,8 @@ const AdminEditMeet = (props) => {
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
-                <button>Сохранить</button>
+                <Link to='/AdminMain'><button>Сохранить</button></Link>
+                
             </section>
         </>
     )

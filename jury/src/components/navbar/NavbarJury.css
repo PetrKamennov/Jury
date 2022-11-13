@@ -58,8 +58,11 @@ hr {
 .navbar {
     width: 89.58%;
     height: 59px;
-    margin: 80px 5.2%;
+    padding: 80px 5.2%;
+    padding-bottom: 0px;
     position: fixed;
+    z-index: 100;
+    background-color: #F3F3F3;
 }
 
 .navbar__line {

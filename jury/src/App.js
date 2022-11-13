@@ -17,10 +17,24 @@ import JuryHistory from './pages/JuryHistory';
 import JuriProfile from './pages/JuriProfile';
 import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
+<<<<<<< Updated upstream
 import { useTransition, animated } from 'react-spring';
 import CriteriaPool from './components/AdminEditMeet/CriteriaPool';
 
 function App() {
+=======
+import RequireAuth from './components/RequireAuth';
+import Layout from './pages/Layout';
+import NavbarJury from './components/navbar/NavbarJury';
+import Navbar from './components/navbar/Navbar';
+import { useTransition, animated } from 'react-spring';
+import IsUser from './components/AdminOrJury/AdminOrJury';
+
+
+
+function App() {
+
+>>>>>>> Stashed changes
   const location = useLocation();
   const transitions = useTransition(location,
     {
@@ -39,6 +53,44 @@ function App() {
         transition: 'all 0.25s linear 0s'
       }
     })
+<<<<<<< Updated upstream
+=======
+
+    
+    const ROLES = {
+      'Jury': false,
+      'Admin': true
+    }
+  return transitions((props, item, key) => (
+    <>
+        <IsUser ROLES={ROLES}/>
+        <animated.div key={key} style={props}>
+        <Routes location={item}>
+          <Route path='/' element={<Layout/>}>
+              {/* Жюри */}
+              <Route element={<RequireAuth allowedRoles={[ROLES.Jury]} />}>
+                <Route path='/jury_meets' element={<JuryMeet />} />
+                <Route path='/history' element={<JuryHistory />} />
+                <Route path='/profile' element={<JuriProfile />} />
+              </Route>
+              {/* Админка */}
+              <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
+                <Route path='/AdminEditProject' element={<AdminEditProject />}/>
+                <Route path='/AdminEditJury' element={<AdminEditJury  />} />
+                <Route path='/AdminAddJury' element={<AdminAddJury  />} />
+                <Route path='/AdminEditMeet' element={<AdminEditMeet  />} />
+                <Route path='/AdminMain' element={<AdminMain  />} />
+                <Route path='/AdminMeet' element={<AdminMeet  />} />
+                <Route path='/CriteriaPool' element={<CriteriaPool />} />
+              </Route>
+              {/* Общее */}
+              <Route path='/login' element={<Authorization/>}/>
+              <Route path='/ChangePassword' element={<ChangePassword/>} />
+              <Route path='/EmailChange' element={<EmailChange />} />
+
+          </Route>
+
+>>>>>>> Stashed changes
 
   return transitions((props, item, key) => (
     <>
@@ -58,10 +110,17 @@ function App() {
           <Route path='/ChangePassword' element={<ChangePassword/>} />
           <Route path='/EmailChange' element={<EmailChange />} />
         </Routes>
+<<<<<<< Updated upstream
       </animated.div>
     </>
     )
   );
+=======
+        </animated.div>
+    </>
+    )
+    )
+>>>>>>> Stashed changes
 }
 
 export default App;

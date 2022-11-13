@@ -15,7 +15,6 @@ const JuryHistory = () => {
 
     return (
         <>
-            <NavbarJury/>
             <div className="JuriHistory">
                 <section className="Jury_History_select">
                     <div className="JuryHistory__ProjektPull">

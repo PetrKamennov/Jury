@@ -45,7 +45,6 @@ const AdminEditProject = (props) => {
 
     return (
         <>
-            <Navbar/>
             <section className="AdminEditProject">
                 <div className="AdminEditProject__pullProject">
                     {projects.map((projects, index) =>

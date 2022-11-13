@@ -5,7 +5,6 @@ import NavbarJury from '../components/navbar/NavbarJury';
 const JuriProfile = () => {
     return (
         <>
-            <NavbarJury/>
             <div className="JuryProfile">
                 <section className="white_block">
                 <div className="main_block_profile">

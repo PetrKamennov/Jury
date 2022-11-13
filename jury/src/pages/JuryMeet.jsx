@@ -16,9 +16,27 @@ const JuryMeet = () => {
         { id: 4, projectname: 'Мероприятие', date: '10.08.2001'  },
     ])
 
+<<<<<<< Updated upstream
+=======
+    async function getinf() {
+        axios.get('http://aleksbcg.beget.tech/events/', {
+
+        }).then(response => {
+            setprojects(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
+    
+
+>>>>>>> Stashed changes
     return (
         <>
-            <NavbarJury/>
             <div className="JuryMeet">
 
                 <section className="Jury_Meet_select">
