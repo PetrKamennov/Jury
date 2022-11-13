@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./EventProject.css";
 import ProjectJury from "./ProjectJury";
 import Arrow from "./img/down-arrow 1.png"
 
 const EventProject = (props, remove) => {
+
+    const axiosPrivate = useAxiosPrivate();
+
 
     const [EventProject__Jurrypull, setPull] = useState('EventProject__Jurrypull EventProjecthidden')
     const [EventProject__text_p, setP] = useState('EventProject__text-p')
@@ -46,7 +49,7 @@ const EventProject = (props, remove) => {
     const EventId = localStorage.getItem("EventId")
 
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {

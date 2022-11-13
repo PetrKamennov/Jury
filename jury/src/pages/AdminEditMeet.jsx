@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
 import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
@@ -10,6 +10,9 @@ import Navbar from "../components/navbar/Navbar";
 const AdminEditMeet = (props) => {
 
     const EventId = localStorage.getItem("EventId")
+
+    const axiosPrivate = useAxiosPrivate();
+
 
     const [update, setUpdate] = useState(false)
 
@@ -25,7 +28,7 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axios.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
+        axiosPrivate.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
         .then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
@@ -42,7 +45,7 @@ const AdminEditMeet = (props) => {
     console.log(localStorage.getItem("id"))
 
     async function editEvent() {
-        axios.patch(`http://aleksbcg.beget.tech/events/${EventId}`, {
+        axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${EventId}`, {
             id: EventId,
             eventName: events.eventName,
             eventDate: events.eventDate,
@@ -55,7 +58,7 @@ const AdminEditMeet = (props) => {
 
 
     async function removeEvent() {
-        axios.delete(`http://aleksbcg.beget.tech/events/${EventId}`)
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/events/${EventId}`)
         .then(response => {
             console.log(response.data)
         }).catch(function (error) {

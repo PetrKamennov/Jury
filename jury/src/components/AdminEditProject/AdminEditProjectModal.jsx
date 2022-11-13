@@ -1,4 +1,4 @@
-import axios from "axios";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import React from "react";
 import { useState } from "react";
 
@@ -9,6 +9,8 @@ const AdminEditProjectModal = (props, {create}) => {
     const [update, setUpdate] = useState(false)
 
     const EventId = localStorage.getItem("EventId")
+
+    const axiosPrivate = useAxiosPrivate();
 
 
 
@@ -25,7 +27,7 @@ const AdminEditProjectModal = (props, {create}) => {
 
     async function addNewProject() {
         // addNewProjects()
-        axios.post(`http://aleksbcg.beget.tech/projects/`,
+        axiosPrivate.post(`http://aleksbcg.beget.tech/projects/`,
         {
 
             events: EventId,

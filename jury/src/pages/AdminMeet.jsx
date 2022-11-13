@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import "../components/AdminMeet/AdminMeet.css";
 import EventProject from "../components/AdminMeet/EvetProject";
 
@@ -15,8 +15,11 @@ const AdminMeet = (props => {
     const [projects, setprojects] = useState([
     ])
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/projects/${EventId}`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/${EventId}`, {
         }).then(response => {
             setprojects(response.data)
         }).catch(function (error) {

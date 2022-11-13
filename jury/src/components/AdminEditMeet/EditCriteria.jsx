@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./EditCriteria.css";
 import { Link } from "react-router-dom";
 import Criteria from "./Сriteria";
@@ -9,10 +9,11 @@ const EditCriteria = (props, {create}) => {
 
     const [criteria, setCriteria] = useState({ criterianame: '', description: '' })
 
+    const axiosPrivate = useAxiosPrivate();
 
 
     async function getCriteria() {
-        axios.get(`http://aleksbcg.beget.tech/criteria/`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/criteria/`, {
         }).then(response => {
             setCriteria(response.data)
         }).catch(function (error) {
@@ -32,7 +33,7 @@ const EditCriteria = (props, {create}) => {
     const EventId = localStorage.getItem("EventId")
 
     async function addCriteria() {
-        axios.post(`http://aleksbcg.beget.tech/cretery/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/cretery/`, {
             eventId: EventId,
             creteryName: criteria.criterianame,
             creteryDescription: criteria.description,

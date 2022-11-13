@@ -1,4 +1,4 @@
-import axios from "axios";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -9,6 +9,9 @@ import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
 import Navbar from "../components/navbar/Navbar";
 
 const AdminAddJury = (props) => {
+
+    const axiosPrivate = useAxiosPrivate();
+
 
     const EventId = localStorage.getItem("EventId")
 
@@ -25,7 +28,7 @@ const AdminAddJury = (props) => {
     }
 
         async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/getAllUsers/`, {
+            axiosPrivate.get(`http://aleksbcg.beget.tech/getAllUsers/`, {
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {

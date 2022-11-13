@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useState, useEffect } from "react";
+import CriteriaPool from './components/AdminEditMeet/CriteriaPool';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import AdminEditJury from './pages/AdminEditJury';
 import AdminEditMeet from './pages/AdminEditMeet';
@@ -40,6 +41,7 @@ function App() {
                 <Route path='/AdminEditMeet' element={<AdminEditMeet  />} />
                 <Route path='/AdminMain' element={<AdminMain  />} />
                 <Route path='/AdminMeet' element={<AdminMeet  />} />
+                <Route path='/CriteriaPool' element={<CriteriaPool />} />
               </Route>
               {/* Общее */}
               <Route path='/login' element={<Authorization/>}/>

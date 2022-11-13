@@ -1,13 +1,16 @@
 import React from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./AddCrit.css";
 
 const AddCrit = (props, remove) => {
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     const EventId = localStorage.getItem("EventId")
 
     async function AddCrit() {
-        axios.post(`http://aleksbcg.beget.tech/AddCreteryOnEvent/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/AddCreteryOnEvent/`, {
             event: EventId,
             cretery: props.criteria.id
         }).then(response => {

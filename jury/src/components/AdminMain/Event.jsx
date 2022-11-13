@@ -1,4 +1,4 @@
-import axios from "axios";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -6,13 +6,16 @@ import "./Event.css";
 
 const Event = (props, getId) => {
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     const EventIds = "props.event.eventName";
 
     function sendID() {
         localStorage.setItem("EventId", props.event.id)
     }
     async function startEvent(){
-        axios.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
+        axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
             eventIsStarted: true
         }).then(resp =>{
         }).catch(error => {

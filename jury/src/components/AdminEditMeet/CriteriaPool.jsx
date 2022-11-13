@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./CriteriaPool.css";
 import Navbar from "../navbar/Navbar";
 import { Link } from "react-router-dom";
@@ -9,6 +9,9 @@ import { useEffect } from "react";
 import AddCrit from "./AddCrit";
 
 const CriteriaPool = (props) => {
+
+    const axiosPrivate = useAxiosPrivate();
+
     const [criterias, setcriteria] = useState([
     ])
     const [modalActive, setModalActive] = useState(false);
@@ -17,7 +20,7 @@ const CriteriaPool = (props) => {
     }
     const [update, setUpdate] = useState(false)
     async function getcrit() {
-        axios.get(`http://aleksbcg.beget.tech/createNewCretery/`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/createNewCretery/`, {
         }).then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
