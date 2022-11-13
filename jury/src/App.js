@@ -18,10 +18,6 @@ import RequireAuth from './components/RequireAuth';
 import Layout from './pages/Layout';
 
 function App() {
-  const [getId1, setgetId1] = useState('');
-  const getId2 = (EventIds) =>{
-    setgetId1(EventIds)
-  }
   const ROLES = {
     'Jury': false,
     'Admin': true
@@ -38,12 +34,12 @@ function App() {
               </Route>
               {/* Админка */}
               <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
-                <Route path='/AdminEditProject' element={<AdminEditProject EventId={getId1}/>}/>
-                <Route path='/AdminEditJury' element={<AdminEditJury EventId={getId1} />} />
-                <Route path='/AdminAddJury' element={<AdminAddJury EventId={getId1} />} />
-                <Route path='/AdminEditMeet' element={<AdminEditMeet EventId={getId1} />} />
-                <Route path='/AdminMain' element={<AdminMain getidPZDC={getId2} />} />
-                <Route path='/AdminMeet' element={<AdminMeet EventId={getId1} />} />
+                <Route path='/AdminEditProject' element={<AdminEditProject />}/>
+                <Route path='/AdminEditJury' element={<AdminEditJury  />} />
+                <Route path='/AdminAddJury' element={<AdminAddJury  />} />
+                <Route path='/AdminEditMeet' element={<AdminEditMeet  />} />
+                <Route path='/AdminMain' element={<AdminMain  />} />
+                <Route path='/AdminMeet' element={<AdminMeet  />} />
               </Route>
               {/* Общее */}
               <Route path='/login' element={<Authorization/>}/>

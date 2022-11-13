@@ -2,12 +2,12 @@ import React from "react";
 import { useRef, useState, useEffect } from 'react';
 import AuthContext from "../content/AuthProvider";
 import "../components/Authorization/Authorization.css";
-import axios from "axios";
+import axios from "../api/axios";
 import jwt_decode from 'jwt-decode';
 import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-const LOGIN_URL = 'http://aleksbcg.beget.tech/api/token/';
+const LOGIN_URL = '/api/token/';
 
 const Authorization = () => {
 
@@ -48,10 +48,11 @@ const Authorization = () => {
             );
             console.log(JSON.stringify(response.data));
             //console.log(JSON.stringify(response));
+            const refreshToken = response.data.refresh;
             const accessToken = response.data.access;
             const roles = response.data.is_superuser;
-            setAuth({ user, pwd, roles, accessToken});
-            console.log(roles)
+            setAuth({ user, pwd, roles, accessToken, refreshToken });
+            console.log(refreshToken)
             setUser('');
             setPwd('');
             if (roles === true){
@@ -63,6 +64,7 @@ const Authorization = () => {
 
             }
         } catch (err) {
+            console.log(err)
             // if (!err.response) {
             //     setErrMsg('No Server Response');
             // } else if (err.response.status === 400) {

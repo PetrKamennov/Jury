@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
 import Event from "../components/AdminMain/Event";
 import "../components/AdminMain/AdminMain.css";
@@ -10,6 +10,7 @@ import AdminAddEvent from "./AdminAddEvent";
 
 
 const AdminMain = (props, getidPZDC) => {
+    const axiosPrivate = useAxiosPrivate();
 
     const [modalActive, setModalActive] = useState(false);
 
@@ -24,7 +25,7 @@ const AdminMain = (props, getidPZDC) => {
     }
 
     async function getinf(){
-        axios.get('http://aleksbcg.beget.tech/events/', {
+        axiosPrivate.get('/events/', {
         }).then(response => {
                 setEvent(response.data)
             }).catch(function (error) {
