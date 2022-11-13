@@ -42,6 +42,9 @@
     text-align: center;
     color: #FFFFFF;
 }
+.AdminMain__buttons button:hover{
+    background: #c90916;
+}
 @media (max-width: 1470px){
     .AdminMain h1{
         align-self: center;

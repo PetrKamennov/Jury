@@ -105,6 +105,9 @@ body {
     margin-right: 100px;
     margin-top: 54px;
 }
+.AdminEditProject > button:hover{
+    background: #c90916;
+}
 @media (max-width: 1050px){
     .AdminEditProject > button{
         align-self: center;

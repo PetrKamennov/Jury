@@ -128,6 +128,10 @@ body {
     color: #FFFFFF;
     border: none;
     margin-top: 65px;
+
+}
+.goto__button:hover{
+    background: #c90916;
 }
 .goto__change_password{
     font-family: 'IBM Plex Sans';

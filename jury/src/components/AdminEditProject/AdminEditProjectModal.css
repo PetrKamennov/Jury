@@ -107,6 +107,9 @@
     border: none;
     margin-top: 65px;
 }
+.AdminEditProjectModal__content-regJury button:hover{
+    background: #c90916;
+}
 @media (max-width: 800px){
     .AdminEditProjectModal__content{
         width: 400px;
