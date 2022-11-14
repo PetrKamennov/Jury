@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import "../components/JuryMeet/jury_meet.css"
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import NavbarJury from '../components/navbar/NavbarJury';
+import { update } from 'react-spring';
+import axios from 'axios';
 
 
 
@@ -15,9 +17,6 @@ const JuryMeet = () => {
         { id: 3, projectname: 'Мероприятие', date: '10.08.2001'  },
         { id: 4, projectname: 'Мероприятие', date: '10.08.2001'  },
     ])
-
-<<<<<<< Updated upstream
-=======
     async function getinf() {
         axios.get('http://aleksbcg.beget.tech/events/', {
 
@@ -32,9 +31,6 @@ const JuryMeet = () => {
         if (update) return
         getinf()
     }, [update])
-    
-
->>>>>>> Stashed changes
     return (
         <>
             <div className="JuryMeet">

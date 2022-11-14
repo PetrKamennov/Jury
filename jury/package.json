@@ -20,11 +20,7 @@
   },
   "scripts": {
     "dev": "concurrently \"npm start npm\" \"run server\"",
-<<<<<<< Updated upstream
-    "start": "react-scripts  start",
-=======
     "start": "react-scripts start --openssl-legacy-provider",
->>>>>>> Stashed changes
     "build": "react-scripts --openssl-legacy-provider build ",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
