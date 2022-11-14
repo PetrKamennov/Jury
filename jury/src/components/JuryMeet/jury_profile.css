@@ -109,9 +109,7 @@ input{
     border: solid 3px #FFFFFF;
 }
 .save_profile:hover{
-    color:#E21A1A;
-    background: #FFFFFF;
-    border: solid 3px #E21A1A;
+    background: #CB0A17;
 }
 @media (max-width: 1560px) {
     .main_block_profile{

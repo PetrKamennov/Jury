@@ -40,6 +40,9 @@
     text-align: center;
     color: #FFFFFF;
 }
+.AdminMeet > button:hover{
+    background: #c90916;
+}
 @media (max-width: 1470px){
     .AdminMeet h1{
         align-self: center;

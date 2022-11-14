@@ -63,6 +63,9 @@
     color: #E21A1A;
     border: none;
 }
+.Criteria__button:hover{
+    background: #CFCFCF;
+}
 @media (max-width: 1050px){
     .Criteria__text span{
         font-size: 24px;
