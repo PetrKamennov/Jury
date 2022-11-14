@@ -51,7 +51,9 @@ const Authorization = () => {
             const refreshToken = response.data.refresh;
             const accessToken = response.data.access;
             const roles = response.data.is_superuser;
-            setAuth({ user, pwd, roles, accessToken, refreshToken });
+            const decoded = jwt_decode(accessToken)
+            // console.log(decoded.user_id)
+            setAuth({ user, pwd, roles, accessToken, refreshToken, user_id: decoded.user_id });
             console.log(refreshToken)
             setUser('');
             setPwd('');

@@ -41,7 +41,7 @@ const AdminMeet = (props => {
                         <EventProject number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
-                <button>Жюри</button>
+                <button>Завершить и создать отчет</button>
             </section>
         </>
     )
