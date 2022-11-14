@@ -17,6 +17,7 @@ import ChangePassword from './pages/ChangePassword';
 import EmailChange from './pages/EmailChange';
 import RequireAuth from './components/RequireAuth';
 import Layout from './pages/Layout';
+import JuryVote from './pages/JuryVote';
 
 function App() {
   const ROLES = {
@@ -44,6 +45,7 @@ function App() {
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
               </Route>
               {/* Общее */}
+                <Route path='/JuryVote' element={<JuryVote />} />
               <Route path='/login' element={<Authorization/>}/>
               <Route path='/ChangePassword' element={<ChangePassword/>} />
               <Route path='/EmailChange' element={<EmailChange />} />

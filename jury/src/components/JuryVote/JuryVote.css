@@ -1,0 +1,51 @@
+.JuryVote{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+.JuryVote__container{
+    width: 1718px;
+}
+
+.JuryVote__container > h1{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    color: #000000;
+    margin: 0 0 20px 0;
+}
+.JuryVote__container > p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 52px;
+    color: #000000;
+    margin: 0 0 54px 0;
+}
+.JuryVote__container__buttons{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.JuryVote__container__buttons > button {
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    color: #FFFFFF;
+    margin:  54px 92px 0 0;
+}
+.JuryVote__CriteriasPull{
+    display: flex;
+    overflow-x: scroll;
+}

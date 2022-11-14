@@ -1,35 +1,42 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { Link } from "react-router-dom";
-import Event from "../components/AdminMain/Event";
-import "../components/AdminMain/AdminMain.css";
-import Navbar from "../components/navbar/Navbar";
-import AdminAddEvent from "./AdminAddEvent";
+import "./CriteriaVote.css";
 
 
 
-const JuryVote = () => {
+const CriteriaVote = (props) => {
 
 
     return (
         <>
-
-            <section className="JuryVote">
-                <h1>Мероприятия</h1>
-                <div className="JuryVote__CriteriasPull">
-                    {events.map((events) =>
-                        <Event getId={getIdEvent} event={events} key={events.id} />
-                    )}
+            <div className="CriteriaVote">
+                <div className="CritrriaVote__top">
+                    <b>{props.criteria.creteryName}</b>
                 </div>
-                <div className="AdminMain__buttons">
-                    <button>Жюри</button>
-                    <button onClick={() => setModalActive(true)}>Мероприятие</button>
+                <div className="CriteriaVote__bottom">
+                       { props.criteria.creteryType === 1 
+                         ?<select name="" id="">
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                         </select>
+                        :props.criteria.creteryType === 2
+                        ?<select name="" id="">
+                            <option value="">да</option>
+                            <option value="">нет</option>
+                        </select>
+                        : <select name="" id="">
+                            <option value="">нет</option>
+                            <option value="">скорее нет</option>
+                            <option value="">затрудняюсь ответить</option>
+                            <option value="">скорее да</option>
+                            <option value="">да</option>
+                        </select>}
                 </div>
-            </section>
-            <AdminAddEvent active={modalActive} setActive={setModalActive} />
+            </div>
         </>
     )
 }
 
-export default JuryVote
+export default CriteriaVote

@@ -17,7 +17,7 @@ const ProjectJury = (props, remove) => {
                         </div>
                         <p>{props.jury.job}</p>
                     </div>
-                    <span className="ProjectJury__indicator">{props.jury.ready}</span>
+                    <Link><span className="ProjectJury__indicator">Хуй</span></Link> 
                 </div>
             </div>
         </>
