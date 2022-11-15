@@ -13,16 +13,13 @@ const JuryVote = () => {
     const [update, setUpdate] = useState(false)
     const [criterias, setCriterias] = useState([
     ])
-    const [project, setProject] = useState([
-    ])
 
-    const projectId = localStorage.getItem("projectId")
-    const EventId = localStorage.getItem("EventId")
 
+<<<<<<< HEAD
     async function getinf() {
-        axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
+        axiosPrivate.get(`/returnCretery/${EventId}`, {
         }).then(response => {
-                setCriterias([response.data])  
+                setCriterias(response.data)  
             console.log(response.data.length)
         }).catch(function (error) {
             console.log(error);
@@ -39,22 +36,33 @@ const JuryVote = () => {
     }
 
     console.log(criterias)
+=======
+    // async function getinf() {
+    //     axiosPrivate.get('/events/', {
+    //     }).then(response => {
+    //         setEvent(response.data)
+    //     }).catch(function (error) {
+    //         console.log(error);
+    //     })
+    // }
+>>>>>>> parent of c50f35a7c (ё1231232)
 
 
-    useEffect(() => {
-        if (update) return
-        getinf()
-        getinf2()
-    }, [update])
 
+    // useEffect(() => {
+    //     if (update) return
+    //     getinf()
+    // }, [update])
+
+    // console.log(events)
 
     return (
         <>
 
             <section className="JuryVote">
                 <div className="JuryVote__container">
-                    <h1>{project.projectName}</h1>
-                    <p>Докладчик: {project.projectAuthor}</p>
+                    <h1>Название проекта 1</h1>
+                    <p>Докладчик: Имя конкурсанта</p>
                     <div className="JuryVote__CriteriasPull">
                         {criterias.map((criteria) =>
                             <CriteriaVote criteria={criteria} key={criteria.id} />

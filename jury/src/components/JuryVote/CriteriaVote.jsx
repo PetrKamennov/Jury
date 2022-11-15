@@ -5,16 +5,15 @@ import "./CriteriaVote.css";
 
 const CriteriaVote = (props) => {
 
-    console.log(props.criteria)
 
     return (
         <>
             <div className="CriteriaVote">
                 <div className="CritrriaVote__top">
-                    <b>{props.criteria[0].creteryName}</b>
+                    <b>{props.criteria.creteryName}</b>
                 </div>
                 <div className="CriteriaVote__bottom">
-                       { props.criteria[0].creteryType === 1 
+                       { props.criteria.creteryType === 1 
                          ?<select name="" id="">
                             <option value="">1</option>
                             <option value="">2</option>

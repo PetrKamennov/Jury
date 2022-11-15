@@ -23,7 +23,6 @@ const AdminMain = (props, getidPZDC) => {
         props.getidPZDC(EventIds)
         console.log(EventIds)
     }
-    
 
     async function getinf(){
         axiosPrivate.get('/events/', {
@@ -35,7 +34,6 @@ const AdminMain = (props, getidPZDC) => {
     }
 
 
-    setInterval(getinf, 10000);
 
     useEffect(() => {
         if (update) return
