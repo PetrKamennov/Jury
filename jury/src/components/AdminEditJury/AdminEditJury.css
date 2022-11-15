@@ -92,6 +92,7 @@ body {
     color: #FFFFFF;
     margin-right: 100px;
     margin-top: 54px;
+    cursor: pointer;
 }
 .AdminEditJury__button:hover{
     background: #c90916;

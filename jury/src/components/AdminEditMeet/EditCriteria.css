@@ -60,6 +60,10 @@
     text-align: center;
     color: #E21A1A;
     border: none;
+    cursor: pointer;
+}
+.EditCriteria__button:hover{
+    background: #CFCFCF;
 }
 .EditCriteria__Link {
     position: relative;

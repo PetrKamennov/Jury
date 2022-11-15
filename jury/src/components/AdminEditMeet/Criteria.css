@@ -62,6 +62,7 @@
     text-align: center;
     color: #E21A1A;
     border: none;
+    cursor: pointer;
 }
 .Criteria__button:hover{
     background: #CFCFCF;

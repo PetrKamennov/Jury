@@ -106,6 +106,7 @@
     color: #FFFFFF;
     border: none;
     margin-top: 65px;
+    cursor: pointer;
 }
 .AdminEditProjectModal__content-regJury button:hover{
     background: #c90916;

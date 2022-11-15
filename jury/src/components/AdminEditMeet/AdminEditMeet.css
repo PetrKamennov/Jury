@@ -164,6 +164,7 @@ body {
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }
 .AdminEditMeet__firstBlock__right button:nth-child(1):hover{
     background: #c90916;
@@ -181,6 +182,7 @@ body {
     text-align: center;
     color: #E21A1A;
     margin-top: 40px;
+    cursor: pointer;
 }
 .AdminEditMeet__firstBlock__right button:nth-child(2):hover{
     background: #CFCFCF;
@@ -243,6 +245,7 @@ body {
     text-align: center;
     color: #FFFFFF;
     margin-top: 66px;
+    cursor: pointer;
 }
 .AdminEditMeet > button:hover{
     background: #c90916;
