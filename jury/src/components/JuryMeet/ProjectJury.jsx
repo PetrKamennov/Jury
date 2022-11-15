@@ -5,6 +5,10 @@ import "./ProjectJury.css";
 
 const ProjectJury = (props, remove) => {
 
+    function setId(){
+        localStorage.setItem("projectId", props.jury.id)
+    }
+
 
     return (
         <>
@@ -13,11 +17,11 @@ const ProjectJury = (props, remove) => {
                     <div className="ProjectJury__text">
                         <div className="ProjectJury__text-spans">
                             <span>{props.number}.</span>
-                            <span>{props.jury.juryname}</span>
+                            <span>{props.jury.projectName}</span>
                         </div>
-                        <p>{props.jury.job}</p>
+                        <p>{props.jury.projectAuthor}</p>
                     </div>
-                    <Link><span className="ProjectJury__indicator">Хуй</span></Link> 
+                    <Link to='/JuryVote'><button onClick={setId}>Проголосовать</button></Link> 
                 </div>
             </div>
         </>

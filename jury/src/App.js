@@ -33,6 +33,7 @@ function App() {
                 <Route path='/jury_meets' element={<JuryMeet />} />
                 <Route path='/history' element={<JuryHistory />} />
                 <Route path='/profile' element={<JuriProfile />} />
+                <Route path='/JuryVote' element={<JuryVote />} />
               </Route>
               {/* Админка */}
               <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
@@ -45,7 +46,6 @@ function App() {
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
               </Route>
               {/* Общее */}
-                <Route path='/JuryVote' element={<JuryVote />} />
               <Route path='/login' element={<Authorization/>}/>
               <Route path='/ChangePassword' element={<ChangePassword/>} />
               <Route path='/EmailChange' element={<EmailChange />} />

@@ -11,53 +11,50 @@ const JuryVote = () => {
     const axiosPrivate = useAxiosPrivate();
 
     const [update, setUpdate] = useState(false)
-    const [criterias, setCriterias] = useState([{
-        creteryName: "хуй", creteryType: 1
-    },{
-        creteryName: "хуй 2", creteryType: 2
-        }, {
-            creteryName: "хуй 3", creteryType: 3
-        }, {
-            creteryName: "хуй 2", creteryType: 2
-        }, {
-            creteryName: "хуй 3", creteryType: 3
-        }, {
-            creteryName: "хуй 2", creteryType: 2
-        }, {
-            creteryName: "хуй 3", creteryType: 3
-        }, {
-            creteryName: "хуй 2", creteryType: 2
-        }, {
-            creteryName: "хуй 3", creteryType: 3
-        }
+    const [criterias, setCriterias] = useState([
+    ])
+    const [project, setProject] = useState([
     ])
 
+    const projectId = localStorage.getItem("projectId")
+    const EventId = localStorage.getItem("EventId")
 
-    // async function getinf() {
-    //     axiosPrivate.get('/events/', {
-    //     }).then(response => {
-    //         setEvent(response.data)
-    //     }).catch(function (error) {
-    //         console.log(error);
-    //     })
-    // }
+    async function getinf() {
+        axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
+        }).then(response => {
+                setCriterias([response.data])  
+            console.log(response.data.length)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+    async function getinf2() {
+        axiosPrivate.get(`/projects/${projectId}`, {
+        }).then(response => {
+            setProject(response.data[0])
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    console.log(criterias)
 
 
+    useEffect(() => {
+        if (update) return
+        getinf()
+        getinf2()
+    }, [update])
 
-    // useEffect(() => {
-    //     if (update) return
-    //     getinf()
-    // }, [update])
-
-    // console.log(events)
 
     return (
         <>
 
             <section className="JuryVote">
                 <div className="JuryVote__container">
-                    <h1>Название проекта 1</h1>
-                    <p>Докладчик: Имя конкурсанта</p>
+                    <h1>{project.projectName}</h1>
+                    <p>Докладчик: {project.projectAuthor}</p>
                     <div className="JuryVote__CriteriasPull">
                         {criterias.map((criteria) =>
                             <CriteriaVote criteria={criteria} key={criteria.id} />
