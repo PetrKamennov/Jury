@@ -1,20 +1,24 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./Criteria.css";
 
 const Criteria = (props, remove) => {
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     async function RemoveProject() {
         props.remove(props.criteria)
-        axios.delete(`http://aleksbcg.beget.tech/cretery/${props.criteria.id}`, {
-            id: props.criteria.id,
-        }).then(response => {
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criteria.CreteryIdIbTable}`
+        ).then(response => {
             console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
+
+    console.log(props.criteria.id)
 
     return (
         <>

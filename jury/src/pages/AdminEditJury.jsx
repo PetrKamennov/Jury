@@ -4,11 +4,18 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import axios from 'axios';
 import Jury from "../components/AdminEditJury/Jury";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
+
 
 import "../components/AdminEditJury/AdminEditJury.css";
 import Navbar from "../components/navbar/Navbar";
 
 const AdminEditJury = (props) => {
+
+    const EventId = localStorage.getItem("EventId")
+
+    const axiosPrivate = useAxiosPrivate();
+
 
     const [update, setUpdate] = useState(false)
 
@@ -20,7 +27,7 @@ const AdminEditJury = (props) => {
     }
 
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${props.EventId}`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
         }).then(response => {
             setJury(response.data)
         }).catch(function (error) {

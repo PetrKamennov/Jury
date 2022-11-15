@@ -1,20 +1,25 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import "../components/AdminMeet/AdminMeet.css";
 import EventProject from "../components/AdminMeet/EvetProject";
 
 
 const AdminMeet = (props => {
 
+    const EventId = localStorage.getItem("EventId")
+
     const [update, setUpdate] = useState(false)
 
     const [projects, setprojects] = useState([
     ])
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/projects/${props.EventId}`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/${EventId}`, {
         }).then(response => {
             setprojects(response.data)
         }).catch(function (error) {
@@ -33,10 +38,10 @@ const AdminMeet = (props => {
                 <h1>Мероприятия</h1>
                 <div className="AdminMeet__ProjektPull">
                     {projects.map((projects, index) =>
-                        <EventProject EventId={props.EventId} number={index + 1} project={projects} key={projects.id} />
+                        <EventProject number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
-                <button>Жюри</button>
+                <button>Завершить и создать отчет</button>
             </section>
         </>
     )

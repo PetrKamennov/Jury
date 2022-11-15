@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
 import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
@@ -9,6 +9,9 @@ import Navbar from "../components/navbar/Navbar";
 
 const AdminEditMeet = (props) => {
 
+    const EventId = localStorage.getItem("EventId")
+
+    const axiosPrivate = useAxiosPrivate();
 
 
     const [update, setUpdate] = useState(false)
@@ -25,24 +28,27 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axios.get(`http://aleksbcg.beget.tech/cretery/getCretery/${props.EventId}`, {
-        }).then(response => {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
+        .then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
 
+
     useEffect(() => {
         if (update) return
         getEvent()
     }, [update])
 
+    console.log(localStorage.getItem("id"))
+
     async function editEvent() {
-        axios.patch(`http://aleksbcg.beget.tech/events/${props.EventId}/`, {
-            id: props.EventId,
+        axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${EventId}`, {
+            id: EventId,
             eventName: events.eventName,
-            eventDate: events.eventDate
+            eventDate: events.eventDate,
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {
@@ -52,16 +58,17 @@ const AdminEditMeet = (props) => {
 
 
     async function removeEvent() {
-        axios.delete(`http://aleksbcg.beget.tech/events/${props.EventId}`, {
-            id: props.EventId,
-        }).then(response => {
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/events/${EventId}`)
+        .then(response => {
             console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
 
-    console.log(criterias)
+    console.log(EventId)
+
+    
 
     return (
         <>
@@ -70,14 +77,8 @@ const AdminEditMeet = (props) => {
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">
                         <div className="AdminEditMeet__firstBlock__left">
-                            <div className="AdminEditMeet__firstBlock__left__input__box eventName">
-                                <input type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
-                                <span>Наименование проекта</span>
-                            </div>
-                            <div className="AdminEditMeet__firstBlock__left__input__box Date">
-                                <span>Дата и время проведения</span>    
-                                <input type="date" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
-                            </div>
+                            <input placeholder="Наименование проекта" type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
+                            <input placeholder="Дата и время проведения" type="text" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
                         </div>
                         <div className="AdminEditMeet__firstBlock__right">
                             <Link to='/AdminMain'><button onClick={removeEvent}>Удалить мероприятие</button></Link>
@@ -92,10 +93,10 @@ const AdminEditMeet = (props) => {
                     <div className="AdminEditMeet__secondBlock-container">
                         <div className="AdminEditMeet__secondBlock__criteriaPull">
                             {criterias.map((criterias, index) =>
-                                <Criteria remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
+                                <Criteria EventId={EventId} remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
                             )}
                         </div>
-                        <EditCriteria EventId={props.EventId} create={createcriteria}/>
+                        <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
                 <button>Сохранить</button>

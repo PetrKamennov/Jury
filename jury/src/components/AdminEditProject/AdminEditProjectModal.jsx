@@ -1,4 +1,4 @@
-import axios from "axios";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import React from "react";
 import { useState } from "react";
 
@@ -8,31 +8,31 @@ const AdminEditProjectModal = (props, {create}) => {
     
     const [update, setUpdate] = useState(false)
 
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY3NzMxMzgwLCJpYXQiOjE2NjUxMzkzODAsImp0aSI6IjNlYTA4ZjE2YmUzNDQyYmViZjQ1Njg5NDkzMDhlZTIzIiwidXNlcl9pZCI6Mn0.sAquDN8WQVpuJnZ8BjLqX8h4ua6KX_IvUH4sdcxDKdc"
+    const EventId = localStorage.getItem("EventId")
+
+    const axiosPrivate = useAxiosPrivate();
+
 
 
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
 
 
-    // const addNewProjects = () => {
-    //     const newProject = {
-    //         ...project, id: Date.now()
-    //     }
-    //     create(newProject)
-    //     setProject({ projectname: '', participant: '' })
-    // }
+     /*const addNewProjects = () => {
+         const newProject = {
+         ...project, id: Date.now()
+         }
+         create(newProject)
+         setProject({ projectname: '', participant: '' })
+     }*/
 
     async function addNewProject() {
         // addNewProjects()
-        axios.post(`http://aleksbcg.beget.tech/projects/${props.EventId}/`, {    
-            headers: {
-                Authorization: "Bearer " + token
-            }
-        },
+        axiosPrivate.post(`http://aleksbcg.beget.tech/projects/`,
         {
-            event: null,
-            name_of_project: project.projectName,
-            speaker_name: project.projectAuthor
+
+            events: EventId,
+            projectName: project.projectName,
+            projectAuthor: project.projectAuthor
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {
@@ -40,7 +40,7 @@ const AdminEditProjectModal = (props, {create}) => {
         })
     }
 
-    console.log(props.EventId)
+    
 
     return (
         <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >
@@ -59,7 +59,7 @@ const AdminEditProjectModal = (props, {create}) => {
                             </div>
 
                         </div>
-                        <button onClick={addNewProject} >Добавить</button>
+                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button>
                     </div>
                 </div>
             </div>
