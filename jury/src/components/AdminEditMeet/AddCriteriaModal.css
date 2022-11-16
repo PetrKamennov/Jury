@@ -14,6 +14,7 @@
 
 .AddCriteriaModal.active{
     transform: scale(1);
+    border: none !important;
 }
 
 .AddCriteriaModal__content{
@@ -24,7 +25,6 @@
     flex-direction: column;
     align-items: center;
 }
-
 .AddCriteriaModal__content h1{
     font-family: 'IBM Plex Sans';
     font-style: normal;
@@ -40,34 +40,46 @@
 
 .AddCriteriaModal__content-regJury__inputs{
     width: 1310px;
-        height: 212px;
         display: flex;
         justify-content: space-between;
 }
 
 .AddCriteriaModal__content-regJury__inputs input{
         width: 566px;
-        height: 70px;
+        font-size: 26px;
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 400;
         background: #FFFFFF;
         display: flex;
         border: none;
-        margin-top: 34px;
+        margin-top: 70px;
         border-bottom: 2px solid #394A58;
         flex-direction: column;
         align-items: center;
     }
-    .AddCriteriaModal__content-regJury__inputs select{
-        width: 566px;
-        height: 70px;
+.AddCriteriaModal__content-regJury__inputs h5{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0px;
+}
+.AddCriteriaModal__content-regJury__inputs select{
+        width: 500px;
         background: #FFFFFF;
         display: flex;
-        margin-top: 34px;
+        margin-top: 20px;
         flex-direction: column;
         align-items: center;
         border: none;
         outline: none;
         border-bottom: 2px solid #394A58;
-    }
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+}
 
 .AddCriteriaModal__content button{
     width: 566px;
@@ -85,7 +97,9 @@
     margin-top: 65px;
     cursor: pointer;
 }
-
+.AddCriteriaModal__content button:hover{
+    background: #c90916;
+}
 .AddCriteriaModal__content-container{
     width: 1310px;
     display: flex;
@@ -103,7 +117,7 @@
     .AddCriteriaModal__content h1{
         align-self: center;
         font-size: 40px;
-        margin: 40px 0px 100px 0px;
+        margin: 40px 0px 0px 0px;
     }
     .AddCriteriaModal__content-regJury__inputs{
         width: 650px;
@@ -113,17 +127,20 @@
     }
     .AddCriteriaModal__content-regJury__inputs input{
         width: 500px;
-        height: 45px;
+        font-size: 20px;
     }
     .AddCriteriaModal__content button{
         align-self: center;
-        margin-top: 160px;
+        margin-top: 120px;
+    }
+    .AddCriteriaModal__content-regJury__inputs-right{
+        margin-top: 60px;
     }
 }
 @media (max-width: 730px){
     .AddCriteriaModal__content{
         width: 350px;
-        height: 600px;
+        height: 580px;
     }
     .AddCriteriaModal__content-container{
         width: 300px;
@@ -131,8 +148,8 @@
     }
     .AddCriteriaModal__content h1{
         align-self: center;
-        font-size: 30px;
-        margin: 40px 0px;
+        font-size: 28px;
+        margin: 20px 0px 0px 0px;
     }
     .AddCriteriaModal__content-regJury__inputs{
         width: 300px;
@@ -141,12 +158,18 @@
         align-items: center;
     }
     .AddCriteriaModal__content-regJury__inputs input{
-        width: 200px;
-        height: 30px;
+        width: 280px;
+        margin-top: 50px;
+    }
+    .AddCriteriaModal__content-regJury__inputs-right{
+        width: 280px;
+    }
+    .AddCriteriaModal__content-regJury__inputs-right select{
+        width: 280px;
     }
     .AddCriteriaModal__content button{
         align-self: center;
-        margin-top: 100px;
+        margin-top: 120px;
         width: 250px;
         height: 45px;
         font-size: 22px;
