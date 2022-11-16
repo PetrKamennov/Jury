@@ -14,6 +14,7 @@
 
 .AdminEditProjectModal.active {
     transform: scale(1);
+    border: none !important;
 }
 
 .AdminEditProjectModal__content {
@@ -63,6 +64,10 @@
     border-bottom: 2px solid #394A58;;
     flex-direction: column;
     align-items: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
 }
 
 .AdminEditProjectModal__content-regJury__inputs__box span {
@@ -98,7 +103,6 @@
     background: #E21A1A;
     font-style: normal;
     font-family: 'IBM Plex Sans';
-    font-style: normal;
     font-weight: 500;
     font-size: 32px;
     line-height: 42px;
@@ -114,14 +118,22 @@
 @media (max-width: 800px){
     .AdminEditProjectModal__content{
         width: 400px;
+        height: 440px;
     }
     .AdminEditProjectModal__content h1{
         font-weight: 500;
         font-size: 28px;
         justify-content: center;
+        margin: 40px 0px 0px 0px;
     }
     .AdminEditProjectModal__content-regJury__inputs{
         width: 330px;
+    }
+    .AdminEditProjectModal__content-regJury__inputs__box span{
+        font-size: 20px;
+    }
+    .AdminEditProjectModal__content-regJury__inputs__box{
+        margin-top: 40px;
     }
     .AdminEditProjectModal__content-regJury button{
         width: 310px;
