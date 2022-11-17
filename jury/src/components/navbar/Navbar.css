@@ -54,7 +54,7 @@ hr{
     margin: 0;
 }
 
-.navbar{
+.navbar {
     width: 1720px;
     height: 59px;
     padding: 80px 5.2%;
@@ -64,30 +64,10 @@ hr{
     background-color: #F3F3F3;
 }
 .navbar__line{
-    display: flex;
+    width: 100%;
+    border: none;
+    border-top: 1px solid #CCCCCC;
 }
-.navbar__line-AdminEditProject{
-    width: 124px;
-}
-.navbar__line-AdminEditJury{
-    width: 88px;
-}
-.navbar__line-AdminEditMeet{
-    width: 185px;
-}
-.navbar__line-end{
-    width: 50%;
-}
-
-.navbar__line-AdminEditJury-space,
-.navbar__line-AdminEditProject-space{
-    width: 45px;
-}
-
-.active{
-    border: 1px solid #E21A1A;
-}
-
 
 .navbar__button{
     font-family: 'IBM Plex Sans';
@@ -98,10 +78,34 @@ hr{
     display: flex;
     align-items: center;
     color: #000000;
+    padding-bottom: 18px;
+    border-bottom: 3px solid #F3F3F3;
+}
+.navbar__button:hover{
+    border-bottom: 3px solid #E21A1A;
+}
+.navbar__button:focus{
+    border-bottom: 3px solid #E21A1A;
 }
 .navbar__button:nth-child(2){
     margin: 0 50px;
 }
 .navbar__buttons{
     display: flex;
+}
+@media (max-width: 820px){
+    .navbar__button{
+        font-size: 20px;
+        padding-bottom: 0px;
+    }
+}
+@media (max-width: 530px){
+    .navbar__button{
+        font-size: 14px;
+    }
+}
+@media (max-width: 420px){
+    .navbar__button:nth-child(2) {
+        margin: 0 25px;
+    }
 }

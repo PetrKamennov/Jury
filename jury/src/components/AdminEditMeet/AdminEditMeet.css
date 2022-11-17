@@ -263,8 +263,14 @@ body {
     .AdminEditMeet__firstBlock{
         height: 390px;
     }
+    .AdminEditMeet__firstBlock__left{
+       margin-top: 35px;
+    }
     .AdminEditMeet__firstBlock__right{
         margin-top: 40px;
+    }
+    .AdminEditMeet__firstBlock__right button:nth-child(2){
+        margin-top: 20px;
     }
 }
 @media (max-width: 700px){
@@ -286,12 +292,26 @@ body {
     }
 }
 @media (max-width: 600px){
+    .AdminEditMeet__firstBlock__left__input__box.eventName{
+        margin-bottom: 0px;
+        width: 80%;
+    }
+    .AdminEditMeet__firstBlock__left__input__box.Date{
+        width: 80%;
+    }
     .AdminEditMeet__firstBlock__left input{
-        width: 70%;
+        width: 100%;
         justify-content: center;
     }
     .AdminEditMeet__firstBlock__left{
         align-items: center;
+        width: 100%;
+    }
+    .AdminEditMeet__firstBlock__left__input__box.eventName span{
+        font-size: 20px;
+    }
+    .AdminEditMeet__firstBlock__left__input__box span{
+        font-size: 20px;
     }
     .AdminEditMeet__firstBlock__right {
         width: 80%;

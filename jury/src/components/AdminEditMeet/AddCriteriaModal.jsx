@@ -1,17 +1,21 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AddCriteriaModal.css";
 
 const AddCriteriaModal = ({ active, setActive, create }) => {
 
+    const axiosPrivate = useAxiosPrivate();
+
+
+
     const [crit, setCrit] = useState({ creteryName: '', creteryDescription: '', creteryType: ''})
 
 
     async function addNewCriteria() {
-        axios.post(`http://aleksbcg.beget.tech/createNewCretery/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/createNewCretery/`, {
             creteryName: crit.creteryName,
             creteryDescription: crit.creteryDescription,
             creteryType: crit.creteryType

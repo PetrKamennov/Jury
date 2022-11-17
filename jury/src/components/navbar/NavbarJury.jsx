@@ -35,15 +35,7 @@ const NavbarJury = () => {
                     <Link to='/history' className="navbar__button" onClick={AdminEditJuryPage}>История</Link>
                     <Link to='/profile' className="navbar__button" onClick={AdminEditMeetPage}>Профиль</Link>
                 </div>
-                <div className="navbar__line">
-                    <hr className={navbar__line__AdminEditProject} />
-                    <hr className="navbar__line-AdminEditProject-space" />
-                    <hr className={navbar__line__AdminEditJury} />
-                    <hr className="navbar__line-AdminEditJury-space" />
-                    <hr className={navbar__line__AdminEditMeet} />
-                    <hr className="navbar__line-end" />
-
-                </div>
+                <hr className="navbar__line"/>
             </div>
         </>
     )

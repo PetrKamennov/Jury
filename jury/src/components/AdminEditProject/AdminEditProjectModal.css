@@ -126,7 +126,7 @@
 }
 @media (max-width: 410px){
     .AdminEditProjectModal__content{
-        width: 300px;
+        width: 360px;
     }
     .AdminEditProjectModal__content h1{
         font-weight: 500;
@@ -134,7 +134,7 @@
         justify-content: center;
     }
     .AdminEditProjectModal__content-regJury__inputs{
-        width: 260px;
+        width: 285px;
     }
     .AdminEditProjectModal__content-regJury button{
         width: 240px;

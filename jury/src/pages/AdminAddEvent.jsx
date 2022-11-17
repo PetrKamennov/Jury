@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
 import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
@@ -12,9 +12,11 @@ const AdminAddEvent = (props) => {
 
     const [events, setEvent] = useState({ eventName: '', eventDate: '' })
 
+    const axiosPrivate = useAxiosPrivate();
+
 
     async function addNewEvent() {
-        axios.post(`http://aleksbcg.beget.tech/events/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/events/`, {
             eventName: events.eventName, 
             eventDate: events.eventDate,
         }).then(response => {

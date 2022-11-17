@@ -173,3 +173,64 @@ body {
      position: relative;
      width: 300px; height: 46px; margin-bottom: 35px;
  }
+@media (max-width: 820px) {
+    .authorization__block{
+        width: 90%;
+    }
+    .authorization__block_content{
+        width: 90%;
+        align-items: center;
+    }
+    .authorization__input__box{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .authorization__input__box span{
+        margin-top: -45px;
+        position: static;
+    }
+    .authorization__input__box input{
+        width: 95%;
+    }
+    .goto__button{
+        width: 85%;
+        font-size: 32px;
+    }
+    .authorization__block_bottom{
+        width: 80%;
+    }
+    .authorization__block_bottom span{
+        font-size: 20px;
+    }
+    .authorization__block_bottom a{
+        font-size: 20px;
+    }
+}
+@media (max-width: 460px){
+    .authorization__block{
+        height: 550px;
+    }
+    .authorization__block h1{
+        font-size: 40px;
+        margin-top: 66px;
+    }
+    .authorization__input__box{
+        margin: 0px;
+    }
+    .authorization__input__box.login{
+        margin-top: 45px;
+    }
+    .authorization__input__box.password{
+        margin-top: 45px;
+    }
+    .goto__button{
+        margin-top: 65px;
+    }
+    .authorization__block_bottom span{
+        font-size: 14px;
+    }
+    .authorization__block_bottom a{
+        font-size: 14px;
+    }
+}
