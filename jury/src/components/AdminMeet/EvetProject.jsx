@@ -46,11 +46,7 @@ const EventProject = (props, remove) => {
     const EventId = localStorage.getItem("EventId")
 
     async function getinf() {
-<<<<<<< Updated upstream
-        axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
-=======
         axiosPrivate.get(`http://aleksbcg.beget.tech/juryGolInfo/${EventId}`, {
->>>>>>> Stashed changes
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {
