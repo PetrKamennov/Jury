@@ -1,15 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./project.css";
 
 const Project = (props, remove) => {
 
+    const axiosPrivate = useAxiosPrivate();
 
 
     async function RemoveProject() {
         props.remove(props.project)
-        axios.delete(`http://aleksbcg.beget.tech/projects/Change/${props.project.id}`, {
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/projects/Change/${props.project.id}`, {
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

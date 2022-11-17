@@ -9,28 +9,22 @@ import AdminAddEvent from "./AdminAddEvent";
 
 
 
-const AdminMain = (props, getidPZDC) => {
+const JuryVote = () => {
     const axiosPrivate = useAxiosPrivate();
 
-    const [modalActive, setModalActive] = useState(false);
-
     const [update, setUpdate] = useState(false)
-    const [events, setEvent] = useState([{
+    const [criterias, setCriterias] = useState([{
     },
     ])
-    
-    const getIdEvent = (EventIds) => {
-        props.getidPZDC(EventIds)
-        console.log(EventIds)
-    }
 
-    async function getinf(){
+
+    async function getinf() {
         axiosPrivate.get('/events/', {
         }).then(response => {
-                setEvent(response.data)
-            }).catch(function (error) {
-                console.log(error);
-            })
+            setEvent(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
     }
 
 
@@ -41,13 +35,13 @@ const AdminMain = (props, getidPZDC) => {
     }, [update])
 
     console.log(events)
-    
+
     return (
         <>
 
-            <section className="AdminMain">
+            <section className="JuryVote">
                 <h1>Мероприятия</h1>
-                <div className="AdminMain__EventPull">
+                <div className="JuryVote__CriteriasPull">
                     {events.map((events) =>
                         <Event getId={getIdEvent} event={events} key={events.id} />
                     )}
@@ -62,4 +56,4 @@ const AdminMain = (props, getidPZDC) => {
     )
 }
 
-export default AdminMain
+export default JuryVote

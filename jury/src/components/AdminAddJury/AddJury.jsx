@@ -1,13 +1,16 @@
 import React from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./addJury.css";
 
 const AddJury = (props, remove) => {
 
     const EventId = localStorage.getItem("EventId")
 
+    const axiosPrivate = useAxiosPrivate();
+
+
     async function addJury() {
-        axios.post(`http://aleksbcg.beget.tech/eventJury/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/eventJury/`, {
             event: EventId,
             jury: props.jury.id
         }).then(response => {

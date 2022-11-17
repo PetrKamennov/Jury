@@ -3,15 +3,21 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import Cors from 'cors'
 import axios from 'axios';
-import {BrowserRouter} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './content/AuthProvider';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

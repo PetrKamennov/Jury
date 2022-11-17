@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import axios from 'axios';
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AdminAddJuryModal.css";
 
@@ -9,9 +9,11 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
 
     const [jury, setJury] = useState({ name: '', post: '', userName: '', password: '', email: ''})
 
+    const axiosPrivate = useAxiosPrivate();
+
 
     async function addNewJury() {
-        axios.post(`http://aleksbcg.beget.tech/createUser/`, {
+        axiosPrivate.post(`http://aleksbcg.beget.tech/createUser/`, {
                 name: jury.name,
                 post: jury.post,
                 userName: jury.userName,

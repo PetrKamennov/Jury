@@ -4,8 +4,9 @@ import { createContext, useState } from "react";
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
-    const [auth, setAuth] = useState({roles : null});
+    const [auth, setAuth] = useState({});
     
+    localStorage.setItem('user_id', auth.user_id)
     
 
     return (
