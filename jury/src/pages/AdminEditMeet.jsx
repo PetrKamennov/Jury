@@ -76,7 +76,7 @@ const AdminEditMeet = (props) => {
                         </div>
                         <div className="AdminEditMeet__firstBlock__right">
                             <Link to='/AdminMain'><button onClick={removeEvent}>Удалить мероприятие</button></Link>
-                            <button onClick={editEvent}>Добавить члена жюри</button>
+                            <button onClick={editEvent}>Отредактировать Мероприятие</button>
                         </div>
                     </div>
                 </div>
@@ -93,8 +93,12 @@ const AdminEditMeet = (props) => {
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
+<<<<<<< Updated upstream
                 <Link to='/AdminMain'><button>Сохранить</button></Link>
                 
+=======
+                <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
+>>>>>>> Stashed changes
             </section>
         </>
     )

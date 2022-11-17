@@ -239,6 +239,22 @@ body {
     color: #FFFFFF;
     margin-top: 66px;
 }
+
+.AdminMeet__save-button{
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 100px;
+    margin-top: 40px;
+}
 @media (max-width: 1200px){
     .AdminEditMeet__firstBlock-container{
         justify-content: center;

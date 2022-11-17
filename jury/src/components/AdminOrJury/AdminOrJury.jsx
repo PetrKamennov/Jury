@@ -5,7 +5,11 @@ import {useAuth} from "../../hooks/useAuth";
 
 
 
+<<<<<<< Updated upstream
 function IsUser(props){
+=======
+function IsUser(props){ 
+>>>>>>> Stashed changes
     const url = window.location.href
     const nonUrl = `http://localhost:3000/adminMain`
     

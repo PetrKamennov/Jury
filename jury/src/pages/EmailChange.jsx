@@ -13,7 +13,7 @@ const EmailChange = () => {
                     <div className="email_change__block_content">
                         <h1>Сброс пароля</h1>
                         <p>Заявка на восстановление пароля отправлена.</p>
-                        <Link className="goto__button_email_change" to="/">Авторизироваться</Link>
+                        <Link className="goto__button_email_change" to="/login">Авторизироваться</Link>
                     </div>
                 </div>
             </section>

@@ -41,7 +41,7 @@ const AdminEditProject = (props) => {
         getinf()
     }, [update])
 
-    console.log(projects)
+    console.log(EventId)
 
     return (
         <>

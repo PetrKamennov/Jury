@@ -46,7 +46,11 @@ const EventProject = (props, remove) => {
     const EventId = localStorage.getItem("EventId")
 
     async function getinf() {
+<<<<<<< Updated upstream
         axios.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
+=======
+        axiosPrivate.get(`http://aleksbcg.beget.tech/juryGolInfo/${EventId}`, {
+>>>>>>> Stashed changes
         }).then(response => {
             setjury(response.data)
         }).catch(function (error) {
@@ -58,6 +62,7 @@ const EventProject = (props, remove) => {
         if (update) return
         getinf()
     }, [update])
+    console.log(props.jurys)
 
     return (
         <>
@@ -65,7 +70,7 @@ const EventProject = (props, remove) => {
                 <div className="EventProject__container">
                     <div className="EventProject__text">
                         <div className="EventProject__text-spans">
-                            <span>{props.number}.</span>
+                            <span>{props.number}</span>
                             <span>{props.project.projectName}</span>s
                         </div>
                         <p className={EventProject__text_p}>{props.project.projectAuthor}</p>

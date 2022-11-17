@@ -4,9 +4,12 @@ import { useEffect } from "react";
 import axios from 'axios';
 import "../components/AdminMeet/AdminMeet.css";
 import EventProject from "../components/AdminMeet/EvetProject";
+import { Link } from "react-router-dom";
 
 
-const AdminMeet = (props => {
+const AdminMeet = (props) => {
+    
+    const axiosPrivate = useAxiosPrivate();
 
     const EventId = localStorage.getItem("EventId")
 
@@ -16,7 +19,8 @@ const AdminMeet = (props => {
     ])
 
     async function getinf() {
-        axios.get(`http://aleksbcg.beget.tech/projects/${EventId}`, {
+
+        axiosPrivate.get(`http://aleksbcg.beget.tech/juryGolInfo/${EventId}`, {
         }).then(response => {
             setprojects(response.data)
         }).catch(function (error) {
@@ -28,7 +32,7 @@ const AdminMeet = (props => {
         if (update) return
         getinf()
     }, [update])
-
+    console.log(EventId)
     return (
         <>
             <section className="AdminMeet">
@@ -38,10 +42,10 @@ const AdminMeet = (props => {
                         <EventProject number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
-                <button>Жюри</button>
+                <Link to="/AdminMain"><button>Завершить и создать отчет</button></Link>
             </section>
         </>
     )
 }
-)
+
 export default AdminMeet
