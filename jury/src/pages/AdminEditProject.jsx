@@ -28,7 +28,7 @@ const AdminEditProject = (props) => {
         setProject(projects.filter(p => p.id !== project.id))
     }
     async function getinf() {
-        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/${EventId}`
+        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/events/${EventId}`
         ).then(response => {
             setProject(response.data)
         }).catch(function (error) {

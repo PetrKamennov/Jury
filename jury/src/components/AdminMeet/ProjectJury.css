@@ -17,7 +17,6 @@
 .ProjectJury__text {
     display: flex;
     width: 48%;
-    justify-content: space-between;
 }
 
 .ProjectJury__text-spans {
@@ -44,7 +43,7 @@
     display: flex;
     align-items: center;
     color: #394A58;
-    margin-left: 15px;
+    margin: 0px 15px;
 }
 .ProjectJury__text span:nth-child(2){
     margin-left: 15px;

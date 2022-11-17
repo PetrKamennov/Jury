@@ -98,12 +98,7 @@ const AdminEditMeet = (props) => {
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
-<<<<<<< Updated upstream
-                <Link to='/AdminMain'><button>Сохранить</button></Link>
-                
-=======
                 <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
->>>>>>> Stashed changes
             </section>
         </>
     )

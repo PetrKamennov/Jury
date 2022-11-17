@@ -14,14 +14,16 @@ const ProjectJury = (props, remove) => {
                 <div className="ProjectJury__container">
                     <div className="ProjectJury__text">
                         <div className="ProjectJury__text-spans">
-                            <span>{props.number}.</span>
-                            {props.project.map(() => 
-                                <></>
-                            )}
+                            <span>{props.number}</span>
                         </div>
-                        <p>{props.jury.first_name}</p>
+                        <p>{props.jury.juryName}</p>
                     </div>
-                    <span className="ProjectJury__indicator"></span>
+                    <span className="ProjectJury__indicator">
+                        {props.jury.state == true ? 
+                            <p>Проголосовал</p>
+                            : <p>Не проголосовал</p>
+                        }
+                    </span>
                 </div>
             </div>
         </>

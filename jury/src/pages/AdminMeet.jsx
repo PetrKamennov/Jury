@@ -5,24 +5,35 @@ import axios from 'axios';
 import "../components/AdminMeet/AdminMeet.css";
 import EventProject from "../components/AdminMeet/EvetProject";
 import { Link } from "react-router-dom";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
 
 
 const AdminMeet = (props) => {
     
     const axiosPrivate = useAxiosPrivate();
 
-    const EventId = localStorage.getItem("EventId")
-
+    
     const [update, setUpdate] = useState(false)
-
+    
     const [projects, setprojects] = useState([
     ])
+    const EventId = localStorage.getItem("EventId")
+    
 
     async function getinf() {
 
-        axiosPrivate.get(`http://aleksbcg.beget.tech/juryGolInfo/${EventId}`, {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/events/${EventId}`, {
         }).then(response => {
             setprojects(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+    async function getType() {
+
+        axiosPrivate.get(`http://aleksbcg.beget.tech/GetResult/${EventId}/1`, {
+        }).then(response => {
+            console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
@@ -32,7 +43,7 @@ const AdminMeet = (props) => {
         if (update) return
         getinf()
     }, [update])
-    console.log(EventId)
+    console.log(setprojects)
     return (
         <>
             <section className="AdminMeet">
@@ -42,7 +53,7 @@ const AdminMeet = (props) => {
                         <EventProject number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
-                <Link to="/AdminMain"><button>Завершить и создать отчет</button></Link>
+                <Link to="/AdminMain"><button className="AdminMeet__button-done" onClick={getType}>Завершить и создать отчет</button></Link>
             </section>
         </>
     )
