@@ -43,7 +43,12 @@ const EventProjectHistory = (props) => {
                 score[index] = { author: '', projectName: '', score: 0 };
                 score[index].author = response.data[0].author[index];
                 score[index].projectName = response.data[0].projects[index];
-                score[index].score = 0;
+                if (response.data[0].score > 1) {
+                    score[index].score = response.data[0].score[index];
+                    
+                }else{
+                    score[index].score = 0;
+                }
             }
             setjury(score)
         }).catch(function (error) {
