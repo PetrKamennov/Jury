@@ -120,6 +120,11 @@ body {
         width: 360px;
     }
 }
+@media (max-width: 500px){
+    .AdminEditProject{
+        padding-top: 104px;
+    }
+}
 @media (max-width: 460px){
     .AdminEditProject > button{
         width: 260px;
