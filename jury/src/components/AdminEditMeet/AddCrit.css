@@ -1,5 +1,4 @@
 .Crit {
-    height: 200px;
     margin-bottom: 32px;
     width: 100%;
     background: #FFFFFF;
@@ -26,6 +25,7 @@
     display: flex;
     align-items: center;
     color: #000000;
+    margin-left: 10px;
 }
 
 .Crit__text span {
@@ -42,4 +42,67 @@
 }
 .Crit__text-spans{
     display: flex;
+}
+@media (max-width: 1100px){
+    .Crit__text span{
+        font-size: 20px;
+    }
+    .Crit__text p{
+        font-size: 16px;
+    }
+    
+    .Jury__button {
+        font-size: 18px;
+        height: 35px;
+    }
+    
+}
+@media (max-width: 850px){
+    .Crit__text{
+        width: 60%;
+    }
+}
+@media (max-width: 680px){
+    .Crit__container{
+        padding: 0px 5px;
+    }
+    .Crit__text{
+        width: 58%;
+    }
+    .Crit__text span{
+        font-size: 16px;
+    }
+    .Crit__text p{
+        font-size: 14px;
+    }
+    .Jury__button{
+        font-size: 16px;
+        height: 35px;
+    }
+}
+@media (max-width: 500px){
+    .Crit__text{
+        width: 64%;
+    }
+    .Crit__text span{
+        font-size: 14px;
+    }
+    .Crit__text p{
+        font-size: 12px;
+    }
+    .Jury__button{
+        font-size: 12px;
+        height: 30px;
+    }
+}
+@media (max-width: 390px){
+    .Crit__text{
+        width: 60%;
+    }
+    .Crit__text span{
+        font-size: 12px;
+    }
+    .Crit__text p{
+        font-size: 10px;
+    }
 }

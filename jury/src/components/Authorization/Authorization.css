@@ -201,6 +201,7 @@ body {
     .goto__button{
         width: 85%;
         font-size: 32px;
+        margin: 65px auto 0px auto;
     }
     .authorization__block_bottom{
         width: 80%;

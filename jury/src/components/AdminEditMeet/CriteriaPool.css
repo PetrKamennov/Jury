@@ -91,3 +91,11 @@ body {
     cursor: pointer;
     margin-top: 80px;
 }
+@media (max-width: 500px){
+    .CriteriaPool {
+        padding-top: 84px;
+    }
+    .CriteriaPool__button{
+        margin: 80px auto 0px auto;
+    }
+}
