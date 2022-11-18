@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AdminAddJuryModal.css";
@@ -53,7 +54,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                                     </div>
                                 </div>
                             </div>
-                    <button onClick={addNewJury}>Зарегистрировать</button>
+                    <Link to="/AdminAddJury"><button onClick={addNewJury}>Зарегистрировать</button></Link>
                 </div>
             </div>
         </div>
