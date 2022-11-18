@@ -1,15 +1,18 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import useAxiosPrivate from "../../hooks/useAxiosPrivate";
+import axios from 'axios';
 import "./EventProject.css";
 import ProjectJury from "./ProjectJury";
 import Arrow from "./img/down-arrow 1.png"
+import { axiosPrivate } from "../../api/axios";
+import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 const EventProject = (props, remove) => {
 
     const axiosPrivate = useAxiosPrivate();
 
+    const EventId = localStorage.getItem("EventId")
 
     const [EventProject__Jurrypull, setPull] = useState('EventProject__Jurrypull EventProjecthidden')
     const [EventProject__text_p, setP] = useState('EventProject__text-p')
@@ -33,6 +36,16 @@ const EventProject = (props, remove) => {
         }
         setIsMenuClicked(!isMenuClicked)
     }
+    const [jurys, setjury] = useState([])
+
+    async function getinf() {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/creteryAddScore/${props.project.id}`, {
+        }).then(response => {
+            setjury(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
     
     const OpenJury = () => {
         setPull('EventProject__Jurrypull')
@@ -41,26 +54,10 @@ const EventProject = (props, remove) => {
         setEventProject__buttons_2("EventProject__buttons-2")
         setEventProject__buttons_3("EventProject__buttons-3")
         setEventProject__buttons('EventProject__buttons active')
-    }
-
-    const [jurys, setjury] = useState([
-    ])
-
-    const EventId = localStorage.getItem("EventId")
-
-    async function getinf() {
-        axiosPrivate.get(`http://aleksbcg.beget.tech/eventJury/getJury/${EventId}`, {
-        }).then(response => {
-            setjury(response.data)
-        }).catch(function (error) {
-            console.log(error);
-        })
-    }
-
-    useEffect(() => {
-        if (update) return
         getinf()
-    }, [update])
+    }
+
+
 
     return (
         <>
@@ -68,8 +65,8 @@ const EventProject = (props, remove) => {
                 <div className="EventProject__container">
                     <div className="EventProject__text">
                         <div className="EventProject__text-spans">
-                            <span>{props.number}.</span>
-                            <span>{props.project.projectName}</span>s
+                            <span>{props.number}</span>
+                            <span>{props.project.projectName}</span>
                         </div>
                         <p className={EventProject__text_p}>{props.project.projectAuthor}</p>
                     </div>

@@ -1,48 +1,44 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from "react-router-dom";
 import "../components/JuryMeet/jury_meet.css"
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import NavbarJury from '../components/navbar/NavbarJury';
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { update } from 'react-spring';
+import axios from 'axios';
 
 
 
 const JuryMeet = () => {
 
-    const [update, setUpdate] = useState(false)
 
-    const axiosPrivate = useAxiosPrivate();
-
-
-    const [events, setevents] = useState([
+    const [projects, setprojects] = useState([
+        { id: 1, projectname: 'Мероприятие', date: '10.08.2001' },
+        { id: 2, projectname: 'Мероприятие', date: '10.08.2001'  },
+        { id: 3, projectname: 'Мероприятие', date: '10.08.2001'  },
+        { id: 4, projectname: 'Мероприятие', date: '10.08.2001'  },
     ])
-
-    const auth = localStorage.getItem("user_id")
     async function getinf() {
-        axiosPrivate.get(`/getEventForJury/${auth}`, {
+        axios.get('http://aleksbcg.beget.tech/events/', {
 
         }).then(response => {
-            setevents(...events, response.data[0])
+            setprojects(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
-    console.log(events)
-    
+
     useEffect(() => {
         if (update) return
         getinf()
     }, [update])
-
     return (
         <>
-            <NavbarJury/>
             <div className="JuryMeet">
 
                 <section className="Jury_Meet_select">
                     <div className="JuryMeet__ProjektPull">
-                        {events.map((events, index) =>
-                            <EventProjectJury number={index + 1} event={events} key={events.id} />
+                        {projects.map((projects, index) =>
+                            <EventProjectJury number={index + 1} project={projects} key={projects.id} />
                         )}
                     </div>
                 </section>

@@ -72,7 +72,6 @@ const AdminEditMeet = (props) => {
 
     return (
         <>
-            <Navbar/>
             <section className="AdminEditMeet">
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">
@@ -82,7 +81,7 @@ const AdminEditMeet = (props) => {
                         </div>
                         <div className="AdminEditMeet__firstBlock__right">
                             <Link to='/AdminMain'><button onClick={removeEvent}>Удалить мероприятие</button></Link>
-                            <button onClick={editEvent}>Добавить члена жюри</button>
+                            <button onClick={editEvent}>Отредактировать Мероприятие</button>
                         </div>
                     </div>
                 </div>
@@ -99,7 +98,7 @@ const AdminEditMeet = (props) => {
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
-                <button>Сохранить</button>
+                <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
             </section>
         </>
     )

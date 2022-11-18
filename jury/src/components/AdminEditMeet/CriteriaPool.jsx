@@ -38,7 +38,6 @@ const CriteriaPool = (props) => {
 
     return(
         <>
-            <Navbar/>
             <section className="CriteriaPool">
                 <div className="CriteriaPool__pullcrit">
                     {criterias.map((criterias, index) =>

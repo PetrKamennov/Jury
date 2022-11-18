@@ -41,11 +41,10 @@ const AdminEditProject = (props) => {
         getinf()
     }, [update])
 
-    console.log(projects)
+    console.log(EventId)
 
     return (
         <>
-            <Navbar/>
             <section className="AdminEditProject">
                 <div className="AdminEditProject__pullProject">
                     {projects.map((projects, index) =>

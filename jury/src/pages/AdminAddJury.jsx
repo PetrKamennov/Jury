@@ -43,7 +43,6 @@ const AdminAddJury = (props) => {
 
     return (
         <>
-            <Navbar/>
             <section className="AdminAddJury">
                 <div className="AdminAddJury__pulljury">
                     {jurys.map((jurys, index) =>

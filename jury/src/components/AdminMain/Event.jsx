@@ -17,13 +17,13 @@ const Event = (props, getId) => {
     async function startEvent(){
         axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
             eventIsStarted: true
-        }).then(resp =>{
+        }).then(response =>{
+            console.log(response.data)
         }).catch(error => {
             console.log(error)
         })
         
     }
-
 
     return (
         <>
