@@ -13,3 +13,9 @@
     margin-top: 184px;
     overflow-y: scroll;
 }
+@media (max-width: 500px){
+    .JuryMeet__ProjektPull{
+        margin-top: 54px;
+    }
+
+}
