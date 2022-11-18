@@ -22,12 +22,13 @@ const JuryMeet = () => {
         axiosPrivate.get(`/getEventForJury/${auth}`, {
 
         }).then(response => {
-            setevents(...events, response.data[0])
+            setevents(...events, response.data)
+            console.log(response.data)
+
         }).catch(function (error) {
             console.log(error);
         })
     }
-    console.log(events)
     
     useEffect(() => {
         if (update) return
