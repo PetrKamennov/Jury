@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 import "./AdminEditProjectModal.css";
+import { Link } from "react-router-dom";
 
 const AdminEditProjectModal = (props, {create}) => {
     
@@ -59,7 +60,7 @@ const AdminEditProjectModal = (props, {create}) => {
                             </div>
 
                         </div>
-                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button>
+                        <Link to="/AdminEditProject"><button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button></Link>
                     </div>
                 </div>
             </div>

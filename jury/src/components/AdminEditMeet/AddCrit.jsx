@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./AddCrit.css";
 
@@ -32,7 +33,7 @@ const AddCrit = (props, remove) => {
                     </div>
                     <p>{props.criteria.creteryDescription}</p>
                 </div>
-                <button onClick={AddCrit} className="Jury__button">Добавить</button>
+                <Link to="/AdminEditMeet"><button onClick={AddCrit} className="Jury__button">Добавить</button></Link>
             </div>
         </div>
     )

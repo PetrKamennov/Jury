@@ -37,7 +37,7 @@ const AdminAddEvent = (props) => {
                             <input placeholder="Наименование мероприятия " type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })} />
                             <input placeholder="Дата проведения" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })} />
                         </div>
-                        <button onClick={addNewEvent} >Добавить</button>
+                        <Link to="/AdminMain"><button onClick={addNewEvent} >Добавить</button></Link>
                     </div>
                 </div>
             </div>
