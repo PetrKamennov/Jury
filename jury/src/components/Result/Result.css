@@ -1,0 +1,119 @@
+.Result{
+    /* width: 100vw; */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Result__table{
+    width: 1722px;
+    height: 90%;
+    overflow: scroll;
+}
+.Result__header{
+    display: flex;
+    height: 50px;
+}
+.Result__header-number{
+    width: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #E21A1A;
+    border: 2px solid #000000;
+}
+
+.Result__header-number span{
+    width: 348px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    
+    color: #FFFFFF;
+}
+.Result__header-projectName span{
+    
+    display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0px auto;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    
+}
+
+.Result__header-projectName {
+    width: 348px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #E21A1A;
+    border: 2px solid #000000;
+}
+
+.CriteriaHead span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.CriteriaHead {
+    width: 188px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E21A1A;
+    border: 2px solid #000000;
+}
+.Result__header__itog span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.Result__header__itog {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E21A1A;
+    border: 2px solid #000000;
+}
+.TableTr{
+    display: flex;
+    height: 78px;
+}
+.TableTr-number{
+    width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3F3F3;
+    border: 2px solid #000000;
+}
+.TableTr-projectName {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3F3F3;
+    border: 2px solid #000000;
+}

@@ -24,6 +24,7 @@ import NavbarJury from './components/navbar/NavbarJury';
 import { useTransition, animated } from 'react-spring';
 import IsUser from './components/AdminOrJury/AdminOrJury';
 import JuryVote from './pages/JuryVote';
+import Result from './pages/Result';
 
 
 
@@ -72,6 +73,7 @@ function App() {
                 <Route path='/AdminMain' element={<AdminMain  />} />
                 <Route path='/AdminMeet' element={<AdminMeet  />} />
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
+                <Route path='/Result' element={<Result/>} />
               </Route>
               {/* Общее */}
               <Route path='/login' element={<Authorization/>}/>
