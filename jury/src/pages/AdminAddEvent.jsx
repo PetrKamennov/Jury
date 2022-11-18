@@ -34,8 +34,14 @@ const AdminAddEvent = (props) => {
                     <h1>Добавление мероприятия</h1>
                     <div className="AdminEditProjectModal__content-regJury">
                         <div className="AdminEditProjectModal__content-regJury__inputs">
-                            <input placeholder="Наименование мероприятия " type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })} />
-                            <input placeholder="Дата проведения" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })} />
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box eventName">
+                                <input className="AdminAddEvent_first_input" type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })}/>
+                                <span>Наименование мероприятия</span>
+                            </div>
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box eventDate">
+                                <input className="AdminAddEvent_scnd_input" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })}/>
+                                <span>Дата проведения</span>
+                            </div>
                         </div>
                         <button onClick={addNewEvent} >Добавить</button>
                     </div>

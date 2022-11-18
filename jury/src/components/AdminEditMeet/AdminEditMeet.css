@@ -164,6 +164,7 @@ body {
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
 }
 .AdminEditMeet__firstBlock__right button:nth-child(2) {
     width: 100%;
@@ -178,6 +179,7 @@ body {
     text-align: center;
     color: #E21A1A;
     margin-top: 40px;
+    cursor: pointer;
 }
 
 .AdminEditMeet__secondBlock{
@@ -238,6 +240,7 @@ body {
     text-align: center;
     color: #FFFFFF;
     margin-top: 66px;
+    cursor: pointer;
 }
 
 .AdminMeet__save-button{

@@ -103,6 +103,7 @@
     border: none;
     align-self: flex-end;
     margin-top: 65px;
+    cursor: pointer;
 }
 .AdminAddJuryModal__content button:hover{
     background: #c90916;

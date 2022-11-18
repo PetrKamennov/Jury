@@ -132,6 +132,7 @@ body {
     color: #FFFFFF;
     border: none;
     margin-top: 65px;
+    cursor: pointer;
 
 }
 .goto__button:hover{
