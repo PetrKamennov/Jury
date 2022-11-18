@@ -108,22 +108,24 @@ body {
     line-height: 31px;
     color: #CCCCCC;
 }
-.AdminEditMeet__firstBlock__left__input__box.Date input {
+.AdminEditMeet__firstBlock__left__input__box input {
     display: flow-root;
 }
-.AdminEditMeet__firstBlock__left__input__box span {
+.AdminEditMeet__firstBlock__left__input__box.date span {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
     line-height: 31px;
+    position: relative;
+    top: -78px;
 }
 
-.AdminEditMeet__firstBlock__left__input__box.eventName span {
-    position: absolute;
+.AdminEditMeet__firstBlock__left__input__box.event span {
+    position: relative;
     display: inline-block;
     left: 0;
-    top: -10px;
+    top: -40px;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 300;
@@ -134,8 +136,8 @@ body {
 
 }
 
-.AdminEditMeet__firstBlock__left__input__box.eventName>input:focus~span,
-.AdminEditMeet__firstBlock__left__input__box.eventName>input[value]:not([value=""])~span {
+.AdminEditMeet__firstBlock__left__input__box.event>input:focus~span,
+.AdminEditMeet__firstBlock__left__input__box.event>input[value]:not([value=""])~span {
     transform: translateY(-38px);
 }
 

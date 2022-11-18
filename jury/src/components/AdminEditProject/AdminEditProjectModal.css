@@ -85,10 +85,18 @@
 
 }
 
-.AdminEditProjectModal__content-regJury__inputs__box > input:focus~span,
-.AdminEditProjectModal__content-regJury__inputs__box > input[value]:not([value=""])~span {
+.AdminAddEvent_first_input:focus~span,
+.AdminAddEvent_first_input[value]:not([value=""])~span {
     color: rgba(0, 0, 0, 0.4);
     transform: translateY(-38px);
+}
+
+.AdminAddEvent_scnd_input ~ span{
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+.AdminAddEvent_scnd_input{
+    display: flow-root !important;
 }
 
 

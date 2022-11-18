@@ -76,8 +76,14 @@ const AdminEditMeet = (props) => {
                 <div className="AdminEditMeet__firstBlock">
                     <div className="AdminEditMeet__firstBlock-container">
                         <div className="AdminEditMeet__firstBlock__left">
-                            <input placeholder="Наименование проекта" type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
-                            <input placeholder="Дата и время проведения" type="date" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
+                            <div className="AdminEditMeet__firstBlock__left__input__box event">
+                                <input type="text" value={events.eventName} onChange={e => setevents({ ...events, eventName: e.target.value })} />
+                                <span>Наименование мероприятия</span>
+                            </div>
+                            <div className="AdminEditMeet__firstBlock__left__input__box date">
+                                <input type="date" value={events.eventDate} onChange={e => setevents({ ...events, eventDate: e.target.value })} />
+                                <span>Дата и время проведения</span>
+                            </div>  
                         </div>
                         <div className="AdminEditMeet__firstBlock__right">
                             <Link to='/AdminMain'><button onClick={removeEvent}>Удалить мероприятие</button></Link>
