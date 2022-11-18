@@ -1,17 +1,43 @@
 import React from 'react';
 import "../components/JuryMeet/jury_history.css"
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import EventProjectHistory from "../components/JuryMeet/EventProjectHistory";
+import useAxiosPrivate from '../hooks/useAxiosPrivate';
 import NavbarJury from '../components/navbar/NavbarJury';
 const JuryHistory = () => {
 
+    const axiosPrivate = useAxiosPrivate()
+    const [update, setUpdate] = useState(false)
+
+
     const [projects, setprojects] = useState([
-        { id: 1, projectname: 'Мероприятие', date: '10.08.2001' },
-        { id: 2, projectname: 'Мероприятие', date: '10.08.2001'  },
-        { id: 3, projectname: 'Мероприятие', date: '10.08.2001'  },
-        { id: 4, projectname: 'Мероприятие', date: '10.08.2001'  },
     ])
+
+    
+
+
+    const auth = localStorage.getItem("user_id")
+    async function getinf() {
+        axiosPrivate.get(`/getEventForJury/${auth}`, {
+
+        }).then(response => {
+            setprojects(response.data)
+            
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+    console.log(projects)
+
+    useEffect(() => {
+        if (update) return
+        getinf()
+    }, [update])
+
+
+
+
 
     return (
         <>
