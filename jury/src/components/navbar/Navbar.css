@@ -94,6 +94,9 @@ hr{
     display: flex;
 }
 @media (max-width: 820px){
+    .navbar{
+        padding: 30px 5.2% 0px 5.2% !important;
+    }
     .navbar__button{
         font-size: 20px;
         padding-bottom: 0px;

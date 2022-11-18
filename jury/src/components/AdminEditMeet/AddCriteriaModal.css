@@ -109,6 +109,7 @@
     .AddCriteriaModal__content{
         width: 700px;
         height: 700px;
+        margin-top: 140px;
     }
     .AddCriteriaModal__content-container{
         width: 650px;
@@ -141,6 +142,7 @@
     .AddCriteriaModal__content{
         width: 350px;
         height: 580px;
+        margin-top: 100px;
     }
     .AddCriteriaModal__content-container{
         width: 300px;
