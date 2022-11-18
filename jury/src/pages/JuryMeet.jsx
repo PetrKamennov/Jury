@@ -37,7 +37,7 @@ const JuryMeet = () => {
 
     return (
         <>
-            <NavbarJury/>
+
             <div className="JuryMeet">
 
                 <section className="Jury_Meet_select">
