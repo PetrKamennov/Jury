@@ -72,7 +72,7 @@ const EventProject = (props, remove) => {
                     </div>
                     <div className={EventProject__buttons}>
                         <button className={EventProject__buttons_1} onClick={OpenJury}>Начать голосование</button>
-                        <button className={EventProject__buttons_2}>Назначить переголосование</button>
+                        {/* <button className={EventProject__buttons_2}>Назначить переголосование</button> */}
                         <img src={Arrow} alt="arrow" className={EventProject__buttons_3} onClick={CloseJury} />
                     </div>
                 </div>

@@ -27,15 +27,17 @@ const Authorization = () => {
     useEffect(() => {
         userRef.current.focus();
     }, [])
-
+    
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd])
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        
         try {
+            setUser('')
+            setPwd('')
             const response = await axios.post(LOGIN_URL,
                 {
                     username: user,

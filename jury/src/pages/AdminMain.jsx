@@ -18,6 +18,17 @@ const AdminMain = (props, getidPZDC) => {
     const [events, setEvent] = useState([{
     },
     ])
+
+
+    function px(){
+        const elId = document.getElementById('navbar')
+        if (elId === null) {
+            console.log('xyz')
+        }else{
+        }
+    }
+    localStorage.setItem("visible", "visible")
+    px()
     
     const getIdEvent = (EventIds) => {
         props.getidPZDC(EventIds)
@@ -55,7 +66,7 @@ const AdminMain = (props, getidPZDC) => {
                     )}
                 </div>
                 <div className="AdminMain__buttons">
-                    <button>Жюри</button>
+                    {/* <button>Жюри</button> */}
                     <button onClick={() => setModalActive(true)}>Мероприятие</button>
                 </div>
             </section>

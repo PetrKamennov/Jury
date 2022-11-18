@@ -7,6 +7,12 @@ import useAuth from "../../hooks/useAuth";
 
 function IsUser(props){ 
 
+  const visible = localStorage.getItem("visible")
+  // const visible = localStorage.getItem("visible")
+
+
+  console.log(visible)
+
     const url = window.location.href
     const nonUrl = `http://localhost:3000/adminMain`
     
@@ -14,9 +20,9 @@ function IsUser(props){
     if ((auth.roles === true && url != nonUrl) || (auth.roles=== false && url != nonUrl)) {
       return (
         auth.roles === false ? 
-              <NavbarJury/>
+          <NavbarJury />
              : 
-              <Navbar/>
+          <Navbar active={visible} />
             
             
       )}}
