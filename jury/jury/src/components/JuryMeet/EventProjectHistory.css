@@ -1,0 +1,136 @@
+.EventProjectHistory {
+    min-height: 100px;
+    margin-bottom: 32px;
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
+.EventProject__container {
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.EventProject__text {
+    display: flex;
+    width: 48%;
+    justify-content: space-between;
+}
+
+.EventProject__text-spans {
+    display: flex;
+}
+.EventProject__text p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.EventProject__text span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+.EventProject__Jurrypull{
+    height: 200px;
+    width: 100%;
+    background: #FFFFFF;
+    border-top: 1px solid #CCCCCC;
+}
+
+.EventProject__Jurrypull-container{
+    overflow-y: scroll;
+    height: 200px;
+    padding: 0 50px;
+}
+
+.EventProject__Jurrypull-container::-webkit-scrollbar {
+    width: 0;
+}
+
+.EventProjecthidden{
+    display: none !important;
+}
+.EventProject__buttons-3{
+    width: 30px;
+    height: 30px;
+}
+.EventProject__buttons-3.active {
+    width: 30px;
+    height: 30px;
+    border: none;
+    transform: rotate(180deg);
+}
+@media (max-width: 1430px){
+    .EventProject__text{
+        width: 58%;
+    }
+}
+@media (max-width: 990px){
+    .EventProject__text{
+        width: 66%;
+    }
+}
+@media (max-width: 760px){
+    .EventProject__text p{
+        font-size: 20px;
+    }
+    .EventProject__text span{
+        font-size: 20px;
+    }
+    .EventProject__Jurrypull-container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 680px){
+    .EventProject__Jurrypull-container{
+        padding: 0 5px;
+    }
+    .EventProject__text{
+        width: 75%;
+    }
+    .EventProject__text p{
+        font-size: 18px;
+    }
+    .EventProject__text span{
+        font-size: 18px;
+    }
+
+}
+@media (max-width: 530px){
+    .EventProject__container{
+        padding: 0 25px;
+    }
+}
+@media (max-width: 460px){
+    .EventProject__text p{
+        font-size: 14px;
+    }
+    .EventProject__text span{
+        font-size: 14px;
+    }
+}
+@media (max-width: 380px){
+    .EventProject__text p{
+        font-size: 12px;
+    }
+    .EventProject__text span{
+        font-size: 12px;
+    }
+}

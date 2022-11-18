@@ -1,0 +1,318 @@
+*,
+*before,
+*after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    list-style: none;
+}
+
+input {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: none;
+    border: none;
+    background-image: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+html,
+body {
+    position: relative;
+    height: 100%;
+
+}
+
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    background-color: #F3F3F3;
+}
+
+.AdminEditMeet {
+    width: 89.5%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 153px;
+    align-items: flex-end;
+}
+
+.AdminEditMeet__firstBlock {
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 323px;
+    display: flex;
+    justify-content: center;
+}
+
+.AdminEditMeet__firstBlock-container {
+    width: 88.37%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.AdminEditMeet__firstBlock__left{
+    height: 163px;
+    width: 445px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.AdminEditMeet__firstBlock__left input{
+    width: 100%;
+    height: 37px;
+    background: #FFFFFF;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #394A58;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 31px;
+    color: #CCCCCC;
+}
+.AdminEditMeet__firstBlock__left__input__box.Date input {
+    display: flow-root;
+}
+.AdminEditMeet__firstBlock__left__input__box span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 31px;
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: -10px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName>input:focus~span,
+.AdminEditMeet__firstBlock__left__input__box.eventName>input[value]:not([value=""])~span {
+    transform: translateY(-38px);
+}
+
+.AdminEditMeet__firstBlock__left__input__box.eventName{
+    margin-bottom: 27px;
+    position: relative;
+}
+
+
+.AdminEditMeet__firstBlock__right{
+    height: 140px;
+    width: 460px;
+    display: flex;
+    flex-direction: column;
+}
+
+.AdminEditMeet__firstBlock__right button:nth-child(1) {
+    width: 100%;
+    height: 50px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.AdminEditMeet__firstBlock__right button:nth-child(1):hover{
+    background: #c90916;
+}
+.AdminEditMeet__firstBlock__right button:nth-child(2) {
+    width: 100%;
+    height: 50px;
+    background: #F3F3F3;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    color: #E21A1A;
+    margin-top: 40px;
+}
+.AdminEditMeet__firstBlock__right button:nth-child(2):hover{
+    background: #CFCFCF;
+}
+.AdminEditMeet__secondBlock{
+    width: 100%;
+    background-color: #FFFFFF;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 32px;
+    align-items: center;
+}
+
+.AdminEditMeet__secondBlock__header{
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.AdminEditMeet__secondBlock__header h1{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin: 28px 0 0 50px;
+}
+
+.AdminEditMeet__secondBlock-container{
+    width: 94.18%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.AdminEditMeet__secondBlock__criteriaPull{
+    height: 101px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.AdminEditMeet__secondBlock__criteriaPull::-webkit-scrollbar {
+    width: 0;
+}
+
+.AdminEditMeet > button{
+    width: 345px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 66px;
+}
+.AdminEditMeet > button:hover{
+    background: #c90916;
+}
+@media (max-width: 1200px){
+    .AdminEditMeet__firstBlock-container{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .AdminEditMeet__firstBlock{
+        height: 390px;
+    }
+    .AdminEditMeet__firstBlock__left{
+       margin-top: 35px;
+    }
+    .AdminEditMeet__firstBlock__right{
+        margin-top: 40px;
+    }
+    .AdminEditMeet__firstBlock__right button:nth-child(2){
+        margin-top: 20px;
+    }
+}
+@media (max-width: 700px){
+    .AdminEditMeet__secondBlock__header h1{
+        display: flex;
+        justify-content: center;
+        margin: 28px 0px;
+        font-size: 24px;
+    }
+    .AdminEditMeet{
+        align-items: center;
+    }
+}
+@media (max-width: 700px){
+    .AdminEditMeet > button{
+        font-size: 24px;
+        width: 220px;
+        height: 46px;
+    }
+}
+@media (max-width: 600px){
+    .AdminEditMeet__firstBlock__left__input__box.eventName{
+        margin-bottom: 0px;
+        width: 80%;
+    }
+    .AdminEditMeet__firstBlock__left__input__box.Date{
+        width: 80%;
+    }
+    .AdminEditMeet__firstBlock__left input{
+        width: 100%;
+        justify-content: center;
+    }
+    .AdminEditMeet__firstBlock__left{
+        align-items: center;
+        width: 100%;
+    }
+    .AdminEditMeet__firstBlock__left__input__box.eventName span{
+        font-size: 20px;
+    }
+    .AdminEditMeet__firstBlock__left__input__box span{
+        font-size: 20px;
+    }
+    .AdminEditMeet__firstBlock__right {
+        width: 80%;
+    }
+    .AdminEditMeet__firstBlock__right button:nth-child(1){
+        font-size: 18px;
+    }
+    .AdminEditMeet__firstBlock__right button:nth-child(2){
+        font-size: 18px;
+    }
+}
+

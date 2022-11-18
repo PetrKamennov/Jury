@@ -1,0 +1,120 @@
+.ProjectJury {
+    height: 100px;
+    width: 100%;
+    background: #FFFFFF;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+
+.ProjectJury__container {
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ProjectJury__text {
+    display: flex;
+    width: 48%;
+    justify-content: space-between;
+}
+
+.ProjectJury__text-spans {
+    display: flex;
+}
+
+.ProjectJury__text p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    color: #394A58;
+}
+
+.ProjectJury__text span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    color: #394A58;
+    margin-left: 15px;
+}
+.ProjectJury__text span:nth-child(2){
+    margin-left: 15px;
+}
+
+.ProjectJury__indicator{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #394A58;
+}
+.score_block{
+    width: 8%;
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 1430px) {
+    .ProjectJury__text{
+        width: 60%;
+    }
+    .ProjectJury__text span{
+        font-size: 20px;
+    }
+    .ProjectJury__text p{
+        font-size: 20px;
+    }
+    .ProjectJury__indicator{
+        font-size: 20px;
+    }
+
+}
+@media (max-width: 990px){
+    .ProjectJury__text{
+        width: 70%;
+    }
+    .ProjectJury__text span{
+        font-size: 16px;
+    }
+    .ProjectJury__text p{
+        font-size: 16px;
+    }
+    .ProjectJury__indicator{
+        font-size: 16px;
+    }
+}
+@media (max-width: 680px){
+    .ProjectJury__text{
+        width: 75%;
+    }
+    .ProjectJury__text span{
+        font-size: 14px;
+    }
+    .ProjectJury__text p{
+        font-size: 14px;
+    }
+    .ProjectJury__indicator{
+        font-size: 14px;
+    }
+    .ProjectJury__container{
+        padding: 0 30px;
+    }
+}
+@media (max-width: 530px){
+    .ProjectJury__container{
+        padding: 0 15px;
+        justify-content: space-around;
+    }
+}

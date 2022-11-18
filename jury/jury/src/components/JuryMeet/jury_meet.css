@@ -1,0 +1,15 @@
+
+.Jury_Meet_select{
+    width: 89.5%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+}
+.JuryMeet__ProjektPull{
+    width: 100%;
+    height: 664px;
+    margin-top: 184px;
+    overflow-y: scroll;
+}

@@ -1,0 +1,175 @@
+.AdminAddJuryModal{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color:   rgba(0, 0, 0, 0.4);
+    transform: scale(0);
+}
+
+.AdminAddJuryModal.active{
+    transform: scale(1);
+}
+
+.AdminAddJuryModal__content{
+    background-color: #FFFFFF;
+    width: 1500px;
+    height: 579px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AdminAddJuryModal__content h1{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin: 80px 0 22px 0 ;
+    align-self: flex-start;
+}
+
+.AdminAddJuryModal__content-regJury__inputs{
+    width: 1310px;
+        height: 212px;
+        display: flex;
+        justify-content: space-between;
+}
+
+.AdminAddJuryModal__content-regJury__inputs input{
+        width: 566px;
+        height: 47px;
+        background: #FFFFFF;
+        display: flex;
+        border: none;
+        margin-top: 34px;
+        border-bottom: 2px solid #394A58;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'IBM Plex Sans';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 26px;
+        line-height: 34px;
+    }
+
+.AdminAddJuryModal__content-regJury__input__box span {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 34px;
+    transition: 0.5s;
+    pointer-events: none;
+
+}
+
+.AdminAddJuryModal__content-regJury__input__box > input:focus~span,
+.AdminAddJuryModal__content-regJury__input__box > input[value]:not([value=""])~span {
+    color: rgba(0, 0, 0, 0.4);
+    transform: translateY(-38px);
+}
+
+
+.AdminAddJuryModal__content-regJury__input__box {
+    position: relative;
+    margin-top: 68px;
+}
+
+.AdminAddJuryModal__content button{
+    width: 566px;
+    height: 66px;
+    background: #E21A1A;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    align-self: flex-end;
+    margin-top: 65px;
+}
+.AdminAddJuryModal__content button:hover{
+    background: #c90916;
+}
+.AdminAddJuryModal__content-container{
+    width: 1310px;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 1570px){
+    .AdminAddJuryModal__content{
+        width: 700px;
+        height: 700px;
+    }
+    .AdminAddJuryModal__content-container{
+        width: 650px;
+        height: 700px;
+    }
+    .AdminAddJuryModal__content h1{
+        align-self: center;
+        font-size: 40px;
+        margin: 40px 0px 100px 0px;
+    }
+    .AdminAddJuryModal__content-regJury__inputs{
+        width: 650px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .AdminAddJuryModal__content-regJury__inputs input{
+        width: 500px;
+        height: 45px;
+    }
+    .AdminAddJuryModal__content button{
+        align-self: center;
+        margin-top: 160px;
+    }
+}
+@media (max-width: 730px){
+    .AdminAddJuryModal__content{
+        width: 350px;
+        height: 600px;
+    }
+    .AdminAddJuryModal__content-container{
+        width: 300px;
+        height: 600px;
+    }
+    .AdminAddJuryModal__content h1{
+        align-self: center;
+        font-size: 30px;
+        margin: 40px 0px;
+    }
+    .AdminAddJuryModal__content-regJury__inputs{
+        width: 300px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .AdminAddJuryModal__content-regJury__inputs input{
+        width: 250px;
+        height: 30px;
+    }
+    .AdminAddJuryModal__content button{
+        align-self: center;
+        width: 250px;
+        height: 45px;
+        font-size: 22px;
+    }
+
+}

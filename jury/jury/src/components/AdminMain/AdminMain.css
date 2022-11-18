@@ -1,0 +1,77 @@
+.AdminMain{
+    width: 89.5%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    align-items: center;
+}
+.AdminMain h1{
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 62px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin: 0 0 50px 0;
+    align-self: flex-start;
+}
+.AdminMain__EventPull{
+    width: 100%;
+    height: 664px;
+    overflow-y: scroll;
+}
+.AdminMain__buttons{
+    width: 88.37%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 54px;
+}
+.AdminMain__buttons button{
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
+}
+.AdminMain__buttons button:hover{
+    background: #c90916;
+}
+@media (max-width: 1470px){
+    .AdminMain h1{
+        align-self: center;
+    }
+    .AdminMain__buttons{
+        align-items: center;
+        flex-direction: column;
+    }
+    .AdminMain__buttons button{
+        margin-top: 20px;
+    }
+}
+@media (max-width: 680px){
+    .AdminMain__buttons button{
+        width: 320px;
+    }
+    .AdminMain h1{
+        font-size: 38px;
+    }
+}
+@media (max-width: 500px){
+    .AdminMain__buttons button{
+        width: 280px;
+        font-size: 26px;
+    }
+    .AdminMain h1{
+        font-size: 32px;
+    }
+}
+

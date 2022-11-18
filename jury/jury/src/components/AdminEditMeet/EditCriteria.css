@@ -1,0 +1,188 @@
+.EditCriteria {
+    height: 100px;
+    width: 100%;
+    background: #FFFFFF;
+}
+
+
+.EditCriteria__container {
+    height: 100%;
+    padding: 0 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.EditCriteria__text {
+    display: flex;
+    width: 56%;
+    justify-content: space-between;
+}
+
+.EditCriteria__text-spans {
+    display: flex;
+}
+
+.EditCriteria__text p {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.EditCriteria__text span {
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+
+.EditCriteria__button {
+    width: 230px;
+    height: 50px;
+    background: #F3F3F3;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 34px;
+    text-align: center;
+    color: #E21A1A;
+    border: none;
+}
+.EditCriteria__Link {
+    position: relative;
+    top: -200px;
+}
+
+.EditCriteria__text input{
+    width: 250px;
+    height: 30px;
+    background: #FFFFFF;
+    display: flex;
+    border: none;
+    border-bottom: 2px solid #394A58;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 31px;
+    display: flex;
+    align-items: center;
+    color: #CCCCCC;
+}
+@media (max-width: 1450px){
+    .EditCriteria__text input{
+        width: 180px;
+    }
+}
+@media (max-width: 1050px){
+    .EditCriteria__text span{
+        font-size: 24px;
+    }
+    .EditCriteria__text p{
+        font-size: 22px;
+    }
+    .EditCriteria__button{
+        font-size: 22px;
+    }
+    .EditCriteria__text{
+        width: 62%;
+    }
+}
+@media (max-width: 970px){
+    .EditCriteria__text input{
+        width: 130px;
+    }
+}
+@media (max-width: 890px){
+    .EditCriteria__text span{
+        font-size: 20px;
+    }
+    .EditCriteria__text p{
+        font-size: 18px;
+    }
+    .EditCriteria__button{
+        font-size: 18px;
+    }
+}
+@media (max-width: 760px){
+    .EditCriteria__button{
+        width: 130px;
+    }
+    .EditCriteria__text{
+        width: 66%;
+    }
+}
+@media (max-width: 700px){
+    .EditCriteria__Link {
+        position: relative;
+        top: -110px;
+        left: -35%;
+    }
+}
+@media (max-width: 660px){
+    .EditCriteria__text input{
+        width: 100px;
+    }
+}
+@media (max-width: 590px){
+    .EditCriteria__text span{
+        font-size: 16px;
+    }
+    .EditCriteria__text p{
+        font-size: 14px;
+    }
+    .EditCriteria__button{
+        font-size: 14px;
+    }
+    .EditCriteria__container{
+        padding: 0 20px;
+    }
+}
+@media (max-width: 500px){
+    .EditCriteria__text input{
+        width: 75px;
+    }
+    .EditCriteria__text{
+        width: 63%;
+    }
+}
+@media (max-width: 460px){
+    .EditCriteria__button{
+        width: 100px;
+    }
+    .EditCriteria__text{
+        width: 68%;
+    }
+}
+@media (max-width: 400px){
+    .EditCriteria__button{
+        width: 80px;
+    }
+    .EditCriteria__text span{
+        font-size: 14px;
+    }
+    .EditCriteria__text p{
+        font-size: 12px;
+    }
+    .EditCriteria__button{
+        font-size: 12px;
+    }
+    .EditCriteria__container{
+        padding: 0 10px;
+    }
+}
