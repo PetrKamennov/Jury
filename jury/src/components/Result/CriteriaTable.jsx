@@ -11,7 +11,7 @@ const CriteriaTable = (props) => {
         <>
 
             <div className="CriteriaTable">
-                <span>{props.result[0]}</span>
+                <span>{props.result}</span>
             </div>
         </>
     )

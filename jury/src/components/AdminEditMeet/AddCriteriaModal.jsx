@@ -25,6 +25,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
         }).catch(function (error) {
             console.log(error);
         })
+        setCrit({ creteryName: '', creteryDescription: '', creteryType: '' })
     }
     
     return (

@@ -32,7 +32,7 @@ const Result = () => {
     }
 
     async function getinf2() {
-        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/events/${EventId}`, {
+        axiosPrivate.get(`/GetResult/${EventId}/1`, {
 
         }).then(response => {
             setProjects(response.data)

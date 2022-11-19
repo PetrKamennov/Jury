@@ -16,23 +16,38 @@ const TableTr = (props) => {
     const EventId = localStorage.getItem("EventId")
 
 
-    async function getinf() {
-        axiosPrivate.get(`/GetResult/${EventId}/1`, {
-        }).then(response => {
-            setResult(response.data)
-        }).catch(function (error) {
-            console.log(error);
-        })
-    }
-    console.log(result)
+    // async function getinf() {
+    //     axiosPrivate.get(`/GetResult/${EventId}/1`, {
+    //     }).then(response => {
+    //         setResult(response.data)
+    //         console.log(response.data)
+    //     }).catch(function (error) {
+    //         console.log(error);
+    //     })
+    // }
 
+    const[resl, setResl]= useState();
+
+    function resultat (){
+        const res = 0;
+        for (let index = 0; index < result.length; index++) {
+            res = res + result[index]
+            console.log(result[0][index])
+            
+        }
+        setResl(res)
+    }
 
     useEffect(() => {
         if (update) return
-        getinf()
+        // getinf()
+        setResult(props.projets.estimations)
+        resultat()
         }, [update])
 
 
+
+    // console.log(result)
     return (
         <>
 
@@ -42,6 +57,9 @@ const TableTr = (props) => {
                 {result.map((result, index) =>
                     <CriteriaTable result={result} number={index + 1} key={result.id} />
                 )}
+                <div className="TableTr-result">
+                    <span>{resl}</span>
+                    </div>
             </section>
         </>
     )
