@@ -13,7 +13,7 @@ const AdminEditProjectModal = (props, {create}) => {
 
     const axiosPrivate = useAxiosPrivate();
 
-
+    
 
     const [project, setProject] = useState({ projectName: '', projectAuthor: ''})
 

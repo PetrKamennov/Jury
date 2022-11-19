@@ -38,6 +38,7 @@ const EventProjectHistory = (props) => {
         axiosPrivate.get(`/getHistory/${user_id}`
         ).then(response => {
             var score = Array(response.data[0].author.length)
+            console.log(response.data)
 
             for (let index = 0; index < response.data[0].author.length; index++) {
                 score[index] = { author: '', projectName: '', score: 0 };

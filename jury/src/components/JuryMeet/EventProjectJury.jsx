@@ -42,7 +42,7 @@ const EventProjectJury = (props) => {
     ])
     
         async function getinf() {
-            axiosPrivate.get(`http://aleksbcg.beget.tech/projects/events/${props.event.id}`, {
+            axiosPrivate.get(`/projectsForJury/${props.event.id}`, {
     
             }).then(response => {
                 setjury(response.data)

@@ -46,6 +46,15 @@ const EventProject = (props, remove) => {
             console.log(error);
         })
     }
+
+    async function postinf() {
+        axiosPrivate.patch(`/projects/Change/${props.project.id}`, {
+            projectState: 1
+        }).then(response => {
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
     
     const OpenJury = () => {
         setPull('EventProject__Jurrypull')
@@ -55,6 +64,7 @@ const EventProject = (props, remove) => {
         setEventProject__buttons_3("EventProject__buttons-3")
         setEventProject__buttons('EventProject__buttons active')
         getinf()
+        postinf()
     }
 
 
