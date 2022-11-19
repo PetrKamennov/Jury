@@ -29,18 +29,19 @@ const TableTr = (props) => {
     const[resl, setResl]= useState();
 
     function resultat (){
-        const res = 0;
-        for (let index = 0; index < result.length; index++) {
-            res = res + result[index]
-            console.log(result[0][index])
+        var res = 0;
+        for (let index = 0; index < 3; index++) {
+            res += props.projets.estimations[index]
+            // console.log(props.projets.estimations[index])
             
         }
         setResl(res)
     }
-
+    
     useEffect(() => {
         if (update) return
         // getinf()
+        
         setResult(props.projets.estimations)
         resultat()
         }, [update])
