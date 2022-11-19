@@ -78,7 +78,7 @@
     color: #394A58;
 }
 .score_block{
-    width: 8%;
+    /* width: 8%; */
     display: flex;
     justify-content: space-between;
 }
@@ -136,6 +136,7 @@
     .ProjectJury__container button{
         font-size: 14px;
     }
+    
 }
 @media (max-width: 400px){
     .ProjectJury__container button{

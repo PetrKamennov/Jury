@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AddCriteriaModal.css";
@@ -52,7 +53,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
                                 </div>
                             </div>
-                    <button onClick={addNewCriteria}>Установить</button>
+                    <Link to="/CriteriaPool"><button onClick={addNewCriteria}>Установить</button></Link>
                 </div>
             </div>
         </div>

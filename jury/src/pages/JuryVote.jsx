@@ -29,6 +29,8 @@ const JuryVote = () => {
     const projectId = localStorage.getItem("projectId")
     const EventId = localStorage.getItem("EventId")
 
+    console.log(EventId)
+
     async function getinf() {
         axiosPrivate.get(`/returnCretery/${EventId}`, {
         }).then(response => {

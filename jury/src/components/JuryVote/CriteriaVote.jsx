@@ -6,7 +6,7 @@ import "./CriteriaVote.css";
 
 const CriteriaVote = (props) => {
 
-    const EventId = localStorage.getItem('EventIds')
+    const EventId = localStorage.getItem('EventId')
     const projectId = localStorage.getItem("projectId")
     const auth = localStorage.getItem("user_id")
 

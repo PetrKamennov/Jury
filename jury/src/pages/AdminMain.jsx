@@ -46,7 +46,7 @@ const AdminMain = (props, getidPZDC) => {
     }
 
 
-    // setInterval(getinf, 2000);
+    // setInterval(getinf, 100);
 
     useEffect(() => {
         if (update) return

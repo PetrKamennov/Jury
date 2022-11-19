@@ -1,6 +1,7 @@
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./AdminEditProjectModal.css";
 
@@ -59,7 +60,7 @@ const AdminEditProjectModal = (props, {create}) => {
                             </div>
 
                         </div>
-                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button>
+                        <Link to="/AdminEditProject"><button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} onClick={addNewProject} >Добавить</button></Link>
                     </div>
                 </div>
             </div>
