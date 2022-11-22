@@ -25,6 +25,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
         }).catch(function (error) {
             console.log(error);
         })
+        setCrit({ creteryName: '', creteryDescription: '', creteryType: '' })
     }
     
     return (
@@ -34,17 +35,23 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
                     <h1>Установка Критерия</h1>
                             <div className="AddCriteriaModal__content-regJury__inputs">
                                 <div className="AddCriteriaModal__content-regJury__inputs-left">
-                            <input placeholder="Наименование Критерия" type="text" className="AddCriteriaModal__content-regJury__name" value={crit.creteryName} onChange={e => setCrit({ ...crit, creteryName: e.target.value })}/>
-                            <input placeholder="Описание Критерия " type="text" className="AddCriteriaModal__content-regJury__login" value={crit.creteryDescription} onChange={e => setCrit({ ...crit, creteryDescription: e.target.value })}/>
+                                    <div className="AdminEditProjectModal__content-regJury__inputs__box">
+                                        <input type="text" className="AddCriteriaModal__content-regJury__name" value={crit.creteryName} onChange={e => setCrit({ ...crit, creteryName: e.target.value })}/>
+                                        <span>Наименование Критерия</span>
+                                    </div>
+                                    <div className="AdminEditProjectModal__content-regJury__inputs__box">
+                                        <input  type="text" className="AddCriteriaModal__content-regJury__login" value={crit.creteryDescription} onChange={e => setCrit({ ...crit, creteryDescription: e.target.value })}/>
+                                        <span>Описание Критерия</span>
+                                    </div>
                                 </div>
                                 <div className="AddCriteriaModal__content-regJury__inputs-right">
-                            <h5> Выберите Тип оценивания:
+                            <h5> Выберите Тип оценивания:</h5>
                                 <select placeholder="Тип оценивания" className="AddCriteriaModal__content-regJury__job" value={crit.creteryType} onChange={e => setCrit({ ...crit, creteryType: e.target.value })}>
                                     <option value={1}>Баллы</option>
                                     <option value={2}>Односложный</option>
                                     <option value={3}>Многосложный</option>
                                 </select>
-                            </h5>
+
                                 </div>
                             </div>
                     <Link to="/CriteriaPool"><button onClick={addNewCriteria}>Установить</button></Link>

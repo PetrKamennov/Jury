@@ -46,6 +46,15 @@ const EventProject = (props, remove) => {
             console.log(error);
         })
     }
+
+    async function postinf() {
+        axiosPrivate.patch(`/projects/Change/${props.project.id}`, {
+            projectState: 1
+        }).then(response => {
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
     
     const OpenJury = () => {
         setPull('EventProject__Jurrypull')
@@ -55,6 +64,7 @@ const EventProject = (props, remove) => {
         setEventProject__buttons_3("EventProject__buttons-3")
         setEventProject__buttons('EventProject__buttons active')
         getinf()
+        postinf()
     }
 
 
@@ -72,7 +82,7 @@ const EventProject = (props, remove) => {
                     </div>
                     <div className={EventProject__buttons}>
                         <button className={EventProject__buttons_1} onClick={OpenJury}>Начать голосование</button>
-                        <button className={EventProject__buttons_2}>Назначить переголосование</button>
+                        {/* <button className={EventProject__buttons_2}>Назначить переголосование</button> */}
                         <img src={Arrow} alt="arrow" className={EventProject__buttons_3} onClick={CloseJury} />
                     </div>
                 </div>

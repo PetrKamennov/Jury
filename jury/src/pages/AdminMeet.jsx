@@ -53,7 +53,7 @@ const AdminMeet = (props) => {
                         <EventProject number={index + 1} project={projects} key={projects.id} />
                     )}
                 </div>
-                <Link to="/AdminMain"><button className="AdminMeet__button-done" onClick={getType}>Завершить и создать отчет</button></Link>
+                <Link to="/Result"><button className="AdminMeet__button-done" onClick={getType}>Завершить и создать отчет</button></Link>
             </section>
         </>
     )

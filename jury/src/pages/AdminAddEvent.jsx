@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
-import "../components/AdminEditMeet/AdminEditMeet.css";
+// import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
 import Navbar from "../components/navbar/Navbar";
@@ -20,6 +20,7 @@ const AdminAddEvent = (props) => {
             eventName: events.eventName, 
             eventDate: events.eventDate,
         }).then(response => {
+            setEvent({ eventName: '', eventDate: '' })
             console.log(response.data)
         }).catch(function (error) {
             console.log(error);
@@ -34,8 +35,14 @@ const AdminAddEvent = (props) => {
                     <h1>Добавление мероприятия</h1>
                     <div className="AdminEditProjectModal__content-regJury">
                         <div className="AdminEditProjectModal__content-regJury__inputs">
-                            <input placeholder="Наименование мероприятия " type="text" value={events.projectname} onChange={e => setEvent({ ...events, eventName: e.target.value })} />
-                            <input placeholder="Дата проведения" type="text" value={events.participant} onChange={e => setEvent({ ...events, eventDate: e.target.value })} />
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box eventName">
+                                <input className="AdminAddEvent_first_input" type="text" value={events.eventName} onChange={e => setEvent({ ...events, eventName: e.target.value })}/>
+                                <span>Наименование мероприятия</span>
+                            </div>
+                            <div className="AdminEditProjectModal__content-regJury__inputs__box eventDate">
+                                <input className="AdminAddEvent_scnd_input" type="date" value={events.eventDate} onChange={e => setEvent({ ...events, eventDate: e.target.value })}/>
+                                <span>Дата проведения</span>
+                            </div>
                         </div>
                         <Link to="/AdminMain"><button onClick={addNewEvent} >Добавить</button></Link>
                     </div>

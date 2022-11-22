@@ -70,6 +70,10 @@
     line-height: 34px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.Event__buttons button:nth-child(1):hover{
+    background: #c90916;
 }
 .Event__button-edit {
     width: 100%;
@@ -83,6 +87,10 @@
     line-height: 34px;
     text-align: center;
     color: #E21A1A !important;
+    cursor: pointer;
+}
+.Event__button-edit:hover{
+    background: #CFCFCF !important;
 }
 @media (max-width: 1100px){
     .Event__text span{

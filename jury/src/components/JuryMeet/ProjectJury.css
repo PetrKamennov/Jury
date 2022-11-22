@@ -33,7 +33,24 @@
     align-items: center;
     color: #394A58;
 }
-
+.ProjectJury__container button{
+    width: 100%;
+    height: 40px;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    color: #E21A1A;
+    background: #F3F3F3;
+    border: none;
+    cursor: pointer;
+}
+.ProjectJury__container button:hover{
+    background: #CFCFCF;
+}
 .ProjectJury__text span {
     font-family: 'IBM Plex Sans';
     font-style: normal;
@@ -61,7 +78,7 @@
     color: #394A58;
 }
 .score_block{
-    width: 8%;
+    /* width: 8%; */
     display: flex;
     justify-content: space-between;
 }
@@ -115,5 +132,14 @@
     .ProjectJury__container{
         padding: 0 15px;
         justify-content: space-around;
+    }
+    .ProjectJury__container button{
+        font-size: 14px;
+    }
+    
+}
+@media (max-width: 400px){
+    .ProjectJury__container button{
+        font-size: 12px;
     }
 }

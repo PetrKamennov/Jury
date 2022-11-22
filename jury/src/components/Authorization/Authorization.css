@@ -132,6 +132,11 @@ body {
     color: #FFFFFF;
     border: none;
     margin-top: 65px;
+    cursor: pointer;
+
+}
+.goto__button:hover{
+    background: #c90916;
 }
 .goto__change_password{
     font-family: 'IBM Plex Sans';
@@ -196,6 +201,7 @@ body {
     .goto__button{
         width: 85%;
         font-size: 32px;
+        margin: 65px auto 0px auto;
     }
     .authorization__block_bottom{
         width: 80%;

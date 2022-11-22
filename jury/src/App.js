@@ -23,6 +23,8 @@ import Layout from './pages/Layout';
 import NavbarJury from './components/navbar/NavbarJury';
 import { useTransition, animated } from 'react-spring';
 import IsUser from './components/AdminOrJury/AdminOrJury';
+import JuryVote from './pages/JuryVote';
+import Result from './pages/Result';
 
 
 
@@ -59,7 +61,8 @@ function App() {
               <Route element={<RequireAuth allowedRoles={[ROLES.Jury]} />}>
                 <Route path='/jury_meets' element={<JuryMeet />} />
                 <Route path='/history' element={<JuryHistory />} />
-                <Route path='/profile' element={<JuriProfile />} />
+                {/* <Route path='/profile' element={<JuriProfile />} /> */}
+                <Route path='/JuryVote' element={<JuryVote/>}/>
               </Route>
               {/* Админка */}
               <Route element={<RequireAuth allowedRoles={[ROLES.Admin]} />}>
@@ -70,6 +73,7 @@ function App() {
                 <Route path='/AdminMain' element={<AdminMain  />} />
                 <Route path='/AdminMeet' element={<AdminMeet  />} />
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
+                <Route path='/Result' element={<Result/>} />
               </Route>
               {/* Общее */}
               <Route path='/login' element={<Authorization/>}/>

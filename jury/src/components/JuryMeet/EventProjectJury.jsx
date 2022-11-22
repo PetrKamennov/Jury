@@ -9,6 +9,8 @@ const EventProjectJury = (props) => {
 
     const [update, setUpdate] = useState(false)
 
+    localStorage.setItem('EventId', props.event.id)
+
     const axiosPrivate = useAxiosPrivate();
 
     const [EventProject__Jurrypull, setPull] = useState('EventProject__Jurrypull EventProjecthidden')
@@ -40,10 +42,11 @@ const EventProjectJury = (props) => {
     ])
     
         async function getinf() {
-            axiosPrivate.get(`http://aleksbcg.beget.tech/projects/${props.event.id}`, {
+            axiosPrivate.get(`/projectsForJury/${props.event.id}`, {
     
             }).then(response => {
                 setjury(response.data)
+                console.log(response.data)
             }).catch(function (error) {
                 console.log(error);
             })

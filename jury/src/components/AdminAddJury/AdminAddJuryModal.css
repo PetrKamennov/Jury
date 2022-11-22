@@ -103,8 +103,11 @@
     border: none;
     align-self: flex-end;
     margin-top: 65px;
+    cursor: pointer;
 }
-
+.AdminAddJuryModal__content button:hover{
+    background: #c90916;
+}
 .AdminAddJuryModal__content-container{
     width: 1310px;
     display: flex;
@@ -113,7 +116,8 @@
 @media (max-width: 1570px){
     .AdminAddJuryModal__content{
         width: 700px;
-        height: 700px;
+        height: 680px;
+        margin-top: 91px;
     }
     .AdminAddJuryModal__content-container{
         width: 650px;
@@ -169,4 +173,5 @@
         height: 45px;
         font-size: 22px;
     }
+
 }

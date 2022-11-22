@@ -41,6 +41,10 @@
     line-height: 42px;
     text-align: center;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.AdminMain__buttons button:hover{
+    background: #c90916;
 }
 @media (max-width: 1470px){
     .AdminMain h1{

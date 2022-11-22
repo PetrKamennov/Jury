@@ -5,7 +5,7 @@ import "./Navbar.css";
 
 const url = window.location.href
 
-const Navbar = () => {
+const Navbar = (props) => {
     const [navbar__line__AdminEditProject, setLine1Class] = useState("navbar__line-AdminEditProject")
     const [navbar__line__AdminEditJury, setLine2Class] = useState("navbar__line-AdminEditJury")
     const [navbar__line__AdminEditMeet, setLine3Class] = useState("navbar__line-AdminEditMeet")
@@ -27,9 +27,11 @@ const Navbar = () => {
         setLine3Class("navbar__line-AdminEditMeet active")
     }
 
+    console.log(props.active)
+
     return (
         <>
-            <div className="navbar">
+            <div className="navbar" id={props.active}>
                 <div className="navbar__buttons">
                     <Link to='/AdminEditProject' className="navbar__button" onClick={AdminEditProjectPage}>Проекты</Link>
                     <Link to='/AdminEditJury' className="navbar__button" onClick={AdminEditJuryPage}>Жюри</Link>

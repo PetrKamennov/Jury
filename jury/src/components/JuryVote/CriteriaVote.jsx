@@ -1,35 +1,58 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { Link } from "react-router-dom";
-import Event from "../components/AdminMain/Event";
-import "../components/AdminMain/AdminMain.css";
-import Navbar from "../components/navbar/Navbar";
-import AdminAddEvent from "./AdminAddEvent";
+import { useState } from "react";
+import "./CriteriaVote.css";
 
 
 
-const JuryVote = () => {
+const CriteriaVote = (props) => {
 
+    const EventId = localStorage.getItem('EventId')
+    const projectId = localStorage.getItem("projectId")
+    const auth = localStorage.getItem("user_id")
 
+    
+    const [crit, setCrit] = useState({ index: props.number, score: '', event: EventId, project: projectId, jury: auth, creteryType: props.criteria.id })
+    console.log(crit)
+
+    async function postCrit(e){
+        await setCrit({ ...crit, score: e.target.value })
+    }
+    
+    if (props.active === true){
+        props.gets(crit)
+    }
+    
     return (
         <>
-
-            <section className="JuryVote">
-                <h1>Мероприятия</h1>
-                <div className="JuryVote__CriteriasPull">
-                    {events.map((events) =>
-                        <Event getId={getIdEvent} event={events} key={events.id} />
-                    )}
+            <div className="CriteriaVote">
+                <div className="CritrriaVote__top">
+                    <b>{props.criteria.creteryName}</b>
                 </div>
-                <div className="AdminMain__buttons">
-                    <button>Жюри</button>
-                    <button onClick={() => setModalActive(true)}>Мероприятие</button>
+                <div className="CriteriaVote__bottom">
+                       { props.criteria.creteryType === 1 
+                        ? <select name="" id="" value={crit.score} onChange={e => postCrit(e)}>
+                            <option value={1}>1</option>
+                            <option value={2}>2</option>
+                            <option value={3}>3</option>
+                            <option value={4}>4</option>
+                            <option value={5}>5</option>
+                         </select>
+                        :props.criteria.creteryType === 2
+                            ? <select name="" id="" value={crit.score} onChange={e => postCrit(e)}>
+                            <option value={1}>да</option>
+                            <option value={5}>нет</option>
+                        </select>
+                            : <select name="" id="" value={crit.score} onChange={e => postCrit(e)}>
+                            <option value={1}>нет</option>
+                            <option value={2}>скорее нет</option>
+                            <option value={3}>затрудняюсь ответить</option>
+                            <option value={4}>скорее да</option>
+                            <option value={5}>да</option>
+                        </select>}
                 </div>
-            </section>
-            <AdminAddEvent active={modalActive} setActive={setModalActive} />
+            </div>
         </>
     )
 }
 
-export default JuryVote
+export default CriteriaVote

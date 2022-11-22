@@ -12,6 +12,9 @@ import Navbar from "../components/navbar/Navbar";
 const AdminEditProject = (props) => {
     const [update, setUpdate] = useState(false)
 
+    localStorage.setItem("visible", "")
+
+
     const axiosPrivate = useAxiosPrivate();
 
     const EventId = localStorage.getItem("EventId")

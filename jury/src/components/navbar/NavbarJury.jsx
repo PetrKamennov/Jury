@@ -33,7 +33,7 @@ const NavbarJury = () => {
                 <div className="navbar__buttons">
                     <Link to='/jury_meets' className="navbar__button" onClick={AdminEditProjectPage}>Текущие мероприятия</Link>
                     <Link to='/history' className="navbar__button" onClick={AdminEditJuryPage}>История</Link>
-                    <Link to='/profile' className="navbar__button" onClick={AdminEditMeetPage}>Профиль</Link>
+                    {/* <Link to='/profile' className="navbar__button" onClick={AdminEditMeetPage}>Профиль</Link> */}
                 </div>
                 <hr className="navbar__line"/>
             </div>
