@@ -41,7 +41,9 @@ const AdminMain = (props, getidPZDC) => {
         }).then(response => {
                 setEvent(response.data)
             }).catch(function (error) {
-                console.log(error);
+                if (error === 401){
+                    window.location.reload();
+                }
             })
     }
 

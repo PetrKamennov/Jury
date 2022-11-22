@@ -15,6 +15,7 @@ const Event = (props, getId) => {
         localStorage.setItem("EventId", props.event.id)
     }
     async function startEvent(){
+        sendID()
         axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
             eventIsStarted: true
         }).then(response =>{

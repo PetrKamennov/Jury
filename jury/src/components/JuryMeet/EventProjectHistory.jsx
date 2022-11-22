@@ -20,7 +20,7 @@ const EventProjectHistory = (props) => {
     const CloseJury = () => {
         if (!isMenuClicked) {
             setPull('EventProject__Jurrypull')
-            setEventProject__buttons_3("EventProject__buttons-3")
+            setEventProject__buttons_3("EventProject__buttons-3") 
         }
         else {
             setPull('EventProject__Jurrypull EventProjecthidden')

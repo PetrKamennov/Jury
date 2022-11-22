@@ -32,7 +32,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.JuryVote__container__buttons  button {
+.JuryVote__container__buttons button {
     width: 560px;
     height: 66px;
     background: #E21A1A;

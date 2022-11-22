@@ -30,12 +30,16 @@ const TableTr = (props) => {
 
     function resultat (){
         var res = 0;
-        for (let index = 0; index < 3; index++) {
+        for (let index = 0; index < props.projets.estimations.length; index++) {
             res += props.projets.estimations[index]
             // console.log(props.projets.estimations[index])
             
         }
-        setResl(res)
+        if(res == NaN){
+            setResl(0)
+        }else{
+            setResl(res)
+        }
     }
     
     useEffect(() => {
@@ -48,7 +52,7 @@ const TableTr = (props) => {
 
 
 
-    // console.log(result)
+    console.log(resl)
     return (
         <>
 
