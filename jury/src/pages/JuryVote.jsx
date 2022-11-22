@@ -28,6 +28,8 @@ const JuryVote = () => {
 
     const projectId = localStorage.getItem("projectId")
     const EventId = localStorage.getItem("EventId")
+    const user_id = localStorage.getItem("user_id")
+
 
     console.log(EventId)
 
@@ -74,6 +76,7 @@ const JuryVote = () => {
             })
             
         }
+        localStorage.setItem(`buttonActive-${user_id}-${projectId}`, false)
     }
     
     console.log(criterias)

@@ -8,6 +8,10 @@ const ProjectJury = (props, remove) => {
     function setId(){
         localStorage.setItem("projectId", props.jury.id)
     }
+    const user_id = localStorage.getItem("user_id")
+
+    const ButtonActive = localStorage.getItem(`buttonActive-${user_id}-${props.jury.id}`)
+
 
 
     return (
