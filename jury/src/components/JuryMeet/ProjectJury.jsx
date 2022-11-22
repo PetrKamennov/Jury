@@ -11,6 +11,7 @@ const ProjectJury = (props, remove) => {
     const user_id = localStorage.getItem("user_id")
 
     const ButtonActive = localStorage.getItem(`buttonActive-${user_id}-${props.jury.id}`)
+    console.log(ButtonActive)
 
 
 
@@ -25,7 +26,10 @@ const ProjectJury = (props, remove) => {
                         </div>
                         <p>{props.jury.projectAuthor}</p>
                     </div>
-                    <Link to='/JuryVote'><button onClick={setId}>Проголосовать</button></Link> 
+                   { ButtonActive === "false"
+                        ?<span>Проголосованно</span>
+                        :<Link to='/JuryVote'><button onClick={setId}>Проголосовать</button></Link> 
+                   }
                 </div>
             </div>
         </>

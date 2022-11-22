@@ -76,7 +76,7 @@ const JuryVote = () => {
             })
             
         }
-        localStorage.setItem(`buttonActive-${user_id}-${projectId}`, false)
+        localStorage.setItem(`buttonActive-${user_id}-${projectId}`, "false")
     }
     
     console.log(criterias)
@@ -104,7 +104,7 @@ const JuryVote = () => {
                         )}
                     </div>
                     <div className="JuryVote__container__buttons">
-                        <button onClick={postinf}>Отправить результаты</button>
+                        <Link to='/jury_meets'><button onClick={postinf}>Отправить результаты</button></Link>
 
                     </div>
                 </div>
