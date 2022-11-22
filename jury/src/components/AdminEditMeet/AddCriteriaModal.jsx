@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AddCriteriaModal.css";
@@ -21,15 +21,21 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
             creteryDescription: crit.creteryDescription,
             creteryType: crit.creteryType
         }).then(response => {
-            console.log(response.data)
+            setCrit(response.data)
         }).catch(function (error) {
             console.log(error);
         })
-        setCrit({ creteryName: '', creteryDescription: '', creteryType: '' })
+    }
+
+    const navigate = useNavigate()
+
+    function closeModal() {
+        setActive(false)
+        navigate("/CriteriaPool")
     }
     
     return (
-        <div className={active ? "AddCriteriaModal active" : "AddCriteriaModal"} onClick={() => setActive(false)} >
+        <div className={active ? "AddCriteriaModal active" : "AddCriteriaModal"} onClick={() => closeModal()} >
             <div className="AddCriteriaModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AddCriteriaModal__content-container">
                     <h1>Установка Критерия</h1>

@@ -20,15 +20,7 @@ const AdminMain = (props, getidPZDC) => {
     ])
 
 
-    function px(){
-        const elId = document.getElementById('navbar')
-        if (elId === null) {
-            console.log('xyz')
-        }else{
-        }
-    }
     localStorage.setItem("visible", "visible")
-    px()
     
     const getIdEvent = (EventIds) => {
         props.getidPZDC(EventIds)

@@ -36,6 +36,9 @@ function App() {
         transform: 'translateY(100%)',
         position: 'absolute',
         width: '100%',
+        height: '80%',
+        top: '153px',
+        opacity: 0, 
       },
       enter: { 
         transform: 'translateY(0%)',
@@ -44,7 +47,8 @@ function App() {
        },
       leave: {
         transform: 'translateY(-100%)',
-        transition: 'all 0.25s linear 0s'
+        transition: 'all 0.25s linear 0s',
+        opacity: 0, 
       }
     })   
     const ROLES = {

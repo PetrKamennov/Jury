@@ -60,7 +60,6 @@ hr{
     padding: 80px 5.2%;
     padding-bottom: 0px;
     position: fixed;
-    z-index: 100;
     background-color: #F3F3F3;
 }
 .navbar__line{

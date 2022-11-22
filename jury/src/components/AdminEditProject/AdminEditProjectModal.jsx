@@ -1,11 +1,9 @@
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./AdminEditProjectModal.css";
-import { Link } from "react-router-dom";
-
 const AdminEditProjectModal = (props, {create}) => {
     
     const [update, setUpdate] = useState(false)
@@ -41,11 +39,15 @@ const AdminEditProjectModal = (props, {create}) => {
             console.log(error);
         })
     }
-
+    const navigate = useNavigate()
     
+    function closeModal() {
+        props.setActive(false)
+        navigate("/AdminEditProject")
+    }
 
     return (
-        <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >
+        <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => closeModal()} >
             <div className="AdminEditProjectModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AdminEditProjectModal__content-container">
                     <h1>Добавление проекта</h1>
