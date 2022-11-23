@@ -9,7 +9,7 @@ const Criteria = (props, remove) => {
 
 
     async function RemoveProject() {
-        props.remove(props.criteria)
+        props.remove(props.criterias)
         axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criteria.CreteryIdIbTable}`
         ).then(response => {
             console.log(response.data)
@@ -17,9 +17,8 @@ const Criteria = (props, remove) => {
             console.log(error);
         })
     }
-
-    console.log(props.criteria.id)
-
+    const Name = props.criterias.creteryName
+    const Descript = props.criterias.creteryDescription
     return (
         <>
             <div className="Criteria">
@@ -27,9 +26,9 @@ const Criteria = (props, remove) => {
                     <div className="Criteria__text">
                         <div className="Criteria__text-spans">
                             <span>{props.number}.</span>
-                            <span>{props.criteria.creteryName}</span>
+                            <span>{Name}</span>
                         </div>
-                        <p>{props.criteria.creteryDescription}</p>
+                        <p>{Descript}</p>
                     </div>
                     <button className="Criteria__button" onClick={RemoveProject}>Удалить</button>
                 </div>

@@ -30,6 +30,7 @@ const AddCrit = (props, remove) => {
                     <div className="Crit__text-spans">
                         <span>{props.number}.</span>
                         <span>{props.criteria.creteryName}</span>
+                        <span>{props.criteria.id}</span>
                     </div>
                     <p>{props.criteria.creteryDescription}</p>
                 </div>

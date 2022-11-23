@@ -61,7 +61,8 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FFFFFF;
-
+    top: -153px;
+    overflow: hidden;
 }
 .authorization__block{
     width: 750px;

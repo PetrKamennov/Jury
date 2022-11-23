@@ -28,7 +28,7 @@ const AdminEditMeet = (props) => {
     }
 
     async function getEvent() {
-        axiosPrivate.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
+        axiosPrivate.get(`http://aleksbcg.beget.tech/GetCreteryOnEvent/${EventId}`)
         .then(response => {
             setcriteria(response.data)
         }).catch(function (error) {
@@ -66,9 +66,7 @@ const AdminEditMeet = (props) => {
         })
     }
 
-    console.log(EventId)
-
-    
+    console.log(criterias)
 
     return (
         <>
@@ -98,7 +96,7 @@ const AdminEditMeet = (props) => {
                     <div className="AdminEditMeet__secondBlock-container">
                         <div className="AdminEditMeet__secondBlock__criteriaPull">
                             {criterias.map((criterias, index) =>
-                                <Criteria EventId={EventId} remove={removeProject} number={index + 1} criteria={criterias} key={criterias.id} />
+                                <Criteria remove={removeProject} number={index + 1} criterias={criterias} key={criterias.id} />
                             )}
                         </div>
                         <EditCriteria create={createcriteria}/>

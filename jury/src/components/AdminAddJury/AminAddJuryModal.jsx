@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AdminAddJuryModal.css";
@@ -26,9 +26,16 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
             console.log(error);
         })
     }
+
+    const navigate = useNavigate()
+
+    function closeModal() {
+        setActive(false)
+        navigate("/AdminAddJury")
+    }
     
     return (
-        <div className={active ? "AdminAddJuryModal active" : "AdminAddJuryModal"} onClick={() => setActive(false)} >
+        <div className={active ? "AdminAddJuryModal active" : "AdminAddJuryModal"} onClick={() => closeModal()} >
             <div className="AdminAddJuryModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AdminAddJuryModal__content-container">
                     <h1>Регистрация жюри</h1>
