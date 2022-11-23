@@ -11,7 +11,7 @@ const CriteriaVote = (props) => {
     const auth = localStorage.getItem("user_id")
 
     
-    const [crit, setCrit] = useState({ index: props.number, score: '', event: EventId, project: projectId, jury: auth, creteryType: props.criteria.id })
+    const [crit, setCrit] = useState({ index: props.number, score: '', event: EventId, project: projectId, jury: auth, creteryType: props.criteria[0].id })
     console.log(crit)
 
     async function postCrit(e){
@@ -26,10 +26,10 @@ const CriteriaVote = (props) => {
         <>
             <div className="CriteriaVote">
                 <div className="CritrriaVote__top">
-                    <b>{props.criteria.creteryName}</b>
+                    <b>{props.criteria[0].creteryName}</b>
                 </div>
                 <div className="CriteriaVote__bottom">
-                       { props.criteria.creteryType === 1 
+                       { props.criteria[0].creteryType === 1 
                         ? <select name="" id="" value={crit.score} onChange={e => postCrit(e)}>
                             <option value={1}>1</option>
                             <option value={2}>2</option>
@@ -37,7 +37,7 @@ const CriteriaVote = (props) => {
                             <option value={4}>4</option>
                             <option value={5}>5</option>
                          </select>
-                        :props.criteria.creteryType === 2
+                        : props.criteria[0].creteryType === 2
                             ? <select name="" id="" value={crit.score} onChange={e => postCrit(e)}>
                             <option value={1}>да</option>
                             <option value={5}>нет</option>

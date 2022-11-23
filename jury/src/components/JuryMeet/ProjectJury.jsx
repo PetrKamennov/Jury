@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import "./ProjectJury.css";
 
 const ProjectJury = (props, remove) => {
-
+    
+    
     function setId(){
+        localStorage.setItem('EventId', props.eventId)
         localStorage.setItem("projectId", props.jury.id)
     }
     const user_id = localStorage.getItem("user_id")

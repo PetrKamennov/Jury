@@ -22,7 +22,7 @@ const Result = () => {
 
 
     async function getinf() {
-        axiosPrivate.get(`/returnCretery/${EventId}`, {
+        axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
         }).then(response => {
             setResult(response.data)
             console.log(response.data)
