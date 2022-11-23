@@ -167,11 +167,17 @@
     }
 }
 @media (max-width: 390px){
+    .Event__container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .Event__text{
-        width: 60%;
+        width: 75%;
     }
     .Event__text span{
         font-size: 12px;
+        margin-left: 0px;
     }
     .Event__text p{
         font-size: 10px;

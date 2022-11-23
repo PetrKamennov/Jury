@@ -136,6 +136,10 @@ body {
         width: 260px;
         font-size: 26px;
     }
+    .AdminEditProject{
+        padding-top: 0px;
+        margin-top: -54px;
+    }
 }
 
 

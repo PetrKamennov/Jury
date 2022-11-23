@@ -66,4 +66,8 @@
     .JuryVote__container__buttons > button{
         font-size: 24px;
     }
+    .JuryVote{
+        padding-top: 0px;
+        margin-top: -54px;
+    }
 }

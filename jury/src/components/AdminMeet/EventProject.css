@@ -154,8 +154,22 @@
     }
 }
 @media (max-width: 390px){
+    .EventProject__container{
+        padding: 0 15px !important;
+    }
     .EventProject__buttons-1{
         width: 100px;
         font-size: 9px;
+    }
+    .EventProject__text span{
+        margin-left: 0px !important;
+        margin-right: 10px;
+    }
+    .EventProject__buttons.active{
+        width: 30px;
+        padding-right: 0px;
+    }
+    .EventProject__txt-span{
+        margin-right: 0px !important;
     }
 }

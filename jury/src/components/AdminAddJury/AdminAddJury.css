@@ -118,7 +118,10 @@ body {
 
 
 @media (max-width: 500px) {
-
+    .AdminAddJury{
+        padding-top: 0px;
+        margin-top: -54px;
+    }
     .AdminAddJury__pulljury {
         height: 450px;
     }

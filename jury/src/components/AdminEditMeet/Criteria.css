@@ -124,11 +124,13 @@
 @media (max-width: 400px){
     .Criteria__button{
         width: 80px;
+        height: 35px;
     }
     .Criteria__text span{
         font-size: 14px;
     }
     .Criteria__text p{
+        margin-right: 10px;
         font-size: 12px;
     }
     .Criteria__button{

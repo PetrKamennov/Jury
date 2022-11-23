@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./Criteria.css";
 
-const Criteria = (props) => {
+const Criteria = (props, remove) => {
 
     const axiosPrivate = useAxiosPrivate();
 
-    // const id = props.criterias.id
+
     async function RemoveProject() {
         props.remove(props.criterias)
-        axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criterias[0].id}`
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criterias[0].id}/`
         ).then(response => {
             console.log(response.data)
         }).catch(function (error) {
