@@ -66,6 +66,10 @@
     }
 }
 @media (max-width: 680px){
+    .AdminMeet{
+        padding: 0;
+        margin-top: -150px;
+    }
     .AdminMeet h1{
         font-size: 38px;
     }

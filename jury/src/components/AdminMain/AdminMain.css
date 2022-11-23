@@ -58,6 +58,16 @@
         margin-top: 20px;
     }
 }
+@media (max-width: 760px) {
+    .AdminEditJury__button {
+        width: 360px;
+    }
+
+    .AdminEditJury {
+        padding-top: 0px;
+    }
+}
+
 @media (max-width: 680px){
     .AdminMain__buttons button{
         width: 320px;
@@ -66,7 +76,14 @@
         font-size: 38px;
     }
 }
+
+
+
+
 @media (max-width: 500px){
+    .AdminMain__EventPull{
+        height: 450px;
+    }
     .AdminMain__buttons button{
         width: 280px;
         font-size: 26px;

@@ -119,10 +119,16 @@ body {
     .AdminEditProject > button{
         width: 360px;
     }
+    .AdminEditProject{
+        padding-top: 0px;
+    }
 }
 @media (max-width: 500px){
     .AdminEditProject{
-        padding-top: 104px;
+        padding-top: 0px;
+    }
+    .AdminEditProject__pullProject{
+        height: 450px;
     }
 }
 @media (max-width: 460px){

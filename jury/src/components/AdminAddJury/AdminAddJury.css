@@ -103,9 +103,23 @@ body {
         margin-right: 0px;
     }
 }
+@media (max-width: 760px) {
+
+    .AdminAddJury {
+        padding-top: 0px;
+    }
+}
 @media (max-width: 600px){
     .AdminAddJury>button{
         width: 360px;
         font-size: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .AdminAddJury__pulljury {
+        height: 450px;
     }
 }

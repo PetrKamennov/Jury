@@ -17,8 +17,8 @@ const Criteria = (props, remove) => {
             console.log(error);
         })
     }
-    const Name = props.criterias.creteryName
-    const Descript = props.criterias.creteryDescription
+    const Name = props.criterias[0].creteryName
+    const Descript = props.criterias[0].creteryDescription
     return (
         <>
             <div className="Criteria">

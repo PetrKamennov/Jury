@@ -1,5 +1,5 @@
 .AdminEditProjectModal {
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     position: fixed;
     top: -153px;
@@ -84,9 +84,12 @@
     pointer-events: none;
 
 }
+.AdminAddJuryModal__content-container{
+    align-items: center;
+}
 
-.AdminAddEvent_first_input:focus~span,
-.AdminAddEvent_first_input[value]:not([value=""])~span {
+.AdminEditProjectModal__content-regJury__inputs__box input:focus~span,
+.AdminEditProjectModal__content-regJury__inputs__box input[value]:not([value=""])~span {
     color: rgba(0, 0, 0, 0.4);
     transform: translateY(-38px);
 }

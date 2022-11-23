@@ -109,10 +109,16 @@ body {
     .AdminEditJury__button{
         width: 360px;
     }
+    .AdminEditJury{
+        padding-top: 0px;
+    }
 }
 @media (max-width: 500px){
     .AdminEditJury{
-        padding-top: 104px;
+        /* padding-top: 104px; */
+    }
+        .AdminEditJury__pulljury{
+        height: 450px;
     }
 }
 @media (max-width: 460px){
