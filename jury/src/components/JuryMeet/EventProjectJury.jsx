@@ -9,7 +9,7 @@ const EventProjectJury = (props) => {
 
     const [update, setUpdate] = useState(false)
 
-    localStorage.setItem('EventId', props.event.id)
+
 
     const axiosPrivate = useAxiosPrivate();
 
@@ -68,7 +68,7 @@ const EventProjectJury = (props) => {
                 <div className={EventProject__Jurrypull}>
                     <div className="EventProject__Jurrypull-container">
                         {jurys.map((jurys, index) =>
-                            <ProjectJury number={index + 1} jury={jurys} key={jurys.id} />
+                            <ProjectJury number={index + 1} eventId={props.event.id} jury={jurys} key={jurys.id} />
                         )}
                     </div>
                 </div>

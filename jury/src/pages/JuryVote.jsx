@@ -34,7 +34,7 @@ const JuryVote = () => {
     console.log(EventId)
 
     async function getinf() {
-        axiosPrivate.get(`/returnCretery/${EventId}`, {
+        axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
         }).then(response => {
                 setCriterias(response.data)  
             console.log(response.data.length)
