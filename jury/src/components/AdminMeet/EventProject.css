@@ -136,6 +136,9 @@
         width: 180px;
         font-size: 16px;
     }
+    .EventProject__text p{
+        margin-right: 8px;
+    }
 }
 @media (max-width: 830px){
     .EventProject__buttons-1{

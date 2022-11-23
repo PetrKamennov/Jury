@@ -61,6 +61,9 @@
     .AdminMeet h1{
         align-self: center;
     }
+    .AdminMeet__button-done{
+        margin-right: 0px;
+    }
 }
 @media (max-width: 680px){
     .AdminMeet h1{
@@ -68,6 +71,10 @@
     }
     .AdminMeet > button{
         width: 320px;
+    }
+    .AdminMeet__button-done{
+        font-size: 20px;
+        width: 330px;
     }
 }
 @media (max-width: 500px){
