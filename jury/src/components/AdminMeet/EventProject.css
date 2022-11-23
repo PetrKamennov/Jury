@@ -63,7 +63,6 @@
 .EventProject__buttons.active{
     display: flex;
     justify-content: space-between;
-    width: 950px;
     padding-right: 155px;
     border: none;
 }
@@ -130,6 +129,9 @@
         width: 240px;
         font-size: 18px;
     }
+    .EventProject__buttons.active{
+        padding-right: 100px;
+    }
 }
 @media (max-width: 960px){
     .EventProject__buttons-1{
@@ -144,6 +146,9 @@
     .EventProject__buttons-1{
         width: 150px;
         font-size: 14px;
+    }
+    .EventProject__buttons.active{
+        padding-right: 50px;
     }
 }
 @media (max-width: 500px){
@@ -161,13 +166,12 @@
         width: 100px;
         font-size: 9px;
     }
+    .EventProject__buttons.active{
+        padding-right: 25px !important;
+    }
     .EventProject__text span{
         margin-left: 0px !important;
         margin-right: 10px;
-    }
-    .EventProject__buttons.active{
-        width: 30px;
-        padding-right: 0px;
     }
     .EventProject__txt-span{
         margin-right: 0px !important;

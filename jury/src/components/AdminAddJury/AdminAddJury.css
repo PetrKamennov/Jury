@@ -125,4 +125,8 @@ body {
     .AdminAddJury__pulljury {
         height: 450px;
     }
+    .AdminAddJury>button{
+        width: 260px;
+        font-size: 16px;
+    }
 }
