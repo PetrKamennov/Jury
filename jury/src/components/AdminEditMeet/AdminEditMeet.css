@@ -325,10 +325,10 @@ body {
         width: 100%;
     }
     .AdminEditMeet__firstBlock__left__input__box.eventName span{
-        font-size: 20px;
+        font-size: 20px !important;
     }
     .AdminEditMeet__firstBlock__left__input__box span{
-        font-size: 20px;
+        font-size: 20px !important;
     }
     .AdminEditMeet__firstBlock__right {
         width: 80%;
@@ -354,13 +354,13 @@ body {
         margin-top: -50px;
     }
     .AdminEditMeet__secondBlock__header h1{
-        font-size: 18px;
+        font-size: 14px;
     }
     .AdminEditMeet__firstBlock__right button:nth-child(1){
         font-size: 14px;
     }
     .AdminEditMeet__firstBlock__right button:nth-child(2){
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 

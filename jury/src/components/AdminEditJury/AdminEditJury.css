@@ -126,5 +126,9 @@ body {
         width: 260px;
         font-size: 20px;
     }
+    .AdminEditJury{
+        padding-top: 0px;
+        margin-top: -54px;
+    }
 }
 

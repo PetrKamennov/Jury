@@ -99,7 +99,10 @@ body {
 }
 
 @media (max-width: 500px) {
-
+    .CriteriaPool{
+        padding-top: 0px;
+        margin-top: -54px;
+    }
     .CriteriaPool__pullcrit {
         height: 300px;
     }

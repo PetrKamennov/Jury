@@ -76,7 +76,7 @@ const EventProject = (props, remove) => {
                     <div className="EventProject__text">
                         <div className="EventProject__text-spans">
                             <span>{props.number}</span>
-                            <span>{props.project.projectName}</span>
+                            <span className="EventProject__txt-span">{props.project.projectName}</span>
                         </div>
                         <p className={EventProject__text_p}>{props.project.projectAuthor}</p>
                     </div>

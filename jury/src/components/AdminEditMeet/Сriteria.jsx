@@ -10,13 +10,14 @@ const Criteria = (props, remove) => {
 
     async function RemoveProject() {
         props.remove(props.criterias)
-        axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criteria.CreteryIdIbTable}`
+        axiosPrivate.delete(`http://aleksbcg.beget.tech/CreteryOnEvent/${props.criterias[0].id}/`
         ).then(response => {
             console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
     }
+    console.log(props.criterias)
     const Name = props.criterias[0].creteryName
     const Descript = props.criterias[0].creteryDescription
     return (
