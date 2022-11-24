@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Notification, useToaster } from "rsuite";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AdminAddJuryModal.css";
@@ -21,21 +22,40 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                 email: "test1@mail.ru",
                 password: jury.password
         }).then(response => {
+            PushM()
             console.log(response.data)
         }).catch(function (error) {
+            PushE()
             console.log(error);
         })
     }
 
-    const navigate = useNavigate()
-
-    function closeModal() {
-        setActive(false)
-        navigate("/AdminAddJury")
-    }
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'success'} 
+            header={'Поздравляем!'} closable>
+            <p>Аккаунт Члена Жюри был успешно создан.</p>
+            <br/>
+            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+        </Notification>
+    );
+    const error = (
+        <Notification type={'error'} 
+            header={'Упс...'} closable>
+            <p>Извините, Произошла Ошибка.</p>
+            <br/>
+            <p>Попробуйте ещё раз, не сдавайтесь!</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
     
     return (
-        <div className={active ? "AdminAddJuryModal active" : "AdminAddJuryModal"} onClick={() => closeModal()} >
+        <div className={active ? "AdminAddJuryModal active" : "AdminAddJuryModal"} onClick={() => setActive(false)} >
             <div className="AdminAddJuryModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AdminAddJuryModal__content-container">
                     <h1>Регистрация жюри</h1>
@@ -61,7 +81,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                                     </div>
                                 </div>
                             </div>
-                    <Link to="/AdminAddJury"><button onClick={addNewJury}>Зарегистрировать</button></Link>
+                    <button onClick={addNewJury}>Зарегистрировать</button>
                 </div>
             </div>
         </div>

@@ -6,6 +6,7 @@ import axios from "../api/axios";
 import jwt_decode from 'jwt-decode';
 import useAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Notification, useToaster } from "rsuite";
 
 const LOGIN_URL = '/api/token/';
 
@@ -69,6 +70,7 @@ const Authorization = () => {
             }
         } catch (err) {
             console.log(err)
+            PushE()
             // if (!err.response) {
             //     setErrMsg('No Server Response');
             // } else if (err.response.status === 400) {
@@ -82,6 +84,17 @@ const Authorization = () => {
         }
     }
 
+    const toaster = useToaster();
+    const error = (
+        <Notification type={'error'} 
+            header={'Упс...'} closable>
+            <p>Данного Пользователя Не существует.</p>
+            <p>Попробуйте ещё раз, людям свойственно забывать!</p>
+        </Notification>
+    );
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
 
     return (
         <>

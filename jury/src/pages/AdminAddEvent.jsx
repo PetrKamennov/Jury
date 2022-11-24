@@ -7,6 +7,7 @@ import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
 import Navbar from "../components/navbar/Navbar";
 import "../components/AdminEditProject/AdminEditProjectModal.css";
+import { Notification, useToaster } from "rsuite";
 
 const AdminAddEvent = (props) => {
 
@@ -20,12 +21,37 @@ const AdminAddEvent = (props) => {
             eventName: events.eventName, 
             eventDate: events.eventDate,
         }).then(response => {
+            PushM()
             setEvent({ eventName: '', eventDate: '' })
             console.log(response.data)
         }).catch(function (error) {
+            PushE()
             console.log(error);
         })
     }
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'success'} 
+            header={'Поздравляем!'} closable>
+            <p>Мероприятие Добавлено.</p>
+            <br/>
+            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+        </Notification>
+    );
+    const error = (
+        <Notification type={'error'} 
+            header={'Упс...'} closable>
+            <p>Извините, Произошла Ошибка.</p>
+            <br/>
+            <p>Попробуйте ещё раз, не сдавайтесь!</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
 
 
     return (
@@ -44,7 +70,7 @@ const AdminAddEvent = (props) => {
                                 <span>Дата проведения</span>
                             </div>
                         </div>
-                        <Link to="/AdminMain"><button onClick={addNewEvent} >Добавить</button></Link>
+                        <button onClick={addNewEvent} >Добавить</button>
                     </div>
                 </div>
             </div>

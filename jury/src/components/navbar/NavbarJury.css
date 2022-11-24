@@ -87,7 +87,9 @@ hr {
     border-top: 1px solid #CCCCCC;
 }
 .navbar__button:hover{
-    border-bottom: 3px solid #E21A1A;
+    text-decoration: none !important;
+    color: #000 !important;
+    border-bottom: 3px solid #E21A1A !important;
 }
 .navbar__button:focus{
     border-bottom: 3px solid #E21A1A;

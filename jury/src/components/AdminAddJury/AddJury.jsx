@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Notification, useToaster } from "rsuite";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 import "./addJury.css";
 
@@ -15,12 +16,37 @@ const AddJury = (props, remove) => {
             event: EventId,
             jury: props.jury.id
         }).then(response => {
+            PushM()
             console.log(response.data.posts)
         }).catch(function (error) {
+            PushE()
             console.log(error);
         })
     }
     console.log(props.EventId)
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'success'} 
+            header={'Поздравляем!'} closable>
+            <p>Член Жюри был успешно добавлен в мероприятие.</p>
+            <br/>
+            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+        </Notification>
+    );
+    const error = (
+        <Notification type={'error'} 
+            header={'Упс...'} closable>
+            <p>Извините, Произошла Ошибка.</p>
+            <br/>
+            <p>Попробуйте ещё раз, не сдавайтесь!</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
 
     return (
         <div className="Jury">
@@ -32,7 +58,7 @@ const AddJury = (props, remove) => {
                     </div>
                     <p>{props.jury.first_name}</p>
                 </div>
-                <Link to="/AdminEditJury"><button onClick={addJury} className="Jury__button">Добавить</button></Link>
+                <button onClick={addJury} className="Jury__button">Добавить</button>
             </div>
         </div>
     )

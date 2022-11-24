@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Notification, useToaster } from "rsuite";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
 
 import "./AddCriteriaModal.css";
@@ -21,21 +22,41 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
             creteryDescription: crit.creteryDescription,
             creteryType: crit.creteryType
         }).then(response => {
+            PushM()
             setCrit(response.data)
         }).catch(function (error) {
+            PushE()
             console.log(error);
         })
     }
 
-    const navigate = useNavigate()
 
-    function closeModal() {
-        setActive(false)
-        navigate("/CriteriaPool")
-    }
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'success'} 
+            header={'Поздравляем!'} closable>
+            <p>Критерий Установлен!</p>
+            <br/>
+            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+        </Notification>
+    );
+    const error = (
+        <Notification type={'error'} 
+            header={'Упс...'} closable>
+            <p>Извините, Произошла Ошибка.</p>
+            <br/>
+            <p>Попробуйте ещё раз, не сдавайтесь!</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
     
     return (
-        <div className={active ? "AddCriteriaModal active" : "AddCriteriaModal"} onClick={() => closeModal()} >
+        <div className={active ? "AddCriteriaModal active" : "AddCriteriaModal"} onClick={() => setActive(false)} >
             <div className="AddCriteriaModal__content" onClick={e => e.stopPropagation()}>
                 <div className="AddCriteriaModal__content-container">
                     <h1>Установка Критерия</h1>
@@ -60,7 +81,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
                                 </div>
                             </div>
-                    <Link to="/CriteriaPool"><button onClick={addNewCriteria}>Установить</button></Link>
+                    <button onClick={addNewCriteria}>Установить</button>
                 </div>
             </div>
         </div>
