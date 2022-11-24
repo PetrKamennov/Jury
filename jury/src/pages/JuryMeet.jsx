@@ -4,6 +4,7 @@ import "../components/JuryMeet/jury_meet.css"
 import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import NavbarJury from '../components/navbar/NavbarJury';
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import UpdateBut from '../components/UpdateBut/UpdateBut';
 
 
 
@@ -46,6 +47,7 @@ const JuryMeet = () => {
                             <EventProjectJury number={index + 1} event={events} key={events.id} />
                         )}
                     </div>
+                    <UpdateBut/>
                 </section>
             </div>
         </>
