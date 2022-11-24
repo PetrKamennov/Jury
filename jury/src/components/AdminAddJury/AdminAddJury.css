@@ -76,9 +76,13 @@ body {
     overflow-y: scroll;
 }
 
-
-.AdminAddJury>button {
-    align-self: flex-end;
+.AdminAddJury__Buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.AdminAddJury__Buttons >button {
     width: 560px;
     height: 66px;
     background: #E21A1A;
@@ -90,12 +94,22 @@ body {
     line-height: 42px;
     text-align: center;
     color: #FFFFFF;
-    margin-right: 100px;
-    margin-top: 54px;
     cursor: pointer;
 }
-.AdminAddJury > button:hover{
+.AdminAddJury__Buttons >button:hover{
     background: #c90916;
+}
+@media (max-width:1470px){
+    .AdminAddJury__Buttons{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .AdminAddJury__Buttons >button{
+        margin-top: 30px;
+    }
 }
 @media (max-width: 920px){
     .AdminAddJury>button{
@@ -109,10 +123,10 @@ body {
         padding-top: 0px;
     }
 }
-@media (max-width: 600px){
-    .AdminAddJury>button{
-        width: 360px;
-        font-size: 20px;
+@media (max-width: 680px){
+    .AdminAddJury__Buttons >button{
+        width: 320px;
+        font-size: 18px;
     }
 }
 
@@ -125,8 +139,8 @@ body {
     .AdminAddJury__pulljury {
         height: 450px;
     }
-    .AdminAddJury>button{
-        width: 260px;
+    .AdminAddJury__Buttons >button{
+        width: 280px;
         font-size: 16px;
     }
 }
