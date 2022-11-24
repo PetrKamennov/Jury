@@ -16,3 +16,19 @@
     color: #FFFFFF !important;
     cursor: pointer;
 }
+.UpdateBut__Link:hover{
+    background: #c90916;
+}
+@media (max-width: 680px){
+    .UpdateBut__Link{
+        width: 320px;
+        font-size: 18px;
+    }
+    
+}
+@media (max-width: 500px){
+    .UpdateBut__Link{
+        width: 280px;
+    }
+    
+}

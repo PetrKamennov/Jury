@@ -45,12 +45,15 @@ const CriteriaPool = (props) => {
                         <AddCrit number={index + 1} criteria={criterias} key={criterias.id} />
                     )}
                 </div>
-                <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить Критерий</button>
-            </section>
-            <div className="CriteriaPool__Buttons">
+                <div className="CriteriaPool__Buttons">
                 <UpdateBut/>
+                <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить Критерий</button>
+                </div>
+            </section>
+            
+                
                 <AddCriteriaModal create={createcriteria} active={modalActive} setActive={setModalActive} />
-            </div>
+           
         </>
     )
 }

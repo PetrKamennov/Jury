@@ -233,7 +233,12 @@ body {
 .AdminEditMeet__secondBlock__criteriaPull::-webkit-scrollbar {
     width: 0;
 }
-
+.AdminEditMeet__Buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 .AdminEditMeet > button{
     width: 345px;
     height: 66px;
@@ -262,12 +267,22 @@ body {
     line-height: 42px;
     text-align: center;
     color: #FFFFFF;
-    margin-right: 100px;
-    margin-top: 40px;
     cursor: pointer;
 }
 .AdminMeet__save-button:hover{
     background: #c90916;
+}
+@media (max-width:1470px){
+    .AdminEditMeet__Buttons{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .AdminMeet__save-button{
+        margin-top: 30px;
+    }
 }
 @media (max-width: 1200px){
     .AdminEditMeet__firstBlock-container{
@@ -287,7 +302,7 @@ body {
         margin-top: 20px;
     }
     .AdminMeet__save-button{
-        margin: 40px auto 0px auto;
+        margin: 30px auto 0px auto;
     }
 }
 @media (max-width: 700px){
@@ -306,6 +321,12 @@ body {
         font-size: 24px;
         width: 220px;
         height: 46px;
+    }
+}
+@media (max-width: 680px){
+    .AdminMeet__save-button{
+        width: 320px;
+        font-size: 18px;
     }
 }
 @media (max-width: 600px){
@@ -342,11 +363,6 @@ body {
     .AdminEditMeet__secondBlock__header h1{
         font-size: 20px;
     }
-    .AdminMeet__save-button{
-        width: 300px;
-        font-size: 20px;
-        height: 40px;
-    }
 }
 @media (max-width: 500px){
     .AdminEditMeet{
@@ -361,6 +377,10 @@ body {
     }
     .AdminEditMeet__firstBlock__right button:nth-child(2){
         font-size: 12px;
+    }
+    .AdminMeet__save-button{
+        width: 280px;
+    
     }
 }
 

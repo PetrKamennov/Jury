@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import axios from 'axios';
 import Jury from "../components/AdminEditJury/Jury";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 
 import "../components/AdminEditJury/AdminEditJury.css";
@@ -50,7 +51,7 @@ const AdminEditJury = (props) => {
 
                 </div>
                 <div className="AdminEditJury__Buttons">
-                    <Link to="/AdminEditJury" className="AdminEditJury__buttons-leftbt">Обновить</Link>
+                   <UpdateBut/>
                     <Link to="/AdminAddJury"><button className="AdminEditJury__button">Добавить члена жюри</button></Link>
                 </div>
             </section>

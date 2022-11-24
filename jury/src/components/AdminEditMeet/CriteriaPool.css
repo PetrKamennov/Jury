@@ -76,20 +76,41 @@ body {
     height: 496px;
     overflow-y: scroll;
 }
+.CriteriaPool__Buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 .CriteriaPool__button{
-    width: 300px;
-    height: 60px;
+    width: 560px;
+    height: 66px;
     background: #E21A1A;
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 500;
-    font-size: 26px;
+    font-size: 32px;
     line-height: 34px;
     text-align: center;
     color: #F3F3F3;
     border: none;
+    cursor: pointer;
 }
-
+.CriteriaPool__button:hover{
+    background: #c90916;
+}
+@media (max-width:1470px){
+    .CriteriaPool__Buttons{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .CriteriaPool__button{
+        margin-top: 30px;
+    }
+}
 @media (max-width: 760px) {
 
     .CriteriaPool {
@@ -97,7 +118,12 @@ body {
         align-items: center;
     }
 }
-
+@media (max-width: 680px){
+    .CriteriaPool__button{
+        width: 320px;
+        font-size: 18px;
+    }
+}
 @media (max-width: 500px) {
     .CriteriaPool{
         padding-top: 0px;
@@ -105,5 +131,8 @@ body {
     }
     .CriteriaPool__pullcrit {
         height: 300px;
+    }
+    .CriteriaPool__button{
+        width: 280px;
     }
 }
