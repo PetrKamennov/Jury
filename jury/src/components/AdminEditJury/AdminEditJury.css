@@ -77,7 +77,12 @@ body {
     overflow-y: scroll;
 }
 
-
+.AdminEditJury__Buttons{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 .AdminEditJury__button {
     width: 560px;
     height: 66px;
@@ -90,12 +95,22 @@ body {
     line-height: 42px;
     text-align: center;
     color: #FFFFFF;
-    margin-right: 100px;
-    margin-top: 54px;
     cursor: pointer;
 }
 .AdminEditJury__button:hover{
     background: #c90916;
+}
+@media (max-width:1470px){
+    .AdminEditJury__Buttons{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .AdminEditJury__button{
+        margin-top: 30px;
+    }
 }
 @media (max-width: 1050px){
     .AdminEditJury__button{
@@ -106,11 +121,15 @@ body {
     }
 }
 @media (max-width: 760px){
-    .AdminEditJury__button{
-        width: 360px;
-    }
     .AdminEditJury{
         padding-top: 0px;
+    }
+
+}
+@media (max-width: 680px){
+    .AdminEditJury__button{
+        width: 320px;
+        font-size: 18px;
     }
 }
 @media (max-width: 500px){
@@ -120,12 +139,12 @@ body {
         .AdminEditJury__pulljury{
         height: 450px;
     }
+    .AdminEditJury__button{
+        width: 280px !important;
+    }
 }
 @media (max-width: 460px){
-    .AdminEditJury__button{
-        width: 260px !important;
-        font-size: 20px;
-    }
+    
     .AdminEditJury{
         padding-top: 0px;
         margin-top: -54px;

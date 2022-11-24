@@ -1,0 +1,34 @@
+.UpdateBut__Link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
+.UpdateBut__Link:hover{
+    background: #c90916;
+}
+@media (max-width: 680px){
+    .UpdateBut__Link{
+        width: 320px;
+        font-size: 18px;
+    }
+    
+}
+@media (max-width: 500px){
+    .UpdateBut__Link{
+        width: 280px;
+    }
+    
+}

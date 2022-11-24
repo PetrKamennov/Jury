@@ -5,6 +5,7 @@ import EventProjectJury from "../components/JuryMeet/EventProjectJury";
 import EventProjectHistory from "../components/JuryMeet/EventProjectHistory";
 import useAxiosPrivate from '../hooks/useAxiosPrivate';
 import NavbarJury from '../components/navbar/NavbarJury';
+import UpdateBut from '../components/UpdateBut/UpdateBut';
 const JuryHistory = () => {
 
     const axiosPrivate = useAxiosPrivate()
@@ -48,6 +49,7 @@ const JuryHistory = () => {
                             <EventProjectHistory number={index + 1} id={index} project={projects} key={projects.id} />
                         )}
                     </div>
+                    <UpdateBut/>
                 </section>
             </div>
         </>

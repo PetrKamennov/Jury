@@ -57,12 +57,12 @@
     .AdminMain__buttons button{
         margin-top: 20px;
     }
+    
 }
 @media (max-width: 760px) {
     .AdminEditJury__button {
         width: 360px;
     }
-
     .AdminEditJury {
         padding-top: 0px;
     }
@@ -71,6 +71,7 @@
 @media (max-width: 680px){
     .AdminMain__buttons button{
         width: 320px;
+        font-size: 18px;
     }
     .AdminMain h1{
         font-size: 38px;
@@ -86,7 +87,7 @@
     }
     .AdminMain__buttons button{
         width: 280px;
-        font-size: 26px;
+    
     }
     .AdminMain h1{
         font-size: 32px;

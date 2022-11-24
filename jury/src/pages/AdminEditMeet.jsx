@@ -6,6 +6,7 @@ import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
 import Navbar from "../components/navbar/Navbar";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 const AdminEditMeet = (props) => {
 
@@ -17,6 +18,7 @@ const AdminEditMeet = (props) => {
     const [update, setUpdate] = useState(false)
 
     const [criterias, setcriteria] = useState([])
+    const [crits, setcrits] = useState([])
     const [events, setevents] = useState({eventName: '', eventDate: ''})
 
     const createcriteria = (newCriteria) => {
@@ -31,6 +33,17 @@ const AdminEditMeet = (props) => {
         axiosPrivate.get(`http://aleksbcg.beget.tech/GetCreteryOnEvent/${EventId}`)
         .then(response => {
             setcriteria(response.data)
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    async function getCretery() {
+        axiosPrivate.get(`http://aleksbcg.beget.tech/returnCretery/${EventId}`)
+        .then(response => {
+            setcrits(response.data)
+            console.log(response.data)
         }).catch(function (error) {
             console.log(error);
         })
@@ -40,6 +53,7 @@ const AdminEditMeet = (props) => {
     useEffect(() => {
         if (update) return
         getEvent()
+        getCretery()
     }, [update])
 
     console.log(localStorage.getItem("id"))
@@ -96,13 +110,16 @@ const AdminEditMeet = (props) => {
                     <div className="AdminEditMeet__secondBlock-container">
                         <div className="AdminEditMeet__secondBlock__criteriaPull">
                             {criterias.map((criterias, index) =>
-                                <Criteria remove={removeProject} number={index + 1} criterias={criterias} key={criterias.id} />
+                                <Criteria remove={removeProject} number={index + 1} crits={crits} criterias={criterias} key={criterias.id} />
                             )}
                         </div>
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
-                <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
+                <div className="AdminEditMeet__Buttons">
+                    <UpdateBut/>
+                    <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
+                </div>
             </section>
         </>
     )

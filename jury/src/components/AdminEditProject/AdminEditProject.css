@@ -88,8 +88,13 @@ body {
 .AdminEditProject__pullProject::-webkit-scrollbar-button {
     display: none;
 }
-
-.AdminEditProject > button {
+.AdminEditProject__Buttons{
+    display: flex;
+    margin-top: 30px;
+    width: 100%;
+    justify-content: space-between;
+}
+.AdminEditProject__Buttons > button {
     align-self: flex-end;
     width: 560px;
     height: 66px;
@@ -102,28 +107,61 @@ body {
     line-height: 42px;
     text-align: center;
     color: #FFFFFF;
-    margin-right: 100px;
-    margin-top: 54px;
     cursor: pointer;
 }
-.AdminEditProject > button:hover{
+.AdminEditProject__buttons-leftbt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
+.AdminEditProject__Buttons > button:hover{
     background: #c90916;
 }
-@media (max-width: 1050px){
-    .AdminEditProject > button{
+@media (max-width:1470px){
+    .AdminEditProject__Buttons{
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (max-width: 1470px){
+    .AdminEditProject__Buttons > button{
         align-self: center;
         margin-right: 0px;
+        margin-top: 30px;
     }
 }
 @media (max-width: 760px){
-    .AdminEditProject > button{
-        width: 360px;
-    }
+
     .AdminEditProject{
         padding-top: 0px;
     }
 }
+@media (max-width: 680px){
+    .AdminEditProject__Buttons > button{
+        width: 320px;
+        font-size: 18px;
+    }
+}
 @media (max-width: 500px){
+    .AdminEditProject__Buttons > button{
+        width: 280px;
+    }
     .AdminEditProject{
         padding-top: 0px;
     }
@@ -132,10 +170,7 @@ body {
     }
 }
 @media (max-width: 460px){
-    .AdminEditProject > button{
-        width: 260px;
-        font-size: 26px;
-    }
+    
     .AdminEditProject{
         padding-top: 0px;
         margin-top: -54px;

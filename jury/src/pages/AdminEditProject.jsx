@@ -6,6 +6,8 @@ import "../components/AdminEditProject/AdminEditProject.css";
 import AdminEditProjectModal from "../components/AdminEditProject/AdminEditProjectModal";
 import Project from "../components/AdminEditProject/Project";
 import Navbar from "../components/navbar/Navbar";
+import { Link } from "react-router-dom";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 
 
@@ -55,7 +57,10 @@ const AdminEditProject = (props) => {
                     )}
 
                 </div>
-                <button onClick={() => setModalActive(true)}>Добавить проект</button>
+                <div className="AdminEditProject__Buttons">
+                    <UpdateBut/>
+                    <button onClick={() => setModalActive(true)}>Добавить проект</button>
+                </div>
             </section>
             <AdminEditProjectModal onClick={createProject} EventId={EventId} active={modalActive} setActive={setModalActive} />
         </>
