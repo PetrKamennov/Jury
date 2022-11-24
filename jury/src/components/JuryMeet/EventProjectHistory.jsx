@@ -37,15 +37,15 @@ const EventProjectHistory = (props) => {
     async function getinf() {
         axiosPrivate.get(`/getHistory/${user_id}`
         ).then(response => {
-            var score = Array(response.data[0].author.length)
+            var score = Array(response.data[props.id].author.length)
             console.log(response.data)
 
-            for (let index = 0; index < response.data[0].author.length; index++) {
+            for (let index = 0; index < response.data[props.id].author.length; index++) {
                 score[index] = { author: '', projectName: '', score: 0 };
-                score[index].author = response.data[0].author[index];
-                score[index].projectName = response.data[0].projects[index];
-                score[index].score = response.data[0].results[index];
-                console.log(response.data[0].results[index])
+                score[index].author = response.data[props.id].author[index];
+                score[index].projectName = response.data[props.id].projects[index];
+                score[index].score = response.data[props.id].results[index];
+                console.log(response.data[props.id].results[index])
             }
             setjury(score)
         }).catch(function (error) {

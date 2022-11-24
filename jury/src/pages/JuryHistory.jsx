@@ -45,7 +45,7 @@ const JuryHistory = () => {
                 <section className="Jury_History_select">
                     <div className="JuryHistory__ProjektPull">
                         {projects.map((projects, index) =>
-                            <EventProjectHistory number={index + 1} project={projects} key={projects.id} />
+                            <EventProjectHistory number={index + 1} id={index} project={projects} key={projects.id} />
                         )}
                     </div>
                 </section>
