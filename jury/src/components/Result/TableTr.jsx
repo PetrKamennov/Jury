@@ -42,11 +42,29 @@ const TableTr = (props) => {
         }
     }
     
+    function tableCrit(){
+            axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
+            }).then(response => {
+                var Crit = Array(response.data.length)
+                for (let index = 0; index < response.data.length; index++) {
+                    if (props.projets.estimations[index] === undefined) {
+                        Crit[index] = 0
+                    }else{
+                        Crit[index] = props.projets.estimations[index]
+                    }
+                }
+                setResult(Crit)
+            }).catch(function (error) {
+                console.log(error);
+            })
+    }
+    
     useEffect(() => {
         if (update) return
         // getinf()
         
-        setResult(props.projets.estimations)
+        // setResult(props.projets.estimations)
+        tableCrit()
         resultat()
         }, [update])
 
