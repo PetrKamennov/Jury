@@ -1,6 +1,6 @@
 .AdminMeet {
     width: 89.5%;
-    margin: 0 auto;
+    margin: -110px auto 0px auto;
     display: flex;
     flex-direction: column;
     padding-top: 50px;
