@@ -70,7 +70,7 @@ const AdminAddEvent = (props) => {
                                 <span>Дата проведения</span>
                             </div>
                         </div>
-                        <button onClick={addNewEvent} >Добавить</button>
+                        <button onClick={addNewEvent}>Добавить</button>
                     </div>
                 </div>
             </div>

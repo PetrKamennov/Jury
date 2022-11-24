@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import AddCriteriaModal from "./AddCriteriaModal";
 import { useEffect } from "react";
 import AddCrit from "./AddCrit";
+import UpdateBut from "../UpdateBut/UpdateBut";
 
 const CriteriaPool = (props) => {
 
@@ -46,7 +47,10 @@ const CriteriaPool = (props) => {
                 </div>
                 <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить Критерий</button>
             </section>
-            <AddCriteriaModal create={createcriteria} active={modalActive} setActive={setModalActive} />
+            <div className="CriteriaPool__Buttons">
+                <UpdateBut/>
+                <AddCriteriaModal create={createcriteria} active={modalActive} setActive={setModalActive} />
+            </div>
         </>
     )
 }

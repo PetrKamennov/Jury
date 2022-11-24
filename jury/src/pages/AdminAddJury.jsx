@@ -7,6 +7,8 @@ import AddJury from "../components/AdminAddJury/AddJury";
 import "../components/AdminAddJury/AdminAddJury.css";
 import AdminAddJuryModal from "../components/AdminAddJury/AminAddJuryModal";
 import Navbar from "../components/navbar/Navbar";
+import { Link } from "react-router-dom";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 const AdminAddJury = (props) => {
 
@@ -50,7 +52,10 @@ const AdminAddJury = (props) => {
                     )}
 
                 </div>
-                <button onClick={() => setModalActive(true)}>Зарегистрировать члена жюри</button>
+                <div className="AdminAddJury__Buttons">
+                    <UpdateBut/>
+                    <button onClick={() => setModalActive(true)}>Зарегистрировать члена жюри</button>
+                </div>
             </section>
             <AdminAddJuryModal create={createjury} active={modalActive} setActive={setModalActive} />
         </>

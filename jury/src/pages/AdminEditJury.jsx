@@ -49,7 +49,10 @@ const AdminEditJury = (props) => {
                     )}
 
                 </div>
-                <Link to="/AdminAddJury"><button className="AdminEditJury__button">Добавить члена жюри</button></Link>
+                <div className="AdminEditJury__Buttons">
+                    <Link to="/AdminEditJury" className="AdminEditJury__buttons-leftbt">Обновить</Link>
+                    <Link to="/AdminAddJury"><button className="AdminEditJury__button">Добавить члена жюри</button></Link>
+                </div>
             </section>
         </>
     )

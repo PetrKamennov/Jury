@@ -6,6 +6,7 @@ import Event from "../components/AdminMain/Event";
 import "../components/AdminMain/AdminMain.css";
 import Navbar from "../components/navbar/Navbar";
 import AdminAddEvent from "./AdminAddEvent";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 
 
@@ -60,8 +61,8 @@ const AdminMain = (props, getidPZDC) => {
                     )}
                 </div>
                 <div className="AdminMain__buttons">
-                    {/* <button>Жюри</button> */}
-                    <button onClick={() => setModalActive(true)}>Мероприятие</button>
+                    <UpdateBut/>
+                    <button onClick={() => setModalActive(true)}>Добавить Мероприятие</button>
                 </div>
             </section>
             <AdminAddEvent active={modalActive} setActive={setModalActive} />

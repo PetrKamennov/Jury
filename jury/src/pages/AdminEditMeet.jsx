@@ -6,6 +6,7 @@ import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
 import Navbar from "../components/navbar/Navbar";
+import UpdateBut from "../components/UpdateBut/UpdateBut";
 
 const AdminEditMeet = (props) => {
 
@@ -102,7 +103,10 @@ const AdminEditMeet = (props) => {
                         <EditCriteria create={createcriteria}/>
                     </div>
                 </div>
-                <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
+                <div className="AdminEditMeet__Buttons">
+                    <UpdateBut/>
+                    <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
+                </div>
             </section>
         </>
     )

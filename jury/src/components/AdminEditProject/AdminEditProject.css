@@ -106,6 +106,24 @@ body {
     margin-top: 54px;
     cursor: pointer;
 }
+.AdminEditProject__buttons-leftbt{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    width: 560px;
+    height: 66px;
+    background: #E21A1A;
+    border: none;
+    font-family: 'IBM Plex Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF !important;
+    cursor: pointer;
+}
 .AdminEditProject > button:hover{
     background: #c90916;
 }
