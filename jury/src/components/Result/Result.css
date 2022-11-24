@@ -6,16 +6,17 @@
     justify-content: center;
 }
 .Result__table{
-    width: 89.69%;
-    height: 90%;
+    width: 1728px;
+    height: 900px;
     overflow: scroll;
+    
 }
 .Result__header{
     display: flex;
     height: 50px;
 }
 .Result__header-number{
-    width: 2.5%;
+    min-width: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +50,7 @@
 }
 
 .Result__header-projectName {
-    width: 18.23%;
+    min-width: 350px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -70,7 +71,7 @@
 }
 
 .CriteriaHead {
-    width: 9.79%;
+    min-width: 188px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +79,7 @@
     border: 2px solid #000000;
 }
 .CriteriaTable{
-    width: 9.79%;
+    min-width: 188px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -97,7 +98,7 @@
 }
 
 .Result__header__itog {
-    width: 18.23%;
+    min-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,7 +110,7 @@
     height: 78px;
 }
 .TableTr-number{
-    width: 2.5%;
+    min-width: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,7 +118,7 @@
     border: 2px solid #000000;
 }
 .TableTr-projectName {
-    width: 18.23%;
+    min-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,7 +126,7 @@
     border: 2px solid #000000;
 }
 .TableTr-result{
-    width: 18.23%;
+    min-width: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
