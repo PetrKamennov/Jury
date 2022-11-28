@@ -55,6 +55,11 @@ function App() {
       'Jury': false,
       'Admin': true
     }
+    const routes = [
+      {path: '/login', Component: Authorization},
+      {path: '/ChangePassword', Component: ChangePassword},
+      {path: '/EmailChange', Component: EmailChange}
+    ]
   return transitions((props, item, key) => (
     <>
         <IsUser ROLES={ROLES}/>
@@ -79,14 +84,16 @@ function App() {
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
                 <Route path='/Result' element={<Result/>} />
               </Route>
-              {/* Общее */}
-              <Route path='/login' element={<Authorization/>}/>
-              <Route path='/ChangePassword' element={<ChangePassword/>} />
-              <Route path='/EmailChange' element={<EmailChange />} />
 
           </Route>
         </Routes>
       </animated.div>
+      <Routes>
+          {/* Общее */}
+          <Route path='/login' element={<Authorization/>}/>
+          <Route path='/ChangePassword' element={<ChangePassword/>} />
+          <Route path='/EmailChange' element={<EmailChange />} />
+      </Routes>
     </>
     )
   );
