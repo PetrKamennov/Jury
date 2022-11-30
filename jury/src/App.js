@@ -55,11 +55,6 @@ function App() {
       'Jury': "false",
       'Admin': "true"
     }
-    const routes = [
-      {path: '/login', Component: Authorization},
-      {path: '/ChangePassword', Component: ChangePassword},
-      {path: '/EmailChange', Component: EmailChange}
-    ]
   return transitions((props, item, key) => (
     <>
         <IsUser ROLES={ROLES}/>
