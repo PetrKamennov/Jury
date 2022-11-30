@@ -51,13 +51,21 @@ const Authorization = () => {
             );
             console.log(JSON.stringify(response.data));
             //console.log(JSON.stringify(response));
-            const refreshToken = response.data.refresh;
-            const accessToken = response.data.access;
-            const roles = response.data.is_superuser;
+            const refreshToken = response.data.refresh
+            const accessToken = response.data.access
+            const roles = response.data.is_superuser
             const decoded = jwt_decode(accessToken)
+            localStorage.setItem("refreshToken", response.data.refresh);
+            localStorage.setItem("accessToken", response.data.access);
+            localStorage.setItem("roles", response.data.is_superuser);
+            localStorage.setItem("user_id", decoded.user_id)
+            localStorage.setItem("user", user)
+            localStorage.setItem("pwd", pwd)
             // console.log(decoded.user_id)
-            setAuth({ user, pwd, roles, accessToken, refreshToken, user_id: decoded.user_id });
+            // setAuth({ user, pwd, roles, accessToken, refreshToken, user_id: decoded.user_id });
+            setAuth({ refreshToken: localStorage.getItem("refreshToken"), accessToken: localStorage.getItem("accessToken"), roles: Boolean(localStorage.getItem("roles")), user_id: Number(localStorage.getItem("user_id")), user: localStorage.getItem("user"), pwd: localStorage.getItem("pwd") })
             console.log(refreshToken)
+            
             setUser('');
             setPwd('');
             if (roles === true){
@@ -66,38 +74,39 @@ const Authorization = () => {
                 navigate("/jury_meets")
             }else{
                 navigate(from, { replace: true });
-
+                
             }
         } catch (err) {
             console.log(err)
             PushE()
             // if (!err.response) {
-            //     setErrMsg('No Server Response');
-            // } else if (err.response.status === 400) {
-            //     setErrMsg('Missing Username or Password');
-            // } else if (err.response.status === 401) {
-            //     setErrMsg('Unauthorized');
-            // } else {
-            //     setErrMsg('Login Failed');
-            // }
-            // errRef.current.focus();
-        }
-    }
-
-    const toaster = useToaster();
-    const error = (
-        <Notification type={'error'} 
-            header={'Упс...'} closable>
+                //     setErrMsg('No Server Response');
+                // } else if (err.response.status === 400) {
+                    //     setErrMsg('Missing Username or Password');
+                    // } else if (err.response.status === 401) {
+                        //     setErrMsg('Unauthorized');
+                        // } else {
+                            //     setErrMsg('Login Failed');
+                            // }
+                            // errRef.current.focus();
+                        }
+                    }
+                    
+                    const toaster = useToaster();
+                    const error = (
+                        <Notification type={'error'} 
+                        header={'Упс...'} closable>
             <p>Данного Пользователя Не существует.</p>
             <p>Попробуйте ещё раз, людям свойственно забывать!</p>
         </Notification>
     );
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
-    )
-
-    return (
-        <>
+        )
+        
+        
+        return (
+            <>
             <section className="authorization">
                 <div className="authorization__block">
                     <div className="authorization__block_content">

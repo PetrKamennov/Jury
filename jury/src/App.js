@@ -52,8 +52,8 @@ function App() {
       }
     })   
     const ROLES = {
-      'Jury': false,
-      'Admin': true
+      'Jury': "false",
+      'Admin': "true"
     }
     const routes = [
       {path: '/login', Component: Authorization},

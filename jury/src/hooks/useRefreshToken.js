@@ -5,12 +5,13 @@ import useAuth from './useAuth';
 const useRefreshToken = () => {
     const { setAuth } = useAuth();
     const { auth } = useAuth();
+    const refreshToken = localStorage.getItem("refreshToken")
 
     const refresh = async () => {
 
         const response = await axios.post('http://aleksbcg.beget.tech/api/token/refresh/',
             {
-                refresh: auth.refreshToken
+                refresh: refreshToken
             },
         );
         setAuth(prev => {

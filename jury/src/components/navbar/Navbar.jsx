@@ -27,7 +27,7 @@ const Navbar = (props) => {
         setLine3Class("navbar__line-AdminEditMeet active")
     }
 
-    console.log(props.active)
+    // console.log(props.active)
 
     return (
         <>
