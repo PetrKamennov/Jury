@@ -4,6 +4,7 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { Link } from "react-router-dom";
 import "../components/JuryVote/JuryVote.css";
 import CriteriaVote from "../components/JuryVote/CriteriaVote";
+import { Notification, useToaster } from "rsuite";
 
 
 
@@ -70,9 +71,13 @@ const JuryVote = () => {
                 score: Number(criteriaScore[index].score), 
                 state: true     
             }).then(response => {
-                console.log("suck " + index)
+                // console.log("suck " + index)
             }).catch(function (error) {
-                console.log(error);
+                if(error.response.status === 400){
+                    PushE();
+                } else{
+                    PushAllE()
+                }
             })
             
         }
@@ -81,7 +86,31 @@ const JuryVote = () => {
     
     console.log(criterias)
     
-
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'error'} 
+            header={'Упс...!'} closable>
+            <p>Извините, Произошла Ошибка.</p>
+            <br/>
+            <p>Попробуйте ещё раз, не сдавайтесь!</p>
+        </Notification>
+    );
+    const error = (
+        <Notification type={'error'} 
+            header={'Увы, но вы уже проголосовали!'} closable>
+            <p>Извините, Но ваш голос уже был внесён.</p>
+            <br/>
+            <p>Дождитесь переголосования, чтобы снова внести свой голос!</p>
+        </Notification>
+    );
+    const PushAllE = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+    const PushE = () => toaster.push(
+        error, { placement: 'topStart' }
+    )
+    
+    
 
     useEffect(() => {
         if (update) return

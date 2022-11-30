@@ -42,6 +42,9 @@ const Result = () => {
         })
     }
 
+    const Table = document.getElementById("Table")
+    console.log(Table)
+
     useEffect(() => {
         if (update) return
         getinf()
@@ -52,7 +55,7 @@ const Result = () => {
         <>
 
             <section className="Result">
-                <div className="Result__table">
+                <div id="Table" className="Result__table">
                     <div className="Result__header">
                         <div className="Result__header-number">
                             <span>№</span>

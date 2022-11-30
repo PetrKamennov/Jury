@@ -11,15 +11,15 @@ function IsUser(props){
   // const visible = localStorage.getItem("visible")
 
 
-  console.log(visible)
+  // console.log(visible)
 
     const url = window.location.href
     const nonUrl = `http://localhost:3000/adminMain`
     
-    const { auth } = useAuth();
-    if ((auth.roles === true && url != nonUrl) || (auth.roles=== false && url != nonUrl)) {
+    const roles = localStorage.getItem('roles');
+  if ((roles === "true" && url != nonUrl) || (roles === "false" && url != nonUrl)) {
       return (
-        auth.roles === false ? 
+        roles === "false" ? 
           <NavbarJury />
              : 
           <Navbar active={visible} />

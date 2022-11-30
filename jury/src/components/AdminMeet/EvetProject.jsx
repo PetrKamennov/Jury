@@ -67,6 +67,15 @@ const EventProject = (props, remove) => {
         postinf()
     }
 
+    function renegotiation(){
+        axiosPrivate.delete(`/creteryAddScore/${props.project.id}`, {
+        }).then(response => {
+            // setjury(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
 
 
     return (
@@ -82,7 +91,7 @@ const EventProject = (props, remove) => {
                     </div>
                     <div className={EventProject__buttons}>
                         <button className={EventProject__buttons_1} onClick={OpenJury}>Начать голосование</button>
-                        {/* <button className={EventProject__buttons_2}>Назначить переголосование</button> */}
+                        <button className={EventProject__buttons_2} onClick={renegotiation}>Назначить переголосование</button>
                         <img src={Arrow} alt="arrow" className={EventProject__buttons_3} onClick={CloseJury} />
                     </div>
                 </div>
