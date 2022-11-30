@@ -28,7 +28,9 @@
 }
 @media (max-width: 500px){
     .UpdateBut__Link{
-        width: 280px;
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
     }
     
 }

@@ -235,6 +235,7 @@ body {
 }
 .AdminEditMeet__Buttons{
     margin-top: 30px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -330,15 +331,18 @@ body {
     }
 }
 @media (max-width: 600px){
+    .AdminEditMeet__firstBlock__left__input__box{
+        width: 96%;
+    }
     .AdminEditMeet__firstBlock__left__input__box.eventName{
         margin-bottom: 0px;
         width: 80%;
     }
     .AdminEditMeet__firstBlock__left__input__box.Date{
-        width: 80%;
+        width: 80% !important;
     }
     .AdminEditMeet__firstBlock__left input{
-        width: 100%;
+        width: 90%;
         justify-content: center;
     }
     .AdminEditMeet__firstBlock__left{
@@ -346,13 +350,14 @@ body {
         width: 100%;
     }
     .AdminEditMeet__firstBlock__left__input__box.eventName span{
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
     .AdminEditMeet__firstBlock__left__input__box span{
-        font-size: 20px !important;
+        font-size: 18px !important;
     }
     .AdminEditMeet__firstBlock__right {
         width: 80%;
+        margin-top: 20px;
     }
     .AdminEditMeet__firstBlock__right button:nth-child(1){
         font-size: 18px;
@@ -379,7 +384,9 @@ body {
         font-size: 12px;
     }
     .AdminMeet__save-button{
-        width: 280px;
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
     
     }
 }

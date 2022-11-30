@@ -47,7 +47,7 @@ const CriteriaPool = (props) => {
                 </div>
                 <div className="CriteriaPool__Buttons">
                 <UpdateBut/>
-                <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить Критерий</button>
+                <button className="CriteriaPool__button" onClick={() => setModalActive(true)}>Установить критерий</button>
                 </div>
             </section>
             
