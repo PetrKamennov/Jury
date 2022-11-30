@@ -22,7 +22,7 @@
 
 .AdminMeet__ProjektPull {
     width: 100%;
-    height: 664px;
+    height: 610px;
     overflow-y: scroll;
 }
 
@@ -88,5 +88,15 @@
     .AdminMeet > button{
         width: 280px;
         font-size: 26px;
+    }
+    .AdminMeet__button-done{
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
+    }
+}
+@media (max-width: 390px) {
+    .AdminMeet__ProjektPull{
+        height: 420px;
     }
 }

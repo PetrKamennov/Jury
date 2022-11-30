@@ -152,4 +152,9 @@ body {
         margin-top: -54px;
     }
 }
+@media (max-width: 390px){
+    .AdminEditJury__pulljury{
+        height: 380px;
+    }
+}
 

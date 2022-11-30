@@ -178,5 +178,10 @@ body {
         margin-top: -54px;
     }
 }
+@media (max-width: 390px){
+    .AdminEditProject__pullProject {
+        height: 380px;
+    }
+}
 
 

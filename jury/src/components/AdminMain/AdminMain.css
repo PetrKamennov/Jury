@@ -78,10 +78,6 @@
         font-size: 38px;
     }
 }
-
-
-
-
 @media (max-width: 500px){
     .AdminMain__EventPull{
         height: 450px;
@@ -93,6 +89,11 @@
     }
     .AdminMain h1{
         font-size: 32px;
+    }
+}
+@media (max-width: 390px){
+    .AdminMain__EventPull{
+        height: 340px;
     }
 }
 
