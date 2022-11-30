@@ -11,7 +11,7 @@ const CriteriaVote = (props) => {
     const auth = localStorage.getItem("user_id")
 
     
-    const [crit, setCrit] = useState({ index: props.number, score: '', event: EventId, project: projectId, jury: auth, creteryType: props.criteria[0].id })
+    const [crit, setCrit] = useState({ index: props.number, score: '1', event: EventId, project: projectId, jury: auth, creteryType: props.criteria[0].id })
     console.log(crit)
 
     async function postCrit(e){
