@@ -180,3 +180,29 @@
         font-size: 24px;
     }
 }
+@media (max-width: 375px) {
+    .AdminEditProjectModal__content{
+        width: 290px;
+        height: 440px;
+    }
+    .AdminEditProjectModal__content h1{
+        font-weight: 500;
+        font-size: 24px;
+        justify-content: center;
+        margin: 40px 0px 0px 0px;
+    }
+    .AdminEditProjectModal__content-regJury__inputs{
+        width: 250px;
+    }
+    .AdminEditProjectModal__content-regJury__inputs__box span{
+        font-size: 20px;
+    }
+    .AdminEditProjectModal__content-regJury__inputs__box{
+        margin-top: 40px;
+    }
+    .AdminEditProjectModal__content-regJury button{
+        width: 220px;
+        height: 50px;
+        font-size: 20px;
+    }
+}

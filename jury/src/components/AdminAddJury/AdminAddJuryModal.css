@@ -10,6 +10,7 @@
     flex-direction: column;
     background-color:   rgba(0, 0, 0, 0.4);
     transform: scale(0);
+    border: none;
 }
 
 .AdminAddJuryModal.active{
@@ -173,5 +174,17 @@
         height: 45px;
         font-size: 22px;
     }
+    .AdminAddJuryModal__content-regJury__input__box span{
+        font-size: 20px;
+    }
 
+}
+@media (max-width: 380px) {
+    .AdminAddJuryModal__content{
+        width: 290px;
+        height: 600px;
+    }
+    .AdminAddJuryModal__content h1{
+        font-size: 24px;
+    }
 }

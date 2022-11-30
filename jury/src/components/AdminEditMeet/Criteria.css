@@ -115,17 +115,16 @@
 }
 @media (max-width: 460px){
     .Criteria__button{
-        width: 100px;
+        width: 80px;
+        height: 35px;
+        font-size: 12px;
     }
     .Criteria__text{
         width: 68%;
     }
 }
 @media (max-width: 400px){
-    .Criteria__button{
-        width: 80px;
-        height: 35px;
-    }
+
     .Criteria__text span{
         font-size: 14px;
     }

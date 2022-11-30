@@ -158,6 +158,11 @@
     }
 }
 @media (max-width: 500px){
+    .EditCriteria__button{
+        width: 80px;
+        height: 35px;
+        font-size: 12px;
+    }
     .EditCriteria__text input{
         width: 75px;
     }
@@ -166,18 +171,13 @@
     }
 }
 @media (max-width: 460px){
-    .EditCriteria__button{
-        width: 100px;
-    }
+
     .EditCriteria__text{
         width: 68%;
     }
 }
 @media (max-width: 400px){
-    .EditCriteria__button{
-        width: 80px;
-        height: 35px;
-    }
+
     .EditCriteria__text span{
         font-size: 14px;
     }
