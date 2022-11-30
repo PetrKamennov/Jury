@@ -110,7 +110,7 @@ const AdminEditMeet = (props) => {
                     <div className="AdminEditMeet__secondBlock-container">
                         <div className="AdminEditMeet__secondBlock__criteriaPull">
                             {criterias.map((criterias, index) =>
-                                <Criteria remove={removeProject} number={index + 1} crits={crits} criterias={criterias} key={criterias.id} />
+                                <Criteria remove={removeProject} id={index} number={index + 1} crits={crits} criterias={criterias} key={criterias.id} />
                             )}
                         </div>
                         <EditCriteria create={createcriteria}/>
