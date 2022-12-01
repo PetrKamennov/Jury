@@ -41,6 +41,9 @@
     margin-right: 100px;
     margin-top: 40px;
 }
+.AdminMeet__button-done:hover{
+    background: #c90916;
+}
 .AdminMeet > button {
     width: 560px;
     height: 66px;

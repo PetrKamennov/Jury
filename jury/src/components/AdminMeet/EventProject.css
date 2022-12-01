@@ -62,9 +62,8 @@
 
 .EventProject__buttons.active{
     display: flex;
-    justify-content: space-between;
-    padding-right: 155px;
     border: none;
+
 }
 
 .EventProject__buttons-1 {
@@ -123,14 +122,15 @@
     text-align: center;
     color: #E21A1A ;
     border: none;
+    margin-right: 50px;
+}
+.EventProject__buttons-2:hover{
+    background: #CCCCCC;
 }
 @media (max-width: 1200px){
     .EventProject__buttons-1{
         width: 240px;
         font-size: 18px;
-    }
-    .EventProject__buttons.active{
-        padding-right: 100px;
     }
 }
 @media (max-width: 960px){
@@ -141,14 +141,21 @@
     .EventProject__text p{
         margin-right: 8px;
     }
+    .EventProject__buttons-2{
+        width: 220px;
+        font-size: 14px;
+        line-height: 15px;
+    }
 }
 @media (max-width: 830px){
     .EventProject__buttons-1{
         width: 150px;
         font-size: 14px;
     }
-    .EventProject__buttons.active{
-        padding-right: 50px;
+}
+@media (max-width: 600px) {
+    .EventProject__container{
+        padding: 0 15px !important;
     }
 }
 @media (max-width: 500px){
@@ -156,6 +163,12 @@
         width: 120px;
         height: 30px;
         font-size: 11px;
+    }
+    .EventProject__buttons-2{
+        width: 120px;
+        font-size: 12px;
+        height: 50px;
+        margin-right: 15px;
     }
 }
 @media (max-width: 390px){
@@ -166,14 +179,17 @@
         width: 100px;
         font-size: 9px;
     }
-    .EventProject__buttons.active{
-        padding-right: 25px !important;
-    }
     .EventProject__text span{
         margin-left: 0px !important;
         margin-right: 10px;
     }
     .EventProject__txt-span{
         margin-right: 0px !important;
+    }
+    .EventProject__buttons-2{
+        width: 100px;
+        font-size: 10px;
+        height: 40px;
+        margin-right: 15px;
     }
 }

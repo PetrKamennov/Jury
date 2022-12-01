@@ -16,7 +16,7 @@
     font-size: 48px;
     line-height: 62px;
     color: #000000;
-    margin: 80px 0 20px 0;
+    margin: 10px 0 20px 0;
 }
 .JuryVote__container > p {
     font-family: 'IBM Plex Sans';
@@ -32,7 +32,7 @@
     display: flex;
     justify-content: flex-end;
 }
-.JuryVote__container__buttons button {
+.JuryVote__container__buttons  button{
     width: 560px;
     height: 66px;
     background: #E21A1A;
@@ -43,31 +43,44 @@
     font-size: 32px;
     line-height: 42px;
     color: #FFFFFF;
-    margin:  54px 92px 0 0;
+    margin:  150px 92px 20px 0;
     cursor: pointer;
 }
-.JuryVote__container__buttons > button:hover{
+.JuryVote__container__buttons  button:hover{
     background: #c90916;
 }
 .JuryVote__CriteriasPull{
     display: flex;
     overflow-x: scroll;
 }
+@media (max-width: 820px) {
+    .JuryVote{
+        padding: 0px;
+    }
+    .JuryVote__container__buttons{
+        justify-content: center;
+    }
+    .JuryVote__container__buttons  button{
+        margin:  150px 0px 20px 0;
+        width: 290px;
+        font-size: 22px;
+    }
+}
 @media (max-width: 700px){
     .JuryVote__container > h1{
         margin: 30px 0px 20px 0px;
         font-size: 32px;
     }
-    .JuryVote__container__buttons > button{
-        margin: 54px 0px 0px 0px;
-    }
 }
 @media (max-width: 500px){
-    .JuryVote__container__buttons > button{
-        font-size: 24px;
+    .JuryVote__container__buttons  button{
+        margin: 54px 0px 20px 0px;
     }
     .JuryVote{
         padding-top: 0px;
         margin-top: -54px;
+    }
+    .JuryVote__container > p{
+        font-size: 24px;
     }
 }
