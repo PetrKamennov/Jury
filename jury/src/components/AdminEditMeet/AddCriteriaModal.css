@@ -178,3 +178,43 @@
         font-size: 22px;
     }
 }
+@media (max-width: 375px) {
+    .AddCriteriaModal__content{
+        width: 290px;
+        height: 580px;
+        margin-top: 80px;
+    }
+    .AddCriteriaModal__content-container{
+        width: 270px;
+        height: 600px;
+        align-items: center;
+    }
+    .AddCriteriaModal__content h1{
+        align-self: center;
+        font-size: 24px;
+        margin: 20px 0px 0px 0px;
+    }
+    .AddCriteriaModal__content-regJury__inputs{
+        width: 250px;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .AddCriteriaModal__content-regJury__inputs input{
+        width: 250px;
+        margin-top: 50px;
+    }
+    .AddCriteriaModal__content-regJury__inputs-right{
+        width: 250px;
+    }
+    .AddCriteriaModal__content-regJury__inputs-right select{
+        width: 250px;
+    }
+    .AddCriteriaModal__content button{
+        align-self: center;
+        margin-top: 120px;
+        width: 250px;
+        height: 45px;
+        font-size: 22px;
+    }
+}

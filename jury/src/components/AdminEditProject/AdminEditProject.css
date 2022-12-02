@@ -160,7 +160,9 @@ body {
 }
 @media (max-width: 500px){
     .AdminEditProject__Buttons > button{
-        width: 280px;
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
     }
     .AdminEditProject{
         padding-top: 0px;
@@ -174,6 +176,11 @@ body {
     .AdminEditProject{
         padding-top: 0px;
         margin-top: -54px;
+    }
+}
+@media (max-width: 390px){
+    .AdminEditProject__pullProject {
+        height: 380px;
     }
 }
 

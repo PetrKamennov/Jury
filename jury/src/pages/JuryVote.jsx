@@ -71,7 +71,7 @@ const JuryVote = () => {
                 score: Number(criteriaScore[index].score), 
                 state: true     
             }).then(response => {
-                console.log("suck " + index)
+                // console.log("suck " + index)
             }).catch(function (error) {
                 if(error.response.status === 400){
                     PushE();

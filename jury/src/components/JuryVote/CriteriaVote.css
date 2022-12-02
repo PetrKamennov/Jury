@@ -39,3 +39,8 @@
     color: #000000;
     border: 2px solid #FFFFFF;
 }
+@media (max-width: 350px) {
+    .CriteriaVote{
+        min-width: 95%;
+    }
+}

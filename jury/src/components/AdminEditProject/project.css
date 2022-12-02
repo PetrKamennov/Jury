@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     color: #000000;
+    padding-right: 10px;
 }
 
 .project__text span {
@@ -105,18 +106,19 @@
         padding: 0 20px;
     }
 }
-@media (max-width: 460px){
+@media (max-width: 500px) {
     .project__button{
-        width: 100px;
+        width: 80px;
+        height: 35px;
+        font-size: 12px;
     }
+}
+@media (max-width: 460px){
     .project__text{
         width: 68%;
     }
 }
 @media (max-width: 400px){
-    .project__button{
-        width: 80px;
-    }
     .project__text span{
         font-size: 14px;
     }

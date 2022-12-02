@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     color: #000000;
+    padding-right: 10px;
 }
 
 .Jury__text span {
@@ -61,4 +62,14 @@
     text-align: center;
     color: #E21A1A;
     border: none;
+}
+@media (max-width: 500px) {
+    .Jury__button{
+        width: 80px;
+        height: 35px;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

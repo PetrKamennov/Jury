@@ -232,6 +232,11 @@ body {
     }
     .goto__button{
         margin-top: 65px;
+        width: 80%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
     }
     .authorization__block_bottom span{
         font-size: 14px;
@@ -240,8 +245,11 @@ body {
         font-size: 14px;
     }
 }
-@media(max-width: 330px){
+@media(max-width: 360px){
     .authorization__input__box span{
         font-size: 20px;
+    }
+    .authorization__block_bottom{
+        width: 95%;
     }
 }

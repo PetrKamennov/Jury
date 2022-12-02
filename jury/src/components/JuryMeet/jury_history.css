@@ -16,3 +16,8 @@
         margin-top: -54px;   
     } 
 }
+@media (max-width: 390px) {
+    .JuryHistory__ProjektPull{
+        height: 470px;
+    }
+}

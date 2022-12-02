@@ -28,6 +28,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 54px;
+    margin-bottom: 15px;
 }
 .AdminMain__buttons button{
     width: 560px;
@@ -77,20 +78,22 @@
         font-size: 38px;
     }
 }
-
-
-
-
 @media (max-width: 500px){
     .AdminMain__EventPull{
         height: 450px;
     }
     .AdminMain__buttons button{
-        width: 280px;
-    
+        width: 250px;
+        height: 50px;
+        font-size: 18px;
     }
     .AdminMain h1{
         font-size: 32px;
+    }
+}
+@media (max-width: 390px){
+    .AdminMain__EventPull{
+        height: 340px;
     }
 }
 

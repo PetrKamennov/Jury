@@ -140,7 +140,9 @@ body {
         height: 450px;
     }
     .AdminEditJury__button{
-        width: 280px !important;
+        width: 250px !important;
+        height: 50px;
+        font-size: 18px;
     }
 }
 @media (max-width: 460px){
@@ -148,6 +150,11 @@ body {
     .AdminEditJury{
         padding-top: 0px;
         margin-top: -54px;
+    }
+}
+@media (max-width: 390px){
+    .AdminEditJury__pulljury{
+        height: 380px;
     }
 }
 

@@ -52,8 +52,8 @@ function App() {
       }
     })   
     const ROLES = {
-      'Jury': false,
-      'Admin': true
+      'Jury': "false",
+      'Admin': "true"
     }
   return transitions((props, item, key) => (
     <>
