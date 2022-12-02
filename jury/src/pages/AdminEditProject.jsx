@@ -58,7 +58,6 @@ const AdminEditProject = (props) => {
 
                 </div>
                 <div className="AdminEditProject__Buttons">
-                    <UpdateBut/>
                     <button onClick={() => setModalActive(true)}>Добавить проект</button>
                 </div>
             </section>

@@ -53,7 +53,6 @@ const AdminAddJury = (props) => {
 
                 </div>
                 <div className="AdminAddJury__Buttons">
-                    <UpdateBut/>
                     <button onClick={() => setModalActive(true)}>Зарегистрировать члена жюри</button>
                 </div>
             </section>
