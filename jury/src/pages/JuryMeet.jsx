@@ -72,7 +72,6 @@ const JuryMeet = () => {
                             <EventProjectJury number={index + 1} event={events} key={events.id} />
                         )}
                     </div>
-                    <UpdateBut/>
                 </section>
             </div>
         </>
