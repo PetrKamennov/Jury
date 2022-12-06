@@ -28,6 +28,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
             PushE()
             console.log(error);
         })
+        setJury({ name: '', post: '', userName: '', password: '', email: '' })
     }
 
     const toaster = useToaster();
@@ -81,7 +82,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                                     </div>
                                 </div>
                             </div>
-                    <button onClick={addNewJury}>Зарегистрировать</button>
+                    <button disabled={!jury.name && !jury.post && !jury.userName && !jury.password || !jury.name || !jury.post || !jury.userName || !jury.password} onClick={addNewJury}>Зарегистрировать</button>
                 </div>
             </div>
         </div>

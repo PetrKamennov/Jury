@@ -61,7 +61,7 @@ const AdminMain = (props, getidPZDC) => {
                     )}
                 </div>
                 <div className="AdminMain__buttons">
-                    <UpdateBut/>
+                    {/* <UpdateBut/> */}
                     <button onClick={() => setModalActive(true)}>Добавить мероприятие</button>
                 </div>
             </section>

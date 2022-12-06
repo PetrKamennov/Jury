@@ -28,6 +28,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
             PushE()
             console.log(error);
         })
+        setCrit({ creteryName: '', creteryDescription: '', creteryType: '' })
     }
 
 
@@ -81,7 +82,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
                                 </div>
                             </div>
-                    <button onClick={addNewCriteria}>Установить</button>
+                    <button disabled={!crit.creteryType && !crit.creteryDescription && !crit.creteryName || !crit.creteryType || !crit.creteryDescription || !crit.creteryName} onClick={addNewCriteria}>Установить</button>
                 </div>
             </div>
         </div>

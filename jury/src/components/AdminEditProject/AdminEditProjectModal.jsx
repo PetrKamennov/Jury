@@ -43,6 +43,7 @@ const AdminEditProjectModal = (props, {create}) => {
         }).catch(function (error) {
             PushE(error);
         })
+        setProject({ projectName: '', projectAuthor: '' })
     }
 
     const toaster = useToaster();
