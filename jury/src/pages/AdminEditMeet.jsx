@@ -117,7 +117,6 @@ const AdminEditMeet = (props) => {
                     </div>
                 </div>
                 <div className="AdminEditMeet__Buttons">
-                    <UpdateBut/>
                     <Link to="/AdminMain"><button className="AdminMeet__save-button">Сохранить</button></Link>
                 </div>
             </section>
