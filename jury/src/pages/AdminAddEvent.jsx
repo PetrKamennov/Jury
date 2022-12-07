@@ -20,6 +20,7 @@ const AdminAddEvent = (props) => {
         axiosPrivate.post(`http://aleksbcg.beget.tech/events/`, {
             eventName: events.eventName, 
             eventDate: events.eventDate,
+            eventIsStarted: 0
         }).then(response => {
             PushM()
             setEvent({ eventName: '', eventDate: '' })
@@ -70,7 +71,7 @@ const AdminAddEvent = (props) => {
                                 <span>Дата проведения</span>
                             </div>
                         </div>
-                        <button onClick={addNewEvent}>Добавить</button>
+                        <button disabled={!events.eventName && !events.eventDate || !events.eventName || !events.eventDate} onClick={addNewEvent}>Добавить</button>
                     </div>
                 </div>
             </div>

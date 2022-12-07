@@ -38,6 +38,8 @@ const EventProject = (props, remove) => {
     }
     const [jurys, setjury] = useState([])
 
+
+
     async function getinf() {
         axiosPrivate.get(`http://aleksbcg.beget.tech/creteryAddScore/${props.project.id}`, {
         }).then(response => {
@@ -51,6 +53,25 @@ const EventProject = (props, remove) => {
         axiosPrivate.patch(`/projects/Change/${props.project.id}`, {
             projectState: 1
         }).then(response => {
+            console.log(response.data)
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    function check(){
+        axiosPrivate.get(`http://aleksbcg.beget.tech/projects/${props.project.id}`, {
+        }).then(response => {
+            var aaa = response.data
+            if (aaa[0].projectState === 1){
+                setPull('EventProject__Jurrypull')
+                setP('EventProject__text-p EventProjecthidden')
+                setEventProject__buttons_1("EventProject__buttons-1 EventProjecthidden")
+                setEventProject__buttons_2("EventProject__buttons-2")
+                setEventProject__buttons_3("EventProject__buttons-3")
+                setEventProject__buttons('EventProject__buttons active')
+            }
+            console.log(aaa)
         }).catch(function (error) {
             console.log(error);
         })
@@ -74,9 +95,13 @@ const EventProject = (props, remove) => {
         }).catch(function (error) {
             console.log(error);
         })
+        getinf()
     }
 
-
+    useEffect(() => {
+        if (update) return
+        check()
+    }, [update])
 
     return (
         <>

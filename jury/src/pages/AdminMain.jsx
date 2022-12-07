@@ -33,6 +33,7 @@ const AdminMain = (props, getidPZDC) => {
         axiosPrivate.get('/events/', {
         }).then(response => {
                 setEvent(response.data)
+                console.log(response.data)
             }).catch(function (error) {
                 if (error === 401){
                     window.location.reload();

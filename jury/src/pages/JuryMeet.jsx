@@ -24,9 +24,15 @@ const JuryMeet = () => {
         axiosPrivate.get(`/getEventForJury/${auth}`, {
 
         }).then(response => {
-            setevents(...events, response.data)
-            console.log(response.data)
-
+            // setevents(...events, response.data)
+            var arr = []
+            for (let index = 0; index < response.data.length; index++) {
+                if (response.data[index].eventIsStarted === 1){
+                    arr.push(response.data[index])
+            }
+                console.log(response.data)
+                setevents(arr)
+        }
         }).catch(function (error) {
             console.log(error);
         })

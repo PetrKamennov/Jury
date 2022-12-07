@@ -86,7 +86,7 @@ function App() {
       <Routes>
           {/* Общее */}
           <Route path='/login' element={<Authorization/>}/>
-          <Route path='/ChangePassword' element={<ChangePassword/>} />
+          {/* <Route path='/ChangePassword' element={<ChangePassword/>} /> */}
           <Route path='/EmailChange' element={<EmailChange />} />
       </Routes>
     </>
