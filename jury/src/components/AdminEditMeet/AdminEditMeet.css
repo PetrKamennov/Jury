@@ -368,6 +368,10 @@ body {
     .AdminEditMeet__secondBlock__header h1{
         font-size: 20px;
     }
+    .AdminEditMeet__firstBlock__left__input__box.event>input:focus~span,
+    .AdminEditMeet__firstBlock__left__input__box.event>input[value]:not([value=""])~span {
+        transform: translateY(-25px);
+    }
 }
 @media (max-width: 500px){
     .AdminEditMeet{

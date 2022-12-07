@@ -213,13 +213,23 @@ body {
         font-size: 20px;
     }
 }
+@media (max-width: 600px) {
+    .authorization__login_input:focus ~ span,
+    .authorization__login_input[value]:not([value=""]) ~ span {
+        transform: translateY(-25px);
+    }
+    .authorization__password_input:focus~span,
+    .authorization__password_input[value]:not([value=""])~span {
+        transform: translateY(-25px);
+    }
+}
 @media (max-width: 460px){
     .authorization__block{
-        height: 550px;
+        height: 490px;
     }
     .authorization__block h1{
         font-size: 40px;
-        margin-top: 66px;
+        margin-top: 60px;
     }
     .authorization__input__box{
         margin: 0px;

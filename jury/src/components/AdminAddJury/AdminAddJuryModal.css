@@ -179,6 +179,12 @@
     }
 
 }
+@media (max-width: 600px) {
+    .AdminAddJuryModal__content-regJury__input__box > input:focus~span,
+    .AdminAddJuryModal__content-regJury__input__box > input[value]:not([value=""])~span {
+        transform: translateY(-30px);
+    }
+}
 @media (max-width: 380px) {
     .AdminAddJuryModal__content{
         width: 290px;

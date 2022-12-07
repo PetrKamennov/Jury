@@ -151,6 +151,12 @@
         font-size: 28px;
     }
 }
+@media (max-width: 600px) {
+    .AdminEditProjectModal__content-regJury__inputs__box input:focus~span,
+    .AdminEditProjectModal__content-regJury__inputs__box input[value]:not([value=""])~span {
+        transform: translateY(-20px);
+    }
+}
 @media (max-width: 500px){
     .rs-toast-container-bottom-start .rs-toast-fade-entered, .rs-toast-container-top-start .rs-toast-fade-entered{
         margin-left: 0px;
