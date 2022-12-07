@@ -40,7 +40,7 @@ const Event = (props, getId) => {
                         {props.event.eventIsStarted !== 2
                         ? <><Link to='/AdminMeet' onClick={startEvent}><button>Начать</button></Link>
                                 <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link></>
-                            : <Link to='/Result' onClick={sendID}><button>Посмотреть отчет</button></Link>
+                            : <Link to='/Result'  onClick={sendID}><button className="Event__button-watch">Посмотреть отчет</button></Link>
                         }
                     </div>
                 </div>
