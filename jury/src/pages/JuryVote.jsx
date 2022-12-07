@@ -60,7 +60,6 @@ const JuryVote = () => {
     }
     async function postinf() {
         await setActive(true);
-        const isError = false;
         for (let index = 0; index < criterias.length; index++) {
             
             console.log(criteriaScore[index])
@@ -78,6 +77,7 @@ const JuryVote = () => {
             })
             
         }
+        AllertNot();
         localStorage.setItem(`buttonActive-${user_id}-${projectId}`, "false")
     }
     const Err = localStorage.getItem('status')
@@ -119,14 +119,19 @@ const JuryVote = () => {
     const PushM = () => toaster.push(
         message2, { placement: 'topStart' }
     )
-
-    function AllertNot() {
-        if(Err === 400){
+    function IsErrors(){
+        if(Err === "400"){
             PushE();
-        } else if(!Err){
-            PushM()
         } else{
             PushAllE()
+        }
+    }
+
+    function AllertNot() {
+        if(Err === undefined){
+            PushM();
+        } else{
+            IsErrors()
         }
     }
     
@@ -138,10 +143,6 @@ const JuryVote = () => {
         getinf2()
     }, [update])
 
-    function PostInfo(){
-        AllertNot();
-        postinf()
-    }
 
     return (
         <>
@@ -156,7 +157,7 @@ const JuryVote = () => {
                         )}
                     </div>
                     <div className="JuryVote__container__buttons">
-                        <Link to='/jury_meets'><button onClick={PostInfo}>Отправить результаты</button></Link>
+                        <Link to='/jury_meets'><button onClick={postinf}>Отправить результаты</button></Link>
                     </div>
                 </div>
             </section>
