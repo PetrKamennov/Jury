@@ -11,7 +11,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
     const axiosPrivate = useAxiosPrivate();
 
-
+    const navigate = useNavigate()
 
     const [crit, setCrit] = useState({ creteryName: '', creteryDescription: '', creteryType: ''})
 
@@ -37,7 +37,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
             header={'Поздравляем!'} closable>
             <p>Критерий Установлен!</p>
             <br/>
-            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+            <p>Если Критерий не появился в списке, перезагрузите страницу.</p>
         </Notification>
     );
     const error = (
@@ -54,6 +54,11 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
+
+    function restart(){
+        addNewCriteria();
+        navigate(window.location.pathname);
+    }
     
     return (
         <div className={active ? "AddCriteriaModal active" : "AddCriteriaModal"} onClick={() => setActive(false)} >
@@ -81,7 +86,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
                                 </div>
                             </div>
-                    <button onClick={addNewCriteria}>Установить</button>
+                    <button onClick={restart}>Установить</button>
                 </div>
             </div>
         </div>

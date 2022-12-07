@@ -41,9 +41,9 @@ const JuryMeet = () => {
     const message = (
         <Notification type={'success'} 
             header={'Поздравляем!'} closable>
-            <p>Мероприятие Добавлено.</p>
+            <p>Вы успешно Проголосовали!</p>
             <br/>
-            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+            <p>Для изменения голоса дождитесь переголосования.</p>
         </Notification>
     );
     const error = (
