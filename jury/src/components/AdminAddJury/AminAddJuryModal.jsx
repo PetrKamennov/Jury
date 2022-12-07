@@ -13,6 +13,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
 
     const axiosPrivate = useAxiosPrivate();
 
+    const navigate = useNavigate();
 
     async function addNewJury() {
         axiosPrivate.post(`http://aleksbcg.beget.tech/createUser/`, {
@@ -37,7 +38,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
             header={'Поздравляем!'} closable>
             <p>Аккаунт Члена Жюри был успешно создан.</p>
             <br/>
-            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+            <p>Если Член Жюри не отобразился, перезагрузите страницу.</p>
         </Notification>
     );
     const error = (
@@ -54,6 +55,11 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
+
+    function restart(){
+        addNewJury();
+        navigate(window.location.pathname)
+    }
     
     return (
         <div className={active ? "AdminAddJuryModal active" : "AdminAddJuryModal"} onClick={() => setActive(false)} >
@@ -82,7 +88,7 @@ const AdminAddJuryModal = ({ active, setActive, create }) => {
                                     </div>
                                 </div>
                             </div>
-                    <button disabled={!jury.name && !jury.post && !jury.userName && !jury.password || !jury.name || !jury.post || !jury.userName || !jury.password} onClick={addNewJury}>Зарегистрировать</button>
+                    <button disabled={!jury.name && !jury.post && !jury.userName && !jury.password || !jury.name || !jury.post || !jury.userName || !jury.password} onClick={restart}>Зарегистрировать</button>
                 </div>
             </div>
         </div>

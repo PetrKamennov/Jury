@@ -49,7 +49,6 @@ const JuryHistory = () => {
                             <EventProjectHistory number={index + 1} id={index} project={projects} key={projects.id} />
                         )}
                     </div>
-                    <UpdateBut/>
                 </section>
             </div>
         </>

@@ -10,6 +10,8 @@ import "rsuite/dist/rsuite.min.css";
 
 import "./AdminEditProjectModal.css";
 const AdminEditProjectModal = (props, {create}) => {
+
+    const navigate = useNavigate();
     
     const [update, setUpdate] = useState(false)
 
@@ -52,7 +54,7 @@ const AdminEditProjectModal = (props, {create}) => {
             header={'Поздравляем!'} closable>
             <p>Проект успешно создан.</p>
             <br/>
-            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
+            <p>Если проект не появился, перезагрузите страницу.</p>
         </Notification>
     );
     const error = (
@@ -69,6 +71,11 @@ const AdminEditProjectModal = (props, {create}) => {
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
+
+    function restart(){
+        addNewProject();
+        navigate(window.location.pathname)
+    }
 
     return (
         <div className={props.active ? "AdminEditProjectModal active" : "AdminEditProjectModal"} onClick={() => props.setActive(false)} >
@@ -87,7 +94,7 @@ const AdminEditProjectModal = (props, {create}) => {
                             </div>
 
                         </div>
-                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} type="submit" onClick={addNewProject} >Добавить</button>
+                        <button disabled={!project.projectAuthor && !project.projectName || !project.projectName || !project.projectAuthor} type="submit" onClick={restart} >Добавить</button>
                     </div>
                 </div>
             </div>
