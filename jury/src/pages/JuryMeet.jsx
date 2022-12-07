@@ -37,30 +37,6 @@ const JuryMeet = () => {
         getinf()
     }, [update])
 
-    const toaster = useToaster();
-    const message = (
-        <Notification type={'success'} 
-            header={'Поздравляем!'} closable>
-            <p>Вы успешно Проголосовали!</p>
-            <br/>
-            <p>Для изменения голоса дождитесь переголосования.</p>
-        </Notification>
-    );
-    const error = (
-        <Notification type={'error'} 
-            header={'Упс...'} closable>
-            <p>Извините, Произошла Ошибка.</p>
-            <br/>
-            <p>Попробуйте ещё раз, не сдавайтесь!</p>
-        </Notification>
-    );
-    const PushM = () => toaster.push(
-        message, { placement: 'topStart' }
-    )
-    const PushE = () => toaster.push(
-        error, { placement: 'topStart' }
-    )
-
     return (
         <>
 

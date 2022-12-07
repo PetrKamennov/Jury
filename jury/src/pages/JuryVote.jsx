@@ -60,6 +60,7 @@ const JuryVote = () => {
     }
     async function postinf() {
         await setActive(true);
+        const isError = false;
         for (let index = 0; index < criterias.length; index++) {
             
             console.log(criteriaScore[index])
@@ -73,18 +74,16 @@ const JuryVote = () => {
             }).then(response => {
                 // console.log("suck " + index)
             }).catch(function (error) {
-                if(error.response.status === 400){
-                    PushE();
-                } else{
-                    PushAllE()
-                }
+                localStorage.setItem("status", error.response.status)
             })
             
         }
         localStorage.setItem(`buttonActive-${user_id}-${projectId}`, "false")
     }
-    
+    const Err = localStorage.getItem('status')
+
     console.log(criterias)
+    console.log(Err)
     
     const toaster = useToaster();
     const message = (
@@ -109,6 +108,27 @@ const JuryVote = () => {
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
+    const message2 = (
+        <Notification type={'success'} 
+            header={'Поздравляем!'} closable>
+            <p>Вы успешно Проголосовали!</p>
+            <br/>
+            <p>Для изменения голоса дождитесь переголосования.</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message2, { placement: 'topStart' }
+    )
+
+    function AllertNot() {
+        if(Err === 400){
+            PushE();
+        } else if(!Err){
+            PushM()
+        } else{
+            PushAllE()
+        }
+    }
     
     
 
@@ -118,7 +138,10 @@ const JuryVote = () => {
         getinf2()
     }, [update])
 
-    
+    function PostInfo(){
+        AllertNot();
+        postinf()
+    }
 
     return (
         <>
@@ -133,8 +156,7 @@ const JuryVote = () => {
                         )}
                     </div>
                     <div className="JuryVote__container__buttons">
-                        <Link to='/jury_meets'><button onClick={postinf}>Отправить результаты</button></Link>
-
+                        <Link to='/jury_meets'><button onClick={PostInfo}>Отправить результаты</button></Link>
                     </div>
                 </div>
             </section>
