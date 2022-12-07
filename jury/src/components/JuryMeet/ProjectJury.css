@@ -16,7 +16,8 @@
 
 .ProjectJury__text {
     display: flex;
-    width: 48%;
+    justify-content: space-between;
+    width: 60%;
 }
 
 .ProjectJury__text-spans {
@@ -50,13 +51,14 @@
 }
 .ProjectJury__container button:hover{
     background: #CFCFCF;
+
 }
 .ProjectJury__text span {
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 26px;
-    line-height: 34px;
+    line-height: 25px;
     display: flex;
     align-items: center;
     color: #394A58;
@@ -98,11 +100,15 @@
 
 }
 @media (max-width: 990px){
+    .ProjectJury__container{
+        padding: 0 10px;
+    }
     .ProjectJury__text{
         width: 70%;
     }
     .ProjectJury__text span{
         font-size: 16px;
+        line-height: 20px;
     }
     .ProjectJury__text p{
         font-size: 16px;
@@ -127,6 +133,9 @@
     .ProjectJury__container{
         padding: 0 30px;
     }
+    .ProjectJury__container button{
+        margin-left: 10px;
+    }
 }
 @media (max-width: 530px){
     .ProjectJury__container{
@@ -141,5 +150,22 @@
 @media (max-width: 400px){
     .ProjectJury__container button{
         font-size: 12px;
+    }
+}
+@media (max-width: 370px) {
+    .ProjectJury__text span{
+        font-size: 12px;
+        margin: 0px 5px;
+        display: flex;
+        text-align: center;
+    }
+    .ProjectJury__text p{
+        font-size: 12px;
+    }
+    .ProjectJury__container button{
+        font-size: 10px;
+        height: 30px;
+        align-items: center;
+        justify-content: center;
     }
 }

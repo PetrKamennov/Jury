@@ -100,6 +100,10 @@
     }
 }
 @media (max-width: 590px){
+    .Criteria{
+        height: 60px;
+        margin-bottom: 10px;
+    }
     .Criteria__text span{
         font-size: 16px;
     }
