@@ -64,7 +64,6 @@ const EventProject = (props, remove) => {
         }).then(response => {
             var aaa = response.data
             if (aaa[0].projectState === 1){
-                setPull('EventProject__Jurrypull')
                 setP('EventProject__text-p EventProjecthidden')
                 setEventProject__buttons_1("EventProject__buttons-1 EventProjecthidden")
                 setEventProject__buttons_2("EventProject__buttons-2")
