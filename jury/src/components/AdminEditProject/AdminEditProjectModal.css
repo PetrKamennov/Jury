@@ -168,6 +168,9 @@
     .rs-notification-content{
         max-width: 300px !important;
     }
+    .AdminAddEvent_scnd_input ~ span{
+     transform: translateY(-20px);
+    }
 }
 @media (max-width: 410px){
     .AdminEditProjectModal__content{
@@ -210,5 +213,8 @@
         width: 220px;
         height: 50px;
         font-size: 20px;
+    }
+    .AdminAddEvent_scnd_input ~ span{
+         transform: translateY(-10px);
     }
 }

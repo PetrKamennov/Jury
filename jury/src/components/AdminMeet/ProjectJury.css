@@ -17,6 +17,7 @@
 .ProjectJury__text {
     display: flex;
     width: 48%;
+    justify-content: flex-start !important;
 }
 
 .ProjectJury__text-spans {
