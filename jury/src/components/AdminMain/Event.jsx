@@ -17,7 +17,7 @@ const Event = (props, getId) => {
     async function startEvent(){
         sendID()
         axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${props.event.id}`,{
-            eventIsStarted: true
+            eventIsStarted: 1
         }).then(response =>{
             console.log(response.data)
         }).catch(error => {
@@ -37,8 +37,11 @@ const Event = (props, getId) => {
                         <p>{props.event.eventDate}</p>
                     </div>
                     <div className="Event__buttons">
-                        <Link to='/AdminMeet' onClick={startEvent}><button>Начать</button></Link>
-                        <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link>
+                        {props.event.eventIsStarted !== 2
+                        ? <><Link to='/AdminMeet' onClick={startEvent}><button>Начать</button></Link>
+                                <Link to='/AdminEditProject' onClick={sendID} className="Event__button-edit"><button className="Event__button-edit">Редактировать</button></Link></>
+                            : <Link to='/Result' onClick={sendID}><button>Посмотреть отчет</button></Link>
+                        }
                     </div>
                 </div>
             </div>

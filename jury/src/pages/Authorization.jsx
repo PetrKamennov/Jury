@@ -133,8 +133,8 @@ const Authorization = () => {
                             <button onClick={handleSubmit} className="goto__button">Продолжить</button>
                         </form>
                         <div className="authorization__block_bottom">
-                            <span>Забыли пароль?</span>
-                            <Link className="goto__change_password" to="/ChangePassword">Восстановить</Link>
+                            {/* <span>Забыли пароль?</span>
+                            <Link className="goto__change_password" to="/ChangePassword">Восстановить</Link> */}
                         </div>
                     </div>
                 </div>

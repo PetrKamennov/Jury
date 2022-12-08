@@ -29,9 +29,9 @@ const AdminMeet = (props) => {
             console.log(error);
         })
     }
-    async function getType() {
-
-        axiosPrivate.get(`http://aleksbcg.beget.tech/GetResult/${EventId}/1`, {
+    function getType() {
+        axiosPrivate.patch(`http://aleksbcg.beget.tech/events/${EventId}`, {
+            eventIsStarted: 2
         }).then(response => {
             console.log(response.data)
         }).catch(function (error) {

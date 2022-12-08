@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { Link, useNavigate, useNavigation } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import "../components/AdminEditMeet/AdminEditMeet.css";
 import EditCriteria from "../components/AdminEditMeet/EditCriteria";
 import Criteria from "../components/AdminEditMeet/Сriteria";
@@ -10,7 +10,6 @@ import "../components/AdminEditProject/AdminEditProjectModal.css";
 import { Notification, useToaster } from "rsuite";
 
 const AdminAddEvent = (props) => {
-    const navigate = useNavigate()
 
     const [events, setEvent] = useState({ eventName: '', eventDate: '' })
 
@@ -21,6 +20,7 @@ const AdminAddEvent = (props) => {
         axiosPrivate.post(`http://aleksbcg.beget.tech/events/`, {
             eventName: events.eventName, 
             eventDate: events.eventDate,
+            eventIsStarted: 0
         }).then(response => {
             PushM()
             setEvent({ eventName: '', eventDate: '' })
@@ -36,7 +36,7 @@ const AdminAddEvent = (props) => {
             header={'Поздравляем!'} closable>
             <p>Мероприятие Добавлено.</p>
             <br/>
-            <p>Если мероприятие не появилось, перезагрузите страницу.</p>
+            <p>Обновите информацию нажав но сопутсвующую кнопку.</p>
         </Notification>
     );
     const error = (
@@ -53,10 +53,6 @@ const AdminAddEvent = (props) => {
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
-    function restart(){
-        addNewEvent();
-        navigate(window.location.pathname);
-    }
 
 
     return (
@@ -75,7 +71,7 @@ const AdminAddEvent = (props) => {
                                 <span>Дата проведения</span>
                             </div>
                         </div>
-                        <button onClick={restart}>Добавить</button>
+                        <button disabled={!events.eventName && !events.eventDate || !events.eventName || !events.eventDate} onClick={addNewEvent}>Добавить</button>
                     </div>
                 </div>
             </div>
