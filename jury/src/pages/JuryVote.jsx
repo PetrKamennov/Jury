@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../components/JuryVote/JuryVote.css";
 import CriteriaVote from "../components/JuryVote/CriteriaVote";
 import { Notification, useToaster } from "rsuite";
+import { stringToObject } from "rsuite/esm/utils";
 
 
 
@@ -19,10 +20,13 @@ const JuryVote = () => {
     }
 
     const [update, setUpdate] = useState(false)
+    const [alert, setAlert] = useState(false)
     const [criterias, setCriterias] = useState([
     ])
     const [project, setProject] = useState([
     ])
+    const [err, setErr] = useState()
+    const [check, setCheck] = useState('')
 
     const [active, setActive] = useState(false)
     
@@ -71,21 +75,39 @@ const JuryVote = () => {
                 score: Number(criteriaScore[index].score), 
                 state: true     
             }).then(response => {
+                if(index === criterias.length - 1){
+                    PushM()
+                }
                 // console.log("suck " + index)
-            }).catch(function (error) {
-                localStorage.setItem("status", error.response.status)
+            }).catch(async function (error) {
+                if(index === criterias.length - 1){
+                    if (error.response.status === 400)  
+                    {PushE()}
+                    else
+                    {PushAllE()}
+                }
+
+                // await setErr(error.response.status);
+                // const errors = 0
+                // console.log(err)
+                // if(err === 400){
+                //     errors++
+                //     setCheck(errors)
+                // } else {
+                //     setCheck(errors)
+                // }
             })
             
         }
-        AllertNot();
+
         localStorage.setItem(`buttonActive-${user_id}-${projectId}`, "false")
+
     }
-    const Err = localStorage.getItem('status')
 
     console.log(criterias)
-    console.log(Err)
     
     const toaster = useToaster();
+
     const message = (
         <Notification type={'error'} 
             header={'Упс...!'} closable>
@@ -94,6 +116,7 @@ const JuryVote = () => {
             <p>Попробуйте ещё раз, не сдавайтесь!</p>
         </Notification>
     );
+
     const error = (
         <Notification type={'error'} 
             header={'Увы, но вы уже проголосовали!'} closable>
@@ -102,12 +125,15 @@ const JuryVote = () => {
             <p>Дождитесь переголосования, чтобы снова внести свой голос!</p>
         </Notification>
     );
+
     const PushAllE = () => toaster.push(
         message, { placement: 'topStart' }
     )
+
     const PushE = () => toaster.push(
         error, { placement: 'topStart' }
     )
+
     const message2 = (
         <Notification type={'success'} 
             header={'Поздравляем!'} closable>
@@ -116,32 +142,49 @@ const JuryVote = () => {
             <p>Для изменения голоса дождитесь переголосования.</p>
         </Notification>
     );
+
     const PushM = () => toaster.push(
         message2, { placement: 'topStart' }
     )
-    function IsErrors(){
-        if(Err === "400"){
-            PushE();
-        } else{
-            PushAllE()
-        }
-    }
 
-    function AllertNot() {
-        if(Err === undefined){
-            PushM();
-        } else{
-            IsErrors()
-        }
-    }
+  
+
+
+    // function Allert(){
+    //     postinf();
+    //     const timer = setTimeout(() => {
+    //         AllertNot()
+    //     }, 1000)
+    // }
     
-    
+    console.log(err);
+
+    // function isErrors()
+    // {
+    //     console.log(err)
+    //     if (err === 400)  
+    //     {PushE()}
+    //     else
+    //     {PushAllE()}
+    // }
+
+    // function AllertNot() {
+    //     {check === 0
+    //         ? PushM()
+    //         : isErrors()
+    //     }
+    // }
 
     useEffect(() => {
         if (update) return
         getinf()
         getinf2()
     }, [update])
+
+    // async function Allert(){
+    //     await postinf();
+    //     AllertNot()
+    // }
 
 
     return (
