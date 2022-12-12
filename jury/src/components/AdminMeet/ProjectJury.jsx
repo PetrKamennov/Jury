@@ -5,7 +5,7 @@ import "./ProjectJury.css";
 
 const ProjectJury = (props, remove) => {
 
-
+    console.log(props)
 
     console.log(props.jury)
     return (

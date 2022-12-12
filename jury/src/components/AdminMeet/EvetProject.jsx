@@ -24,27 +24,49 @@ const EventProject = (props, remove) => {
     const [isMenuClicked, setIsMenuClicked] = useState(false)
     const [update, setUpdate] = useState(false)
 
-    const CloseJury = () => {
-        if (!isMenuClicked) {
-            setPull('EventProject__Jurrypull')
-            setEventProject__buttons_3("EventProject__buttons-3")
-            setEventProject__buttons('EventProject__buttons active')
-        }
-        else {
-            setPull('EventProject__Jurrypull EventProjecthidden')
-            setEventProject__buttons_3("EventProject__buttons-3 active")
-            setEventProject__buttons('EventProject__buttons active')
-        }
-        setIsMenuClicked(!isMenuClicked)
-    }
     const [jurys, setjury] = useState([])
+    
+    const CloseJury = async () => {
+        await getinf()
+        if (jurys.length === 0) {
+            setjury([])
+        }else{
+            if (!isMenuClicked) {
+                setPull('EventProject__Jurrypull')
+                setEventProject__buttons_3("EventProject__buttons-3")
+                setEventProject__buttons('EventProject__buttons active')
+            }
+            else {
+                setPull('EventProject__Jurrypull EventProjecthidden')
+                setEventProject__buttons_3("EventProject__buttons-3 active")
+                setEventProject__buttons('EventProject__buttons active')
+            }
+            setIsMenuClicked(!isMenuClicked)
+        }
+        console.log(jurys)
+    }
 
 
 
     async function getinf() {
-        axiosPrivate.get(`http://aleksbcg.beget.tech/creteryAddScore/${props.project.id}`, {
+        axios.get(`http://aleksbcg.beget.tech/creteryAddScore/${props.project.id}`, {
         }).then(response => {
-            setjury(response.data)
+            if(response.data.length !== 0){
+                var arr = [response.data]
+                // console.log(response.data[1])
+                arr.push(response.data[0])
+                for (let index = 1; index < response.data.length; index++) {
+                    console.log(response.data[index].juryName)
+                    if (response.data[index].juryName !== response.data[index - 1].juryName) {
+                        arr.push(response.data[index])
+                    }
+                    
+                }
+                arr.shift()
+                setjury(arr)
+                console.log(jurys)
+
+            }
         }).catch(function (error) {
             console.log(error);
         })
@@ -97,7 +119,8 @@ const EventProject = (props, remove) => {
             PushE()
             console.log(error);
         })
-        getinf()
+        // getinf()
+        setjury([])
     }
 
     useEffect(() => {

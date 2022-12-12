@@ -28,7 +28,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
             PushE()
             console.log(error);
         })
-        setCrit({ creteryName: '', creteryDescription: '', creteryType: '' })
+        setCrit({ creteryName: '', creteryDescription: '', creteryType: '1' })
     }
 
 
