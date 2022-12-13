@@ -3,7 +3,9 @@ import { useState, useEffect } from "react";
 import CriteriaHead from "../components/Result/CriteriaHead";
 import TableTr from "../components/Result/TableTr";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import "../components/Result/Result.css"
+import "../components/Result/PDF.css"
+
+
 
 
 
@@ -42,6 +44,7 @@ const PDF = () => {
         })
     }
 
+
     const Table = document.getElementById("Table")
     console.log(Table)
 
@@ -51,8 +54,9 @@ const PDF = () => {
         getinf2()
     }, [update])
 
+
     return (
-        <>
+        <section className="container" id="container">
                 {/* <div id="Table" className="Result__table"> */}
                     <div className="Result__header">
                         <div className="Result__header-number">
@@ -73,7 +77,7 @@ const PDF = () => {
                     )}
 
                 {/* </div> */}
-        </>
+        </section>
     )
 }
 

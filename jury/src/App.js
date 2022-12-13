@@ -28,7 +28,6 @@ import Result from './pages/Result';
 import PDF from './pages/PDF';
 
 
-
 function App() {
   const location = useLocation();
   const transitions = useTransition(location,

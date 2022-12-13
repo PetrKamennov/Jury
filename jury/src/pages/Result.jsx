@@ -4,11 +4,19 @@ import CriteriaHead from "../components/Result/CriteriaHead";
 import TableTr from "../components/Result/TableTr";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import "../components/Result/Result.css"
+import { Link } from "react-router-dom";
+import { Notification, useToaster } from "rsuite";
+
+
+
+
+
 
 
 
 
 const Result = () => {
+
     const axiosPrivate = useAxiosPrivate();
     const [update, setUpdate] = useState(false)
 
@@ -20,6 +28,7 @@ const Result = () => {
 
     const EventId = localStorage.getItem("EventId")
 
+    
 
     async function getinf() {
         axiosPrivate.get(`/GetCreteryOnEvent/${EventId}`, {
@@ -41,7 +50,7 @@ const Result = () => {
             console.log(error);
         })
     }
-
+    
     const Table = document.getElementById("Table")
     console.log(Table)
 
@@ -50,6 +59,21 @@ const Result = () => {
         getinf()
         getinf2()
     }, [update])
+
+    
+    const toaster = useToaster();
+    const message = (
+        <Notification type={'info'} 
+            header={'Информация для скачивания таблицы в PDF'} closable>
+            <p>Для сохранения отчёта в формате .pdf нажмите правой кнопкой мыши на таблицу и выберите "Сохранить как PDF".</p>
+            <br/>
+            <p>Либо найдите кнопку скачивания в мобильном браузере в меню.</p>
+        </Notification>
+    );
+    const PushM = () => toaster.push(
+        message, { placement: 'topStart' }
+    )
+   
 
     return (
         <>
@@ -75,7 +99,7 @@ const Result = () => {
                     )}
 
                 </div>
-
+                <Link to="/PDF" type="button" onClick={PushM}>Создать Отчёт</Link>
             </section>
         </>
     )
