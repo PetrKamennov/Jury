@@ -25,7 +25,7 @@ import { useTransition, animated } from 'react-spring';
 import IsUser from './components/AdminOrJury/AdminOrJury';
 import JuryVote from './pages/JuryVote';
 import Result from './pages/Result';
-
+import PDF from './pages/PDF';
 
 
 function App() {
@@ -78,6 +78,7 @@ function App() {
                 <Route path='/AdminMeet' element={<AdminMeet  />} />
                 <Route path='/CriteriaPool' element={<CriteriaPool />} />
                 <Route path='/Result' element={<Result/>} />
+                <Route path='/PDF' element={<PDF />} />
               </Route>
 
           </Route>

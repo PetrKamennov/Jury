@@ -30,6 +30,7 @@ const EventProject = (props, remove) => {
         await getinf()
         if (jurys.length === 0) {
             setjury([])
+            PushI()
         }else{
             if (!isMenuClicked) {
                 setPull('EventProject__Jurrypull')
@@ -143,6 +144,17 @@ const EventProject = (props, remove) => {
             <p>Попробуйте ещё раз, не сдавайтесь!</p>
         </Notification>
     );
+    const info = (
+        <Notification type={'info'} 
+            header={'Информация о проекте.'} closable>
+            <p>За данный проект ещё не проголосовали.</p>
+            <br/>
+            <p>Попробуйте в другой раз.</p>
+        </Notification>
+    );
+    const PushI = () => toaster.push(
+        info, { placement: 'topStart' }
+    )
     const PushM = () => toaster.push(
         message, { placement: 'topStart' }
     )
