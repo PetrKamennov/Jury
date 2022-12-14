@@ -13,7 +13,7 @@ const AddCriteriaModal = ({ active, setActive, create }) => {
 
     const navigate = useNavigate()
 
-    const [crit, setCrit] = useState({ creteryName: '', creteryDescription: '', creteryType: ''})
+    const [crit, setCrit] = useState({ creteryName: '', creteryDescription: '', creteryType: '1'})
 
 
     async function addNewCriteria() {
