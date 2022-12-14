@@ -73,22 +73,6 @@ body,html{
     text-align: center;
     color: #FFFFFF;
 }
-
-.CriteriaHead {
-    min-width: 188px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #E21A1A;
-    border: 2px solid #000000;
-}
-.CriteriaTable{
-    min-width: 188px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #000000;
-}
 .Result__header__itog span {
     font-family: 'IBM Plex Sans';
     font-style: normal;

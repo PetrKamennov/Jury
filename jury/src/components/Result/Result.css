@@ -74,11 +74,12 @@ body,html{
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+    padding: 5px 2px;
 }
 
 .CriteriaHead {
-    min-width: 188px;
-    max-width: 188px;
+    min-width: 250px;
+    max-width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +87,8 @@ body,html{
     border: 2px solid #000000;
 }
 .CriteriaTable{
-    min-width: 188px;
+    min-width: 250px;
+    max-width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,6 +104,7 @@ body,html{
     align-items: center;
     text-align: center;
     color: #FFFFFF;
+
 }
 
 .Result__header__itog {
