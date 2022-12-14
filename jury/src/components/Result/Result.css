@@ -20,7 +20,6 @@ body,html{
 }
 .Result__header{
     display: flex;
-    height: 50px;
 }
 .Result__header-number{
     min-width: 48px;
@@ -69,7 +68,7 @@ body,html{
     font-family: 'IBM Plex Sans';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 20px;
     display: flex;
     align-items: center;
@@ -79,6 +78,7 @@ body,html{
 
 .CriteriaHead {
     min-width: 188px;
+    max-width: 188px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -164,7 +164,7 @@ body,html{
 }
 @media (max-width: 1800px) {
     .CriteriaHead span{
-        font-size: 20px;
+        font-size: 16px;
     }
     .Result__header__itog span{
         font-size: 20px;
