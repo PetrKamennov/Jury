@@ -53,6 +53,19 @@
     display: flex;
     overflow-x: scroll;
 }
+.JuryVote__CriteriasPull::-webkit-scrollbar {
+    height: 10px;            
+  }
+  .JuryVote__CriteriasPull::-webkit-scrollbar-track {
+    background: ghostwhite;    
+    border-radius: 10px;
+  }
+  .JuryVote__CriteriasPull::-webkit-scrollbar-thumb {
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 10px;
+  }
 @media (max-width: 820px) {
     .JuryVote{
         padding: 0px;

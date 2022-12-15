@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import "./CriteriaVote.css";
+import Info from "../JuryVote/infos.png"
+import { Notification, useToaster } from "rsuite";
 
 
 
@@ -21,12 +23,35 @@ const CriteriaVote = (props) => {
     if (props.active === true){
         props.gets(crit)
     }
+
+    const toaster = useToaster();
+    const info = (
+        <Notification type={'info'} 
+            header={'Информация'} closable>
+            <p>{props.criteria[0].creteryDescription}</p>
+            <br/>
+            <p>Тип оценивания:</p>
+            <p>{ props.criteria[0].creteryType === 1 
+                        ? "Баллы"
+                        : props.criteria[0].creteryType === 2
+                            ? "Односложный Ответ"
+                            : "Многосложный Ответ"
+                }
+            </p>
+        </Notification>
+    );
+    const PushI = () => toaster.push(
+        info, { placement: 'topStart' }
+    )
     
     return (
         <>
             <div className="CriteriaVote">
                 <div className="CritrriaVote__top">
                     <b>{props.criteria[0].creteryName}</b>
+                    <button className="CriteriaVote__top_image" onClick={PushI}>
+                        <img className="CriteriaVote__top_image-img" src={Info} alt="info" />
+                    </button>
                 </div>
                 <div className="CriteriaVote__bottom">
                        { props.criteria[0].creteryType === 1 

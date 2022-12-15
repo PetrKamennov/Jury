@@ -62,8 +62,18 @@
 }
 
 .EventProject__Jurrypull-container::-webkit-scrollbar {
-    width: 0;
-}
+    width: 10px;              
+  }
+  .EventProject__Jurrypull-container::-webkit-scrollbar-track {
+    background: ghostwhite;    
+    border-radius: 10px;
+  }
+  .EventProject__Jurrypull-container::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: red;
+    border-radius: 10px;
+  }
+  
 
 .EventProjecthidden{
     display: none !important;

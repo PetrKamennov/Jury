@@ -12,6 +12,15 @@
     margin-top: 54px;
     overflow-y: scroll;
 }
+  .JuryMeet__ProjektPull::-webkit-scrollbar-track {
+    background: ghostwhite;    
+    border-radius: 10px;
+  }
+  .JuryMeet__ProjektPull::-webkit-scrollbar-thumb {
+    width: 10px;
+    background: red;
+    border-radius: 10px;
+  }
 @media (max-width: 500px){
     .JuryMeet__ProjektPull{
         margin-top: -54px;
