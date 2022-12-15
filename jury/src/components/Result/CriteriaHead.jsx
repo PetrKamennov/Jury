@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 const CriteriaHead = (props) => {
     // const axiosPrivate = useAxiosPrivate();
-    console.log(props.result)
+    // console.log(props.result)
 
 
     return (

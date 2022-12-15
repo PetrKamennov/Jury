@@ -70,13 +70,14 @@ const TableTr = (props) => {
 
 
 
-    console.log(resl)
+    // console.log(props.projets)
     return (
         <>
 
             <section className="TableTr">
                 <div className="TableTr-number">{props.number}</div>
                 <div className="TableTr-projectName">{props.projets.projectName}</div>
+                <div className="TableTr-projectName">{props.projets.projectAuthor}</div>
                 {result.map((result, index) =>
                     <CriteriaTable result={result} number={index + 1} key={result.id} />
                 )}

@@ -23,6 +23,7 @@
 
 .EventProject__text-spans {
     display: flex;
+    margin-right: 5px;
 }
 .EventProject__text p {
     font-family: 'IBM Plex Sans';

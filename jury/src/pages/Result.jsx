@@ -40,19 +40,37 @@ const Result = () => {
         })
     }
 
+   
     async function getinf2() {
         axiosPrivate.get(`/GetResult/${EventId}/1`, {
 
         }).then(response => {
-            setProjects(response.data)
-            console.log(response.data)
+            var arr = []
+            // console.log(response.data)
+            for (let index = 0; index < response.data.length; index++) {
+                var res = 0
+                for (var i = 0; i < response.data[index].estimations.length; i++) {
+                    res += response.data[index].estimations[i];
+                }
+                arr.splice(index, 0, {
+                    projectAuthor: response.data[index].projectAuthor,
+                    estimations: response.data[index].estimations,
+                    id: response.data[index].id,
+                    projectName: response.data[index].projectName, res: res
+                });
+            }
+            arr.sort(function (a, b) { 
+                return b.res - a.res });
+
+            setProjects(arr)
+            
         }).catch(function (error) {
             console.log(error);
         })
     }
     
     const Table = document.getElementById("Table")
-    console.log(Table)
+    // console.log(Table)
 
     useEffect(() => {
         if (update) return
@@ -87,6 +105,9 @@ const Result = () => {
                         <div className="Result__header-projectName">
                             <span>Название проекта</span>
                         </div>
+                        <div className="Result__header-projectName">
+                            <span>ФИО отвечающего</span>
+                        </div>
                         {result.map((result, index) =>
                             <CriteriaHead result={result} number={index + 1} key={result.id} />
                         )}
@@ -95,7 +116,7 @@ const Result = () => {
                         </div>
                     </div>
                     {projets.map((projets, index) =>
-                        <TableTr projets={projets} number={index + 1} key={result.id} />
+                        <TableTr projets={projets} number={index + 1} key={result[0].id} />
                     )}
 
                 </div>
