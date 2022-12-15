@@ -56,28 +56,26 @@ const PDF = () => {
 
 
     return (
-        <section className="container" id="container">
-                {/* <div id="Table" className="Result__table"> */}
-                    <div className="Result__header">
-                        <div className="Result__header-number">
-                            <span>№</span>
-                        </div>
-                        <div className="Result__header-projectName">
-                            <span>Название проекта</span>
-                        </div>
-                        {result.map((result, index) =>
-                            <CriteriaHead result={result} number={index + 1} key={result.id} />
-                        )}
-                        <div className="Result__header__itog">
-                            <span>Итог</span>
-                        </div>
-                    </div>
-                    {projets.map((projets, index) =>
-                        <TableTr projets={projets} number={index + 1} key={result.id} />
-                    )}
+        <div id="Table" className="Result__table__pdf">
+            <div className="Result__header">
+                <div className="Result__header-number">
+                    <span>№</span>
+                </div>
+                <div className="Result__header-projectName">
+                    <span>Название проекта</span>
+                </div>
+                {result.map((result, index) =>
+                    <CriteriaHead result={result} number={index + 1} key={result.id} />
+                )}
+                <div className="Result__header__itog">
+                    <span>Итог</span>
+                </div>
+            </div>
+            {projets.map((projets, index) =>
+                <TableTr projets={projets} number={index + 1} key={result.id} />
+            )}
 
-                {/* </div> */}
-        </section>
+        </div>
     )
 }
 

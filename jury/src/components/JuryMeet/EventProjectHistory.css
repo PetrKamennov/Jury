@@ -29,7 +29,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 31px;
+    line-height: 20px;
     display: flex;
     align-items: center;
     color: #000000;
@@ -40,7 +40,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
-    line-height: 36px;
+    line-height: 20px;
     margin-left: 15px;
     display: flex;
     align-items: center;

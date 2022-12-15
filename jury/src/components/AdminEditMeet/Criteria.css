@@ -30,9 +30,10 @@
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
-    line-height: 31px;
+    line-height: 25px;
     display: flex;
     align-items: center;
+    text-align: center;
     color: #000000;
     
 }
@@ -42,7 +43,7 @@
     font-style: normal;
     font-weight: 500;
     font-size: 28px;
-    line-height: 36px;
+    line-height: 25px;
     margin-left: 15px;
     display: flex;
     align-items: center;
@@ -133,13 +134,20 @@
         font-size: 14px;
     }
     .Criteria__text p{
-        margin-right: 10px;
+        margin-right: 0px;
+        margin-left: 10px;
         font-size: 12px;
     }
     .Criteria__button{
-        font-size: 12px;
+        width: 55px;
+        height: 20px;
+        font-size: 10px;
+        margin-left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .Criteria__container{
-        padding: 0 10px;
+        padding: 0 0px;
     }
 }

@@ -32,7 +32,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
-    line-height: 62px;
+    line-height: 30px;
     display: flex;
     align-items: center;
     margin: 82px 0 22px 0;
@@ -79,7 +79,7 @@
     font-style: normal;
     font-weight: 300;
     font-size: 26px;
-    line-height: 34px;
+    line-height: 25px;
     transition: 0.5s;
     pointer-events: none;
 
@@ -192,19 +192,21 @@
 @media (max-width: 375px) {
     .AdminEditProjectModal__content{
         width: 290px;
-        height: 440px;
+        height: 400px;
     }
     .AdminEditProjectModal__content h1{
         font-weight: 500;
         font-size: 24px;
         justify-content: center;
-        margin: 40px 0px 0px 0px;
+        text-align: center;
+        align-self: center;
+        margin: 30px 0px 0px 0px;
     }
     .AdminEditProjectModal__content-regJury__inputs{
         width: 250px;
     }
     .AdminEditProjectModal__content-regJury__inputs__box span{
-        font-size: 20px;
+        font-size: 18px;
     }
     .AdminEditProjectModal__content-regJury__inputs__box{
         margin-top: 40px;

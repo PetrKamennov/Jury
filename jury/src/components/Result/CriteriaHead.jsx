@@ -7,12 +7,13 @@ import { useState, useEffect } from "react";
 
 const CriteriaHead = (props) => {
     // const axiosPrivate = useAxiosPrivate();
+    console.log(props.result)
 
 
     return (
         <>
             <div className="CriteriaHead">
-                <span>{`Критерий ${props.number}`}</span>
+                <span>{props.result[0].creteryName}</span>
             </div>
         </>
     )
