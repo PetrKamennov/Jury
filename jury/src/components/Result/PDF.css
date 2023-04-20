@@ -20,7 +20,8 @@ body,html{
     display: flex;
 }
 .Result__header-number{
-    min-width: 48px;
+    min-width: 2.5%;
+    max-width: 2.5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -54,7 +55,8 @@ body,html{
 }
 
 .Result__header-projectName {
-    min-width: 350px;
+    min-width: 18.63%;
+    max-width: 18.63%;
     display: flex;
     align-items: center;
     text-align: center;
@@ -86,7 +88,8 @@ body,html{
 }
 
 .Result__header__itog {
-    min-width: 350px;
+    min-width: 18.63%;
+    max-width: 18.63%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +101,8 @@ body,html{
     height: 78px;
 }
 .TableTr-number{
-    min-width: 48px;
+    min-width: 2.5%;
+    max-width: 2.5%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,7 +110,8 @@ body,html{
     border: 2px solid #000000;
 }
 .TableTr-projectName {
-    min-width: 350px;
+    min-width: 18.63%;
+    max-width: 18.63%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +119,8 @@ body,html{
     border: 2px solid #000000;
 }
 .TableTr-result{
-    min-width: 350px;
+    min-width: 18.63%;
+    max-width: 18.63%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -169,17 +175,89 @@ body,html{
         font-size: 12px;
     }
 }
-@media (max-width: 720px) {
+@media (max-width: 900px){
+    .CriteriaHead span {
+            font-size: 9px;
+            line-height: 10px;
+        }
+    
+        .Result__header__itog span {
+            font-size: 9px;
+            line-height: 10px;
+        }
+    
+        .Result__header-projectName span {
+            font-size: 9px;
+            line-height: 10px;
+        }
+    
+        .Result__header-number span {
+            font-size: 9px;
+        }
+        .TableTr-projectName{
+            font-size: 9px;
+        }
+        .CriteriaTable{
+            font-size: 9px;
+        }
+        .TableTr-result{
+            font-size: 9px;
+        }
+        .TableTr-number{
+            font-size: 9px;
+        }
+}
+@media (max-width: 650px) {
     .CriteriaHead span{
-        font-size: 10px;
+        font-size: 4px;
+        line-height: 8px;
     }
     .Result__header__itog span{
-        font-size: 10px;
+        font-size: 5px;
     }
     .Result__header-projectName span{
-        font-size: 10px;
+        font-size: 5px;
     }
     .Result__header-number span{
-        font-size: 10px;
+        font-size: 5px;
+    }
+    .TableTr-projectName {
+            font-size: 6px;
+    }
+    
+    .CriteriaTable {
+            font-size: 6px;
+    }
+    
+    .TableTr-result {
+            font-size: 6px;
+    }
+    
+    .TableTr-number {
+            font-size: 6px;
+    }
+    .Result__header-number{
+        border: 1px solid #000000;
+        }
+    .Result__header-projectName{
+        border: 1px solid #000000;
+        }
+    .Result__header__itog{
+        border: 1px solid #000000;
+        }
+    .TableTr-number{
+        border: 1px solid #000000;
+    }
+    .TableTr-projectName{
+        border: 1px solid #000000;
+    }
+    .TableTr-result{
+        border: 1px solid #000000;
+    }
+    .CriteriaHead{
+        border: 1px solid #000000;
+    }
+    .CriteriaTable{
+        border: 1px solid #000000;
     }
 }
