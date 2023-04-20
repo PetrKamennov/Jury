@@ -117,3 +117,9 @@ hr {
         margin: 0 25px;
     }
 }
+@media (max-width: 320px) {
+    .navbar__button{
+        font-size: 12px;
+        line-height: 12px;
+    }
+}

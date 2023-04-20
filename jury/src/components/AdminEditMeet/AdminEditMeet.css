@@ -393,4 +393,11 @@ body {
     
     }
 }
-
+@media (max-width: 320px) {
+    .AdminEditMeet__firstBlock__right button:nth-child(2){
+        line-height: 17px;
+    }
+    .AdminEditMeet__firstBlock__left__input__box.date span{
+        line-height: 15px;
+    }
+}

@@ -147,6 +147,18 @@
     .ProjectJury__container button{
         font-size: 14px;
     }
+    .ProjectJury__text span{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .ProjectJury__text p{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .ProjectJury__indicator{
+        font-size: 13px;
+        line-height: 15px;
+    }
     
 }
 @media (max-width: 400px){
@@ -156,13 +168,15 @@
 }
 @media (max-width: 370px) {
     .ProjectJury__text span{
-        font-size: 12px;
+        font-size: 11px;
         margin: 0px 5px;
         display: flex;
         text-align: center;
+        line-height: 12px;
     }
     .ProjectJury__text p{
-        font-size: 12px;
+        font-size: 11px;
+        line-height: 12px;
     }
     .ProjectJury__container button{
         font-size: 10px;
@@ -171,7 +185,20 @@
         justify-content: center;
     }
     .ProjectJury__indicator{
-        font-size: 13px;
+        font-size: 12px;
         margin-left: 5px;
+        line-height: 13px;
+    }
+}
+@media (max-width: 320px) {
+    .ProjectJury__text span:nth-child(2){
+        margin-left: 0;
+    }
+    .ProjectJury__text span{
+        font-size: 9px;
+    }
+    .ProjectJury__text p{
+        font-size: 9px;
+        line-height: 12px;
     }
 }

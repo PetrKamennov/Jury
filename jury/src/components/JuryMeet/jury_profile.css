@@ -171,7 +171,11 @@ input{
         margin-top: -390px;
     }
 }
-
+@media (max-width: 320px) {
+    .EventProject__text span{
+        line-height: 15px;
+    }
+}
 .JuryProfile__input__box span {
     position: absolute;
     display: inline-block;

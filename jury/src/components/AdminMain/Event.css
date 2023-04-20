@@ -228,4 +228,14 @@
     .Event__button-watch{
         margin: 10px 0 0 50px !important;
     }
+    .Event__text span{
+        font-size: 12px;
+        margin-left: 0px;
+        line-height: 15px;
+    }
+    .Event__text p{
+        font-size: 10px;
+        line-height: 15px;
+        margin-left: 10px;
+    }
 }

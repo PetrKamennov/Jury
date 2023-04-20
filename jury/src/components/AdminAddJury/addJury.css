@@ -132,3 +132,14 @@
         padding: 0 10px;
     }
 }
+@media (max-width: 320px) {
+    .Jury__text span{
+        font-size: 12px;
+        line-height: 15px !important;
+    }
+    .Jury__text p{
+        font-size: 12px;
+        line-height: 15px !important;
+        margin-left: 8px;
+    }
+}

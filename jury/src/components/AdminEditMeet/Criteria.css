@@ -69,51 +69,116 @@
 .Criteria__button:hover{
     background: #CFCFCF;
 }
-@media (max-width: 1050px){
-    .Criteria__text span{
-        font-size: 24px;
-    }
-    .Criteria__text p{
-        font-size: 22px;
-    }
-    .Criteria__button{
-        font-size: 22px;
-    }
-}
-@media (max-width: 890px){
+@media (max-width: 1800px) {
     .Criteria__text span{
         font-size: 20px;
     }
     .Criteria__text p{
-        font-size: 18px;
+        font-size: 20px;
+    }
+}
+@media (max-width: 1350px) {
+    .Criteria__text{
+        width: 65%;
+    }
+    .Criteria__text span{
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .Criteria__text p{
+        font-size: 16px;
+        line-height: 20px;
     }
     .Criteria__button{
         font-size: 18px;
+        height: 40px;
+        width: 180px;
+    }
+}
+@media (max-width: 800px) {
+    .Criteria__text span{
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .Criteria__text p{
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .Criteria__button{
+        font-size: 14px;
+        width: 100px;
     }
     .Criteria__text{
-        width: 59%;
+        width: 70%;
     }
 }
-@media (max-width: 760px){
+@media (max-width: 500px) {
+    .Criteria__text span{
+        font-size: 9px;
+        line-height: 12px;
+    }
+    .Criteria__text p{
+        font-size: 9px;
+        line-height: 12px;
+    }
+}
+@media (max-width: 320px) {
+    .Criteria__text span{
+        font-size: 8px;
+        line-height: 10px;
+    }
+    .Criteria__text p{
+        font-size: 8px;
+        line-height: 10px;
+    }
+}
+/*@media (max-width: 1050px){*/
+/*    .Criteria__text span{*/
+/*        font-size: 24px;*/
+/*    }*/
+/*    .Criteria__text p{*/
+/*        font-size: 22px;*/
+/*    }*/
+/*    .Criteria__button{*/
+/*        font-size: 22px;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 890px){*/
+/*    .Criteria__text span{*/
+/*        font-size: 20px;*/
+/*    }*/
+/*    .Criteria__text p{*/
+/*        font-size: 18px;*/
+/*    }*/
+/*    .Criteria__button{*/
+/*        font-size: 18px;*/
+/*    }*/
+/*    .Criteria__text{*/
+/*        width: 59%;*/
+/*    }*/
+/*}*/
+/*@media (max-width: 760px){*/
 
-    .Criteria__button{
-        width: 130px;
-    }
-}
+/*    .Criteria__button{*/
+/*        width: 130px;*/
+/*    }*/
+/*}*/
 @media (max-width: 590px){
     .Criteria{
         height: 60px;
         margin-bottom: 10px;
     }
-    .Criteria__text span{
-        font-size: 16px;
-    }
-    .Criteria__text p{
-        font-size: 14px;
-    }
-    .Criteria__button{
-        font-size: 14px;
-    }
+    /*.Criteria__text span{*/
+    /*    font-size: 16px;*/
+    /*}*/
+    /*.Criteria__text p{*/
+    /*    font-size: 14px;*/
+    /*}*/
+    /*.Criteria__button{*/
+    /*    font-size: 14px;*/
+    /*}*/
     .Criteria__container{
         padding: 0 20px;
     }
@@ -124,20 +189,9 @@
         height: 35px;
         font-size: 12px;
     }
-    .Criteria__text{
-        width: 68%;
-    }
+
 }
 @media (max-width: 400px){
-
-    .Criteria__text span{
-        font-size: 14px;
-    }
-    .Criteria__text p{
-        margin-right: 0px;
-        margin-left: 10px;
-        font-size: 12px;
-    }
     .Criteria__button{
         width: 55px;
         height: 20px;
