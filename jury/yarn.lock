@@ -3431,9 +3431,9 @@
     "lodash.uniq" "^4.5.0"
 
 "caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30000918", "caniuse-lite@^1.0.30000929", "caniuse-lite@^1.0.30001109", "caniuse-lite@^1.0.30001400":
-  "integrity" "sha512-NORIQuuL4xGpIy6iCCQGN4iFjlBXtfKWIenlUuyZJumLRIindLb7wXM+GO8erEhb7vXfcnf4BAg2PrSDN5TNLQ=="
-  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001488.tgz"
-  "version" "1.0.30001488"
+  "integrity" "sha512-06wzzdAkCPZO+Qm4e/eNghZBDfVNDsCgw33T27OwBH9unE9S478OYw//Q2L7Npf/zBzs7rjZOszIFQkwQKAEqA=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001416.tgz"
+  "version" "1.0.30001416"
 
 "canvg@^3.0.6":
   "integrity" "sha512-qwR2FRNO9NlzTeKIPIKpnTY6fqwuYSequ8Ru8c0YkYU7U0oW+hLUvWadLvAu1Rl72OMNiFhoLu4f8eUjQ7l/+Q=="
@@ -4966,6 +4966,11 @@
     "is-date-object" "^1.0.1"
     "is-symbol" "^1.0.2"
 
+"es6-promise@^4.2.5":
+  "integrity" "sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w=="
+  "resolved" "https://registry.npmjs.org/es6-promise/-/es6-promise-4.2.8.tgz"
+  "version" "4.2.8"
+
 "escalade@^3.1.1":
   "integrity" "sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw=="
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
@@ -6283,13 +6288,22 @@
     "tapable" "^1.0.0"
     "util.promisify" "1.0.0"
 
-"html2canvas@^1.0.0-rc.5":
+"html2canvas@^1.0.0", "html2canvas@^1.0.0-rc.5", "html2canvas@^1.4.1":
   "integrity" "sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA=="
   "resolved" "https://registry.npmjs.org/html2canvas/-/html2canvas-1.4.1.tgz"
   "version" "1.4.1"
   dependencies:
     "css-line-break" "^2.1.0"
     "text-segmentation" "^1.0.3"
+
+"html2pdf.js@^0.10.1":
+  "integrity" "sha512-3onwwhOWsZfNjIZwV6YIJ6FVhXk+X9YxHSqzeS6hup+1dGi2DHI+zZYUJ+iFnvtaYcjlhyrILL1fvRCUOa8Fcg=="
+  "resolved" "https://registry.npmjs.org/html2pdf.js/-/html2pdf.js-0.10.1.tgz"
+  "version" "0.10.1"
+  dependencies:
+    "es6-promise" "^4.2.5"
+    "html2canvas" "^1.0.0"
+    "jspdf" "^2.3.1"
 
 "htmlparser2@^6.1.0":
   "integrity" "sha512-gyyPk6rgonLFEDGoeRgQNaEUvdJ4ktTmmUh/h2t7s+M8oPpIPxgNACWa+6ESR57kXstwqPiCut0V8NRpcwgU7A=="
@@ -7767,7 +7781,7 @@
   "resolved" "https://registry.npmjs.org/jsonify/-/jsonify-0.0.0.tgz"
   "version" "0.0.0"
 
-"jspdf@^2.5.1":
+"jspdf@^2.3.1", "jspdf@^2.5.1":
   "integrity" "sha512-hXObxz7ZqoyhxET78+XR34Xu2qFGrJJ2I2bE5w4SM8eFaFEkW2xcGRVUss360fYelwRSid/jT078kbNvmoW0QA=="
   "resolved" "https://registry.npmjs.org/jspdf/-/jspdf-2.5.1.tgz"
   "version" "2.5.1"
@@ -11437,7 +11451,7 @@
     "lodash" "^4.17.21"
     "react-is" "^17.0.2"
 
-"rsuite@^5.23.0":
+"rsuite@^5.23.1":
   "integrity" "sha512-/ExSbYzhSU5gHupc3t15Sfw+1p2W0haCZJGgp13Y1b3n51lpZdGj4WwVijKfSy4BpXXkL/EUttynYxYPAZg2Dw=="
   "resolved" "https://registry.npmjs.org/rsuite/-/rsuite-5.23.2.tgz"
   "version" "5.23.2"
